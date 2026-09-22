@@ -189,3 +189,7 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
  .hero-calendar>.free-entry{font-size:18px}
  .hero-scene{height:380px}
 }
+
+/* Transparent organizer artwork, directly from Noorteaeg. */
+.organizer > a { background: transparent; padding: 0; }
+.organizer img, .sub-organizer img { width: 112px; height: auto; max-height: 112px; object-fit: contain; }
