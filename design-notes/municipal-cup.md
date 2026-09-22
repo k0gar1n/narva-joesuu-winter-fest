@@ -22,3 +22,11 @@ Confirmed: Friday 22 January 2027, Narva-Jõesuu; category for cities and munici
 Team size and substitutes; participant connection to the municipality; age/mixed-team criteria; number of teams per municipality; price unit, taxes and payment/invoice arrangements; registration deadline and Fienta link; schedule and entrance/drop-off map; final sports and scoring/appeal rules; safety/weather/cancellation conditions; meal portions/menu/dietary process; sauna inclusion and booking; team flags/introductions; accessibility and on-site contact.
 
 Checklist stores only checked item IDs in this browser, shared across site languages. No forms, personal data collection or invented participant lists were added. Print opens all details and temporarily includes filtered-out sports, restoring the screen afterward.
+
+## Approved conditions — 22 September 2026
+
+Canonical general rules: `content/municipal-rules/{ru,et,en}.md`. These supersede earlier provisional eligibility, fees and inclusion notes above. Five adults per team; municipal staff, subordinate/owned institutions and council members only. Registration by 17 January; roster by 19 January. Prices €90/120/150 by application date. Two meals, equipment and sauna included. Confirmed scoring, ties, appeals and refund conditions are in the rules.
+
+Generate participant pages with `python3 tools/render-municipal-cup.py`, then generate HTML rules and three-page PDFs with `python3 tools/render-municipal-rules.py` (ReportLab required). Static Manrope font instances are bundled in `tools/fonts/`. Finally run `node tools/build-vercel.mjs`.
+
+Discipline regulations and exact individual timetables remain pending. The actual Fienta event URL must still be supplied in `docs/site-config.js` (registration.municipalities); preserve the existing fallback until then.
