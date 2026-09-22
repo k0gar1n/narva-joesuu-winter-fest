@@ -29,6 +29,11 @@
         "ru": null,
         "et": null,
         "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
       }
     },
     {
@@ -49,6 +54,11 @@
         "ru": null,
         "et": null,
         "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
       }
     },
     {
@@ -69,6 +79,11 @@
         "ru": null,
         "et": null,
         "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
       }
     },
     {
@@ -89,6 +104,11 @@
         "ru": null,
         "et": null,
         "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
       }
     },
     {
@@ -109,6 +129,11 @@
         "ru": null,
         "et": null,
         "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
       }
     },
     {
@@ -129,6 +154,87 @@
         "ru": null,
         "et": null,
         "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
+      }
+    },
+    {
+      "id": "snowball",
+      "icon": "28-snowball.webp",
+      "name": [
+        "Битва снежков",
+        "Lumesõda",
+        "Snowball battle"
+      ],
+      "rulesPdf": {
+        "ru": null,
+        "et": null,
+        "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
+      }
+    },
+    {
+      "id": "relay",
+      "icon": "23-team.webp",
+      "name": [
+        "Эстафеты",
+        "Teatevõistlused",
+        "Relay races"
+      ],
+      "rulesPdf": {
+        "ru": null,
+        "et": null,
+        "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
+      }
+    },
+    {
+      "id": "flipper-run",
+      "icon": "flipper-run-ribbon.png",
+      "name": [
+        "Бег в ластах",
+        "Lestajooks",
+        "Flipper run"
+      ],
+      "rulesPdf": {
+        "ru": null,
+        "et": null,
+        "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
+      }
+    },
+    {
+      "id": "target-throw",
+      "icon": "28-snowball.webp",
+      "name": [
+        "Метание на точность",
+        "Täpsusvisked",
+        "Target throwing"
+      ],
+      "rulesPdf": {
+        "ru": null,
+        "et": null,
+        "en": null
+      },
+      "rulesSections": {
+        "ru": [],
+        "et": [],
+        "en": []
       }
     }
   ],

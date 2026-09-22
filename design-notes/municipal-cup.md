@@ -30,3 +30,11 @@ Canonical general rules: `content/municipal-rules/{ru,et,en}.md`. These supersed
 Generate participant pages with `python3 tools/render-municipal-cup.py`, then generate HTML rules and three-page PDFs with `python3 tools/render-municipal-rules.py` (ReportLab required). Static Manrope font instances are bundled in `tools/fonts/`. Finally run `node tools/build-vercel.mjs`.
 
 Discipline regulations and exact individual timetables remain pending. The actual Fienta event URL must still be supplied in `docs/site-config.js` (registration.municipalities); preserve the existing fallback until then.
+
+## Discipline cards and individual regulations
+
+Compact cards link to `/winter-cup/municipalities/disciplines/{id}/` in each language. Five desktop columns, six on wide screens; two on mobile. No filters or card descriptions.
+
+For each discipline, populate `rulesSections[lang]` with `{heading, paragraphs: [...]}` objects and `rulesPdf[lang]` with the actual PDF URL in `content/municipal-cup.json`. Until published, the individual page shows a pending message and has no inactive download button. Run `python3 tools/render-discipline-rules.py` after the municipality and general rules renderers.
+
+Flipper-run illustration: `docs/assets/flipper-run-ribbon.png`, generated from winter-fest-ribbon style-master.png and 01-skier.png. Prompt: isolated natural runner wearing two broad swimming fins; cobalt folded ribbons, navy reverse planes and pale fold seams; no skis, poles, text or shadows; transparent PNG. Native output 1199 × 1312, alpha verified. Original remains in Codex generated_images (exec-6bb04fbb-8958-4601-b6a2-80f68498aab7.png).

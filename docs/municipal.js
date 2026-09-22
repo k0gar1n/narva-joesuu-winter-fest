@@ -1,13 +1,5 @@
 (() => {
  const root=document.querySelector('.municipal-page');if(!root)return;
- const cards=[...root.querySelectorAll('[data-sport-group]')],filters=[...root.querySelectorAll('[data-mc-filter]')];
- filters.forEach(button=>button.addEventListener('click',()=>{
-  const value=button.dataset.mcFilter;filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-  let count=0;cards.forEach(card=>{card.hidden=value!=='all'&&card.dataset.sportGroup!==value;if(!card.hidden)count++;});
-  const status=root.querySelector('#mc-filter-status');status.textContent=`${status.dataset.label}: ${count}`;
- }));
- const openHash=()=>{let el;try{el=document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return;}if(el?.matches('.mc-sport')){filters[0].click();el.open=true;el.scrollIntoView({block:'start',behavior:'auto'});}};
- addEventListener('hashchange',openHash);openHash();
  const checks=[...root.querySelectorAll('[data-mc-check]')],key='wf-municipal-checklist-2027-v1';let saved=[];
  try{saved=JSON.parse(localStorage.getItem(key)||'[]');if(!Array.isArray(saved))saved=[];}catch{}
  const progress=()=>{const total=checks.filter(x=>x.checked).length;root.querySelector('#mc-progress').textContent=`${total} / ${checks.length}`;root.querySelector('#mc-progress-bar').value=total;};
