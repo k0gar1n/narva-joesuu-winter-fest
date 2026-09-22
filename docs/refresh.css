@@ -23,7 +23,8 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 .activity-figure{width:94px;height:78px;object-fit:contain;transition:transform .25s var(--ease)}
 .activity-card-link:hover .activity-figure,.experience-tile a:hover .activity-figure{transform:translateY(-4px) rotate(-3deg)}
 .activity-card-link:focus-visible{outline-offset:7px}
-.sport-line{display:flex;justify-content:flex-start;border:0;padding-top:0;margin-top:30px}
+.sport-line{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:12px;border:0;padding-top:0;margin-top:30px}
+.activities-more{font-size:14px;font-weight:400;line-height:1.5;color:var(--muted)}
 .all-activities-button{min-height:58px;gap:30px}
 .tile-caption{grid-template-columns:minmax(0,1fr) 74px 22px;gap:10px;align-items:center;padding-top:12px}
 .tile-caption .activity-figure{width:74px;height:70px}

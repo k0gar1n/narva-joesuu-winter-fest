@@ -40,5 +40,5 @@ window.WF_TRANSLATIONS = {
 Object.assign(window.WF_TRANSLATIONS.et,{"heroLine":"Eesti suurim<br> talvefestival","festivalTitle":"Mis sind ootab","skiTitle":"Suusasõit","rinkTitle":"Uisuväljak","concertTitle":"Suur kontsert «Summer Fest»","saunaTitle":"Saunaküla","free":"TASUTA","skiingCardAlt":"Suusasõit","skatingCardAlt":"Uisuväljak","musicCardAlt":"Suur kontsert «Summer Fest»","warmthCardAlt":"Saunaküla"});
 Object.assign(window.WF_TRANSLATIONS.en,{"heroLine":"Estonia’s largest<br> winter festival","festivalTitle":"What to expect","skiTitle":"Ski event","rinkTitle":"Ice rink","concertTitle":"Grand concert «Summer Fest»","saunaTitle":"Sauna Villages","free":"FREE ENTRY","skiingCardAlt":"Ski event","skatingCardAlt":"Ice rink","musicCardAlt":"Grand concert «Summer Fest»","warmthCardAlt":"Sauna Villages"});
 
-Object.assign(window.WF_TRANSLATIONS.et,{footballTitle:"Lumejalgpall",footballCardAlt:"Jalgpall lumel"});
-Object.assign(window.WF_TRANSLATIONS.en,{footballTitle:"Snow football",footballCardAlt:"Football on snow"});
+Object.assign(window.WF_TRANSLATIONS.et,{footballTitle:"Lumejalgpall",footballCardAlt:"Jalgpall lumel",activitiesMore:"Ja palju muud"});
+Object.assign(window.WF_TRANSLATIONS.en,{footballTitle:"Snow football",footballCardAlt:"Football on snow",activitiesMore:"And much more"});
