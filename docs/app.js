@@ -69,7 +69,7 @@
  });
  $$('[data-activity]').forEach(b=>b.addEventListener('click',()=>openDetail('activity',b.dataset.activity)));
  $$('[data-cup]').forEach(b=>b.addEventListener('click',()=>openDetail('cup',b.dataset.cup)));
- $('[data-credits]').addEventListener('click',()=>openDetail('credits'));
+ $('[data-credits]')?.addEventListener('click',()=>openDetail('credits'));
  menuButton.addEventListener('click',()=>{lastFocus=menuButton;menu.showModal();menuButton.setAttribute('aria-expanded','true');lockScroll(true);});
  $$('.close-dialog').forEach(b=>b.addEventListener('click',()=>closeDialog(b.closest('dialog'))));
  $$('dialog').forEach(d=>{
