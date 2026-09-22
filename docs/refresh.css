@@ -1,0 +1,74 @@
+/* September homepage revision. Keep shared layouts and existing colour tokens. */
+@font-face{font-family:WF Condensed;src:url('assets/RobotoCondensed-900.ttf') format('truetype');font-weight:900;font-display:swap}
+html[lang=ru] .display,html[lang=ru] .page-title,html[lang=ru] .hero-scene-content h2,html[lang=ru] .evening-content h2{font-family:WF Condensed,Oswald,sans-serif;font-weight:900}
+.hero-calendar{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.hero-calendar .hero-date{aspect-ratio:1/1;flex-shrink:0;padding:30px 22px 22px;justify-content:center}
+.hero-calendar .date-number{font:400 clamp(52px,4.7vw,78px)/1 Anton,sans-serif;letter-spacing:-.045em}
+.hero-calendar .date-meta{font:400 clamp(15px,1.5vw,24px)/1.2 Anton,sans-serif;margin-top:12px;gap:12px}
+html[lang=ru] .hero-calendar .date-meta{font-family:WF Condensed,Oswald,sans-serif;font-weight:900}
+.hero-calendar>.free-entry{font:400 clamp(20px,2vw,31px)/1.1 Anton,sans-serif;text-align:center;color:var(--blue);border:0;margin:8px 0 0;padding:0;letter-spacing:0}
+html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-serif;font-weight:900}
+.hero-foot{justify-content:flex-end}
+.hero-scene-content h2{max-width:800px}
+.festival .section-intro{align-items:end;margin-bottom:32px}
+.festival .intro-aside{padding-top:0}
+.festival .intro-bottom{margin:0}
+.sports-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:24px 44px;align-items:start}
+.sports-grid .activity{min-width:0;margin:0}
+.sports-grid .activity:nth-child(even){padding-top:42px}
+.sports-grid .photo-wrap{aspect-ratio:1.95;margin:0}
+.sports-grid .photo-wrap>img{height:100%;width:100%;object-fit:cover}
+.activity-caption{display:grid;grid-template-columns:minmax(0,1fr) 94px 24px;gap:12px;align-items:center;margin-top:12px;min-height:82px}
+.activity-caption h3{font:800 clamp(19px,1.9vw,28px)/1.18 Manrope,sans-serif;letter-spacing:-.035em}
+.activity-figure{width:94px;height:78px;object-fit:contain;transition:transform .25s var(--ease)}
+.activity-card-link:hover .activity-figure,.experience-tile a:hover .activity-figure{transform:translateY(-4px) rotate(-3deg)}
+.activity-card-link:focus-visible{outline-offset:7px}
+.sport-line{display:flex;justify-content:flex-start;border:0;padding-top:0;margin-top:30px}
+.all-activities-button{min-height:58px;gap:30px}
+.tile-caption{grid-template-columns:minmax(0,1fr) 74px 22px;gap:10px;align-items:center;padding-top:12px}
+.tile-caption .activity-figure{width:74px;height:70px}
+.tile-caption h2{font-size:24px}
+.experiences .tile-warmth .tile-photo img{object-position:center}
+.brand-arrow{display:inline-block!important;width:26px!important;height:19px!important;min-width:26px;flex-shrink:0;vertical-align:middle;background:var(--blue);-webkit-mask:url('assets/16-arrow-right.webp') center/contain no-repeat;mask:url('assets/16-arrow-right.webp') center/contain no-repeat;transform:rotate(-35deg)}
+.brand-arrow[data-direction=right]{transform:none}.brand-arrow[data-direction=down]{transform:rotate(90deg)}.brand-arrow[data-direction=up]{transform:rotate(-90deg)}
+.button .brand-arrow,.cup .brand-arrow,.footer .brand-arrow,.sub-footer .brand-arrow,.hero-explore .brand-arrow,.mobile-menu .brand-arrow,.fold-moving .brand-arrow,.mini-cup .brand-arrow{background:var(--paper)}
+.button-light .brand-arrow{background:var(--blue)}
+.round-button,.circle-arrow,.footer-up,.footer-top-link{border:0;border-radius:0}
+.tile-arrow,.activity-arrow{display:grid;place-items:center}
+@media(min-width:1200px){
+ .hero-mast{grid-template-columns:minmax(0,1fr) 185px;padding-top:22px;padding-bottom:20px;gap:40px}
+ .hero h1{font-size:clamp(100px,12vw,190px);line-height:1.05}
+ .hero-location{font-size:22px}
+ .hero-calendar .hero-date{padding:25px 15px 18px}
+ .hero-calendar .date-number{font-size:60px}
+ .hero-calendar .date-meta{font-size:18px;gap:10px}
+ .hero-calendar>.free-entry{font-size:25px}
+ .hero-scene{height:min(56.28vw,max(300px,calc(100svh - 400px)));background:var(--navy)}
+ .hero-photo{object-fit:contain;object-position:center;animation:none}
+ .hero-scene-content{bottom:25px;max-width:1450px;margin:auto}
+ .hero-scene-content h2{font-size:clamp(34px,3.5vw,60px)}
+}
+@media(max-width:760px){
+ .hero-calendar{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:18px}
+ .hero-calendar .hero-date{aspect-ratio:auto;flex-direction:row;justify-content:flex-start;align-items:center;padding:13px 20px 13px 13px;gap:12px}
+ .hero-calendar .date-number{font-size:29px}
+ .hero-calendar .date-meta{font-size:15px;margin:0;gap:10px}
+ .hero-calendar>.free-entry{margin:0;font-size:22px;text-align:right;white-space:nowrap}
+ .hero-scene-content h2{font-size:clamp(29px,8.2vw,40px);max-width:310px}
+ .hero-scene-content{gap:8px}
+ .festival .section-intro{margin-bottom:23px}
+ .festival .intro-aside{padding-top:16px}
+ .sports-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -22px;padding:0 22px 12px;scroll-padding-left:22px;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--blue) transparent}
+ .sports-grid .activity{flex:0 0 81%;scroll-snap-align:start;padding:0!important}
+ .sports-grid .activity:nth-child(even){margin-top:22px}
+ .sports-grid .photo-wrap{aspect-ratio:1.45}
+ .activity-caption{grid-template-columns:minmax(0,1fr) 64px 20px;gap:7px;min-height:70px}
+ .activity-caption h3{font-size:19px;line-height:1.2}
+ .activity-figure{width:64px;height:64px}
+ .all-activities-button{width:100%;justify-content:space-between}
+ .sport-line{margin-top:21px}
+ .tile-caption h2{font-size:22px}
+ .hero-foot a{width:100%}
+}
+@media(max-width:370px){.hero-calendar{gap:9px}.hero-calendar .date-number{font-size:24px}.hero-calendar .date-meta{font-size:13px;gap:6px}.hero-calendar>.free-entry{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.activity-figure{transition:none}.activity-card-link:hover .activity-figure,.experience-tile a:hover .activity-figure{transform:none}}
