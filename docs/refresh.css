@@ -43,6 +43,9 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 .cup-choice{display:flex;flex-direction:column;position:relative;min-width:0;padding:32px 28px 24px;background:var(--paper);color:var(--navy);clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);transition:background .25s,translate .25s}
 .cup-choice:after{content:'';position:absolute;top:0;right:0;width:24px;height:24px;background:var(--ice);clip-path:polygon(0 0,0 100%,100% 100%)}
 .cup-choice h3{font:800 clamp(23px,2.25vw,34px)/1.15 Manrope,sans-serif;letter-spacing:-.045em}
+.cup-choice-icon{width:100px;height:88px;object-fit:contain;margin-bottom:18px;transition:transform .25s var(--ease)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.cup-choice:hover .cup-choice-icon{transform:rotate(-4deg) translateY(-3px)}}
+@media(max-width:760px){.cup-choice-icon{width:78px;height:68px;margin-bottom:14px}}
 .cup-choice p{font-size:14px;line-height:1.65;margin:18px 0 28px;color:var(--muted)}
 .cup-choice-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:12px;font-weight:800;color:var(--blue)}
 .cup .cup-choice .brand-arrow{background:var(--blue);transition:transform .25s}
