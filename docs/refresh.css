@@ -136,3 +136,28 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
  .sports-grid .activity-card-link{display:block;transition:transform .3s var(--ease)}
  .sports-grid .activity-card-link:hover,.sports-grid .activity-card-link:focus-visible{transform:translateY(-8px)}
 }
+
+/* Mobile opening: the approved light masthead above the photograph. */
+@media(max-width:760px){
+ .hero-mast{position:relative;inset:auto;display:flex;flex-direction:column;align-items:stretch;gap:13px;padding:25px 20px 18px;background:var(--paper)}
+ .hero-location{color:var(--blue);font-size:16px;max-width:100%}
+ .hero h1{color:var(--blue);font-size:16.4vw;line-height:1.17;letter-spacing:-.02em;margin-top:8px}
+ .hero-calendar{width:100%;transform:none;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:18px}
+ .hero-calendar .hero-date{aspect-ratio:auto;flex-direction:row;justify-content:flex-start;align-items:center;padding:13px 20px 13px 13px;gap:12px;background:var(--blue);color:var(--paper);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}
+ .hero-calendar .hero-date:after{width:14px;height:14px;background:#0d278f}
+ .hero-calendar .date-number{font-size:29px;line-height:1}
+ .hero-calendar .date-meta{width:auto;font-size:15px;margin:0;gap:10px}
+ .hero-calendar>.free-entry{color:var(--blue);margin:0;font-size:22px;text-align:right;white-space:nowrap}
+ .hero-scene{height:420px;min-height:0}
+ .hero-photo{object-position:64% center}
+ .hero-scene-content{bottom:42px;left:22px;right:22px;gap:8px}
+ .hero-scene-content h2{font-size:clamp(29px,8.2vw,40px);max-width:310px;white-space:normal;margin-top:10px}
+ .hero-explore .circle-arrow{width:42px}
+}
+@media(max-width:370px){
+ .hero-calendar{gap:9px}
+ .hero-calendar .date-number{font-size:24px}
+ .hero-calendar .date-meta{font-size:13px;gap:6px}
+ .hero-calendar>.free-entry{font-size:18px}
+ .hero-scene{height:380px}
+}
