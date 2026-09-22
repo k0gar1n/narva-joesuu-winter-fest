@@ -1,0 +1,17 @@
+{
+  "date": "2027-01-22",
+  "priceEurPerTeam": null,
+  "teamSize": null,
+  "registrationDeadline": null,
+  "rulesPdf": {"ru": null, "et": null, "en": null},
+  "rulesVersion": null,
+  "rulesUpdated": null,
+  "disciplines": [
+    {"id": "ski", "group": "movement", "icon": "01-skier.webp", "name": ["Лыжи", "Suusatamine", "Skiing"], "note": ["Движение и работа команды на снегу", "Liikumine ja koostöö lumel", "Movement and teamwork on snow"], "rulesPdf": {"ru": null, "et": null, "en": null}},
+    {"id": "biathlon", "group": "precision", "icon": "27-biathlon.webp", "name": ["Биатлон", "Laskesuusatamine", "Biathlon"], "note": ["Сочетание движения и точности", "Liikumise ja täpsuse ühendamine", "A combination of movement and precision"], "rulesPdf": {"ru": null, "et": null, "en": null}},
+    {"id": "curling", "group": "precision", "icon": "05-curling.webp", "name": ["Кёрлинг", "Kurling", "Curling"], "note": ["Точность, расчёт и общий замысел", "Täpsus, taktika ja ühine plaan", "Precision, tactics and a shared plan"], "rulesPdf": {"ru": null, "et": null, "en": null}},
+    {"id": "football", "group": "team", "icon": "25-football.webp", "name": ["Футбольное испытание", "Jalgpallikatse", "Football challenge"], "note": ["Работа с мячом и командное взаимодействие", "Pallikäsitsus ja võistkonnatöö", "Ball skills and team coordination"], "rulesPdf": {"ru": null, "et": null, "en": null}},
+    {"id": "volleyball", "group": "team", "icon": "26-volleyball.webp", "name": ["Волейбол", "Võrkpall", "Volleyball"], "note": ["Взаимопонимание на площадке", "Koostöö mänguväljakul", "Coordination on the court"], "rulesPdf": {"ru": null, "et": null, "en": null}},
+    {"id": "kicksled", "group": "movement", "icon": "31-kicksled.webp", "name": ["Финские сани", "Tõukekelk", "Kicksled"], "note": ["Зимний этап на скорость и координацию", "Talvine kiiruse ja koordinatsiooni katse", "A winter challenge of speed and coordination"], "rulesPdf": {"ru": null, "et": null, "en": null}}
+  ]
+}
