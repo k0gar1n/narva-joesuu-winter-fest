@@ -1,6 +1,7 @@
 import {readFile, writeFile, readdir, mkdir, copyFile, rm} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
 
 const source=fileURLToPath(new URL('../docs/',import.meta.url));
 const output=fileURLToPath(new URL('../dist/',import.meta.url));
@@ -14,6 +15,10 @@ await readFile(path.join(source,'index.html'),'utf8');
 await rm(output,{recursive:true,force:true});
 await mkdir(output,{recursive:true});
 let count=0;
+const assetVersions=new Map();
+for(const file of await readdir(source)){
+ if(/\.(css|js)$/.test(file))assetVersions.set('/'+file,createHash('sha256').update(await readFile(path.join(source,file))).digest('hex').slice(0,12));
+}
 async function build(relative=''){
  for(const entry of await readdir(path.join(source,relative),{withFileTypes:true})){
   if(entry.name.startsWith('.'))continue;
@@ -23,6 +28,7 @@ async function build(relative=''){
   if(/\.(html|js|css|xml|ics)$/.test(name)){
    let content=await readFile(from,'utf8');
    content=content.replaceAll(githubOrigin,origin).replaceAll(githubBase+'/','/');
+   if(name.endsWith('.html'))content=content.replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?(")/g,(match,start,url,end)=>assetVersions.has(url)?`${start}${url}?v=${assetVersions.get(url)}${end}`:match);
    if(name==='config.js')content=content.replace('window.WF_BASE="'+githubBase+'";','window.WF_BASE="";');
    await writeFile(to,content);
   }else await copyFile(from,to);

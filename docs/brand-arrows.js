@@ -35,7 +35,7 @@
     queued=false;
     const current=Math.max(0,scrollY),delta=current-previous;
     previous=current;
-    if(current<80||document.querySelector('dialog[open]')||header.querySelector(':focus-visible')){
+    if(current<80||document.querySelector('dialog[open]')){
       header.classList.remove('header-hidden');travel=0;return;
     }
     if(!delta)return;
