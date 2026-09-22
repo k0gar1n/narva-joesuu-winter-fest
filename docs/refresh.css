@@ -24,7 +24,21 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 .activity-card-link:hover .activity-figure,.experience-tile a:hover .activity-figure{transform:translateY(-4px) rotate(-3deg)}
 .activity-card-link:focus-visible{outline-offset:7px}
 .sport-line{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:12px;border:0;padding-top:0;margin-top:30px}
-.activities-more{font-size:14px;font-weight:400;line-height:1.5;color:var(--muted)}
+.sport-line .activities-more{font-size:14px;font-weight:400;line-height:1.5;color:var(--muted)}
+.cup-explainer-title{font:800 clamp(24px,2.4vw,34px)/1.15 Manrope,sans-serif;margin-bottom:20px;letter-spacing:-.04em}
+.cup-story .lead{font-size:clamp(16px,1.45vw,21px);line-height:1.65}
+.cup-format{display:flex;align-items:center;gap:18px;border-top:1px solid #ffffff40;margin-top:26px;padding-top:20px;font-size:14px;color:var(--ice)}
+.cup-format img{width:85px;height:85px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
+.cup-choices{gap:18px;border:0;margin-top:38px}
+.cup-choice{display:flex;flex-direction:column;position:relative;min-width:0;padding:32px 28px 24px;background:var(--paper);color:var(--navy);clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);transition:background .25s,translate .25s}
+.cup-choice:after{content:'';position:absolute;top:0;right:0;width:24px;height:24px;background:var(--ice);clip-path:polygon(0 0,0 100%,100% 100%)}
+.cup-choice h3{font:800 clamp(23px,2.25vw,34px)/1.15 Manrope,sans-serif;letter-spacing:-.045em}
+.cup-choice p{font-size:14px;line-height:1.65;margin:18px 0 28px;color:var(--muted)}
+.cup-choice-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:12px;font-weight:800;color:var(--blue)}
+.cup .cup-choice .brand-arrow{background:var(--blue);transition:transform .25s}
+.cup-choice:focus-visible{outline:3px solid var(--paper);outline-offset:5px;clip-path:none}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.cup-choice:hover{translate:0 -6px;background:#fff}.cup-choice:hover .brand-arrow{transform:translate(3px,-3px)}}
+@media(max-width:760px){.cup-choices{grid-template-columns:1fr;gap:12px;margin-top:28px}.cup-choice{padding:23px 22px 18px}.cup-choice h3{font-size:26px}.cup-choice p{margin:10px 0 16px}.cup-format{gap:14px;margin-top:20px;padding-top:14px}.cup-format img{width:64px;height:64px}.cup-explainer-title{margin-bottom:14px}}
 .all-activities-button{min-height:58px;gap:30px}
 .tile-caption{grid-template-columns:minmax(0,1fr) 74px 22px;gap:10px;align-items:center;padding-top:12px}
 .tile-caption .activity-figure{width:74px;height:70px}
