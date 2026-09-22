@@ -7,26 +7,26 @@
  $$('[data-alt]').forEach(el=>{ru[el.dataset.alt]=el.alt;});
  $$('[data-label]').forEach(el=>{if(!ru[el.dataset.label])ru[el.dataset.label]=el.getAttribute('aria-label');});
  Object.assign(ru,{
- activityDate:'23–24 ЯНВАРЯ · ОТКРЫТЫЙ ФЕСТИВАЛЬ',
+ activityDate:'22–23 ЯНВАРЯ · ОТКРЫТЫЙ ФЕСТИВАЛЬ',
  skiDetail:'Массовый лыжный заезд у моря — возможность провести зимний день в движении, рядом с другими участниками и болельщиками. Приезжай за своим темпом и видом на зимний берег.',
  skiPending:'Дистанция, время старта, запись и условия проката уточняются. Проверь подробную программу перед поездкой.',
  rinkDetail:'Приходи на первый круг или ещё на один. На фестивале планируется временный открытый каток — для новичков и тех, кто уверенно чувствует себя на льду.',
  rinkPending:'Часы работы, наличие проката и условия участия опубликуем в подробной программе. Работа катка зависит от погоды.',viewProgramme:'Смотреть программу',
- cupModalKicker:'WINTER CUP · 24 ЯНВАРЯ 2027',gymDetail:'Представьте свою гимназию вместе с одноклассниками. Проходите спортивные и командные испытания, поддерживайте друг друга и набирайте очки для своей команды.',
+ cupModalKicker:'WINTER CUP · 23 ЯНВАРЯ 2027',gymDetail:'Представьте свою гимназию вместе с одноклассниками. Проходите спортивные и командные испытания, поддерживайте друг друга и набирайте очки для своей команды.',
  businessDetail:'Смените рабочий ритм на спортивный. Соберите команду коллег и проверьте, как ваше взаимопонимание работает в общих испытаниях.',openDetail:'Соберите друзей и приезжайте играть. Open Cup — категория для дружеских компаний и сборных команд.',
  cupRegister:'Регистрация в Fienta',cupTerms:'Стоимость участия, требования к составу команды и регламент — на странице регистрации.',
  creditsTitle:'ОБ ИЗОБРАЖЕНИЯХ',creditsText:'Изображения фестиваля передают атмосферу будущего события; это не фоторепортаж с прошлых Winter Fest. Концертный кадр используется как образ вечерней программы.',creditsSkates:'Фото коньков: Matthew Fournier / Unsplash.',
- days:{'23':[['ДНЁМ','Попробуй зимний спорт','Лыжи у моря, каток и открытые спортивные занятия.'],['ВМЕСТЕ','Ярмарка и семейный день','Уличная еда, ручная работа, игры и места, где можно согреться.'],['ВЕЧЕРОМ','Музыка у моря','Сцена, DJ и танцы. Артистов объявим отдельно.']],'24':[['ИГРАЕМ','Winter Cup','Три категории. Спортивные задания, командная работа и общий результат.'],['ДЛЯ ВСЕХ','Фестиваль продолжается','Ярмарка, открытые активности и сцена — в том числе для тех, кто не участвует в Cup.'],['БОЛЕЕМ','Финалы и награждение','Поддержка команд и самые азартные моменты последних этапов.']]}
+ days:{'22':[['ДНЁМ','Попробуй зимний спорт','Лыжи у моря, каток и открытые спортивные занятия.'],['ВМЕСТЕ','Ярмарка и семейный день','Уличная еда, ручная работа, игры и места, где можно согреться.'],['ВЕЧЕРОМ','Музыка у моря','Сцена, DJ и танцы. Артистов объявим отдельно.']],'23':[['ИГРАЕМ','Winter Cup','Три категории. Спортивные задания, командная работа и общий результат.'],['ДЛЯ ВСЕХ','Фестиваль продолжается','Ярмарка, открытые активности и сцена — в том числе для тех, кто не участвует в Cup.'],['БОЛЕЕМ','Финалы и награждение','Поддержка команд и самые азартные моменты последних этапов.']]}
  });
  const copy={ru,...window.WF_TRANSLATIONS};
  Object.assign(copy.et,{allActivities:'Kõik tegevused',fullProgramme:'Kogu programm',privacyLink:'Privaatsus',visitSource:'Reisiplaan ja kasulikud aadressid'});
  Object.assign(copy.en,{allActivities:'All activities',fullProgramme:'Full programme',privacyLink:'Privacy',visitSource:'Your trip and useful addresses'});
  const menu=$('#mobile-menu'),detail=$('#detail-dialog'),menuButton=$('.menu-toggle');
- let currentDay='23',activeDetail=null,lastFocus=null,lang='ru';
+ let currentDay='22',activeDetail=null,lastFocus=null,lang='ru';
  const t=key=>copy[lang][key]??ru[key]??key;
  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function renderDay(){
-   $('#day-panel').innerHTML=t('days')[currentDay].map(row=>`<article class="programme-row"><span class="row-time">${escape(row[0])}</span><div><h3>${escape(row[1])}</h3><p>${escape(row[2])}</p></div></article>`).join('');
+   $('#day-panel').innerHTML=`<div class="programme-pending"><p>${escape(t('programmeSoon'))}</p><span>${escape(t('programmeUpdates'))}</span></div>`;
    $('#day-panel').setAttribute('aria-labelledby',`day-tab-${currentDay}`);
    $$('[data-day]').forEach(b=>{const active=b.dataset.day===currentDay;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});
  }
@@ -40,7 +40,7 @@
    $('.languages').setAttribute('aria-label',lang==='ru'?'Язык':lang==='et'?'Keel':'Language');
    $('.brand').setAttribute('aria-label',`Winter Fest — ${lang==='ru'?'главная':lang==='et'?'avaleht':'home'}`);
    $('.hero-explore').setAttribute('aria-label',t('heroExplore'));menuButton.setAttribute('aria-label',t('menu'));
-   $('meta[name="description"]').content=lang==='ru'?'23–24 января 2027. Зимний спорт, Winter Cup, музыка и ярмарка у моря в Нарва-Йыэсуу. Вход свободный.':lang==='et'?'23.–24. jaanuar 2027. Talisport, Winter Cup, muusika ja laat Narva-Jõesuus mere ääres. Tasuta sissepääs.':'23–24 January 2027. Winter sports, Winter Cup, music and a seaside market in Narva-Jõesuu. Free entry.';
+   $('meta[name="description"]').content=lang==='ru'?'22–23 января 2027. Зимний спорт, Winter Cup, музыка и ярмарка у моря в Нарва-Йыэсуу. Вход свободный.':lang==='et'?'22.–23. jaanuar 2027. Talisport, Winter Cup, muusika ja laat Narva-Jõesuus mere ääres. Tasuta sissepääs.':'22–23 January 2027. Winter sports, Winter Cup, music and a seaside market in Narva-Jõesuu. Free entry.';
    $$('[data-site-route]').forEach(a=>{a.href=(window.WF_BASE||'')+(lang==='ru'?'':'/'+lang)+a.dataset.siteRoute;});
    renderDay();if(activeDetail)renderDetail();
    if(persist){try{localStorage.setItem('winter-fest-language',lang);}catch{}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);}
@@ -65,7 +65,7 @@
  $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
  $$('[data-day]').forEach(b=>{
    b.addEventListener('click',()=>{currentDay=b.dataset.day;renderDay();});
-   b.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();currentDay=event.key==='Home'?'23':event.key==='End'?'24':currentDay==='23'?'24':'23';renderDay();$(`#day-tab-${currentDay}`).focus();}});
+   b.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();currentDay=event.key==='Home'?'22':event.key==='End'?'22':currentDay==='22'?'22':'22';renderDay();$(`#day-tab-${currentDay}`).focus();}});
  });
  $$('[data-activity]').forEach(b=>b.addEventListener('click',()=>openDetail('activity',b.dataset.activity)));
  $$('[data-cup]').forEach(b=>b.addEventListener('click',()=>openDetail('cup',b.dataset.cup)));
