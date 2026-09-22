@@ -25,3 +25,25 @@
   });
   observer.observe(document.body,{childList:true,subtree:true});
 })();
+
+// Reveal navigation when returning up the page; ignore tiny scroll jitters.
+(() => {
+  const header=document.querySelector('.header');
+  if(!header)return;
+  let previous=Math.max(0,scrollY),travel=0,direction=0,queued=false;
+  function update(){
+    queued=false;
+    const current=Math.max(0,scrollY),delta=current-previous;
+    previous=current;
+    if(current<80||document.querySelector('dialog[open]')||header.querySelector(':focus-visible')){
+      header.classList.remove('header-hidden');travel=0;return;
+    }
+    if(!delta)return;
+    const nextDirection=Math.sign(delta);
+    travel=nextDirection===direction?travel+Math.abs(delta):Math.abs(delta);
+    direction=nextDirection;
+    if(travel>12)header.classList.toggle('header-hidden',direction>0);
+  }
+  addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});
+  header.addEventListener('focusin',()=>header.classList.remove('header-hidden'));
+})();
