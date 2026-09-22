@@ -54,3 +54,7 @@ Object.assign(window.WF_TRANSLATIONS.en,{"marketTitle":"JUST RELAX<br>AND ENJOY 
 Object.assign(window.WF_TRANSLATIONS.et, {"navFestival":"Kõik tegevused","navCup":"Võistkondlikud võistlused","navVisit":"Praktiline info","practicalAll":"Kogu praktiline info","practicalTravel":"Kuidas kohale jõuda","practicalStay":"Kus ööbida","practicalExplore":"Mida avastada","practicalInfo":"Kasulik info","practicalTraders":"Kauplejatele","practicalVolunteers":"Vabatahtlikele","practicalPartners":"Partneritele","practicalContact":"Kontakt"});
 
 Object.assign(window.WF_TRANSLATIONS.en, {"navFestival":"All activities","navCup":"Team competitions","navVisit":"Practical information","practicalAll":"All practical information","practicalTravel":"Getting here","practicalStay":"Where to stay","practicalExplore":"Explore the town","practicalInfo":"Useful information","practicalTraders":"For traders","practicalVolunteers":"For volunteers","practicalPartners":"For partners","practicalContact":"Contact"});
+
+Object.assign(window.WF_TRANSLATIONS.et, {"cupNavBusiness":"Ettevõtetele","cupNavMunicipalities":"Omavalitsustele","cupNavOpen":"Kõigile soovijatele"});
+
+Object.assign(window.WF_TRANSLATIONS.en, {"cupNavBusiness":"For companies","cupNavMunicipalities":"For municipalities","cupNavOpen":"Open to everyone"});
