@@ -50,3 +50,6 @@
 @media(max-width:760px){.open-page .oc-solo{display:block;padding:22px;margin-bottom:32px}.open-page .oc-solo p{margin-top:12px}.open-page .oc-solo a{margin-top:18px}.open-page .oc-hero-note{font-size:13px}.open-page .mc-tier{gap:12px}}
 
 .mc-programme-link{padding:0 var(--pad) 32px}.mc-programme-link .button{gap:28px}
+
+.mc-arrival{margin:0 var(--pad) 24px;padding:32px;background:#e8edf3;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}.municipal-page .mc-arrival h2{font-size:clamp(27px,2.7vw,40px)}.mc-arrival p{max-width:760px;margin-top:16px!important;font-size:14px;color:var(--mc-muted)}.mc-arrival-actions{display:flex;flex-direction:column;align-items:flex-start;gap:20px}.mc-arrival-actions .text-link{display:flex;gap:18px;font-size:13px;color:var(--blue);font-weight:800}
+@media(max-width:760px){.mc-arrival{grid-template-columns:1fr;padding:24px;gap:24px}.mc-programme-link .button{white-space:normal;line-height:1.5}}
