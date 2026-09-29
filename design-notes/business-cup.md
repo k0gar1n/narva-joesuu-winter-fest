@@ -7,3 +7,5 @@ Approved by user: same date, team size, age, prices, inclusions and conditions a
 Eligibility adapted from https://www.firmasport.ee/yldjuhend/ (OSALEJAD, accessed 29 September 2026): employees under employment/service contracts, board members, former employees within one year; one family member for a five-person team with competitive-sport restrictions; one team per person. This is a participation summary; full category rules remain to be written. Firmasport has further discipline-specific exceptions for friends/partners and company sports clubs; these should be considered when drafting rules, not treated as unrestricted access to the entire mixed-sport Cup.
 
 Copy highlights a ready-made staff outing, meeting other organisations, company colours in the parade, and shared effort. No guaranteed media reach, sponsorship package or advertising placement is promised.
+
+User copy revision: family-member sentence is now simply “A team may include one employee’s family member” in all languages; omit the detailed competition-history restriction from the participation page.
