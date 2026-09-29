@@ -9,3 +9,5 @@ Individual teams are assembled by organisers. Team-balancing, no-shows, incomple
 Registration URL for this category has been requested. Until supplied the two entry links explicitly open email. Set registration.open and optionally registration.openIndividual in docs/config.js when confirmed; update button labels to Register / Enter individually in the generator. Do not reuse the business event URL without confirmation.
 
 Generators: tools/render-open-cup.py and tools/render-open-discipline-rules.py. Discipline pages use the existing assets but have independent pending rules. No business or municipal regulations apply automatically. General open-category regulations are pending.
+
+Team registration confirmed: https://fienta.com/et/204081 (team tickets only). Both team CTAs link directly to this URL. Individual entry remains email-only until its own URL is supplied; never fall back to the team URL. Fienta page contents were not consulted.

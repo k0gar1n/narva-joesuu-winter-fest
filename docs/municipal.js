@@ -8,7 +8,7 @@
 (() => {
  const registration=window.WF_CONFIG?.registration;
  if(!registration)return;
- for(const [selector,url] of [['[data-open-register]',registration.open],['[data-open-solo]',registration.openIndividual||registration.open]]){
+ for(const [selector,url] of [['[data-open-register]',registration.open],['[data-open-solo]',registration.openIndividual]]){
   if(url)document.querySelectorAll(selector).forEach(a=>{a.href=url;a.target='_blank';a.rel='noopener';});
  }
 })();
