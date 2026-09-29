@@ -38,3 +38,7 @@ Compact cards link to `/winter-cup/municipalities/disciplines/{id}/` in each lan
 For each discipline, populate `rulesSections[lang]` with `{heading, paragraphs: [...]}` objects and `rulesPdf[lang]` with the actual PDF URL in `content/municipal-cup.json`. Until published, the individual page shows a pending message and has no inactive download button. Run `python3 tools/render-discipline-rules.py` after the municipality and general rules renderers.
 
 Flipper-run illustration: `docs/assets/flipper-run-ribbon.png`, generated from winter-fest-ribbon style-master.png and 01-skier.png. Prompt: isolated natural runner wearing two broad swimming fins; cobalt folded ribbons, navy reverse planes and pale fold seams; no skis, poles, text or shadows; transparent PNG. Native output 1199 × 1312, alpha verified. Original remains in Codex generated_images (exec-6bb04fbb-8958-4601-b6a2-80f68498aab7.png).
+
+## 29 September 2026 — participation page simplification
+
+Four sections: event explanation/inclusions/eligibility, disciplines, registration and a short general-rules link block. Removed separate day, sauna, practical FAQ and duplicated checklist sections. Hero has one registration CTA. Fienta event URL is now https://fienta.com/et/204033 in docs/config.js. Its external description still has outdated dates, eligibility, roster deadline and RU early price; website retains user-approved conditions. Change Fienta content separately.
