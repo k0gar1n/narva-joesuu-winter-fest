@@ -14,7 +14,7 @@ Võistkonna moodustab ja lähetab linna- või vallavalitsus, kes tasub ka osalus
 
 Lubatud asutuste hulka kuuluvad muu hulgas munitsipaalkoolid, lasteaiad, raamatukogud, kultuuri-, spordi- ja sotsiaalasutused ning omavalitsuse ettevõtted. Üksnes omavalitsuse territooriumil elamine või organisatsiooni rahastamine selle eelarvest ei anna osalemisõigust.
 
-Võistkonnas on viis vähemalt 18-aastast osalejat. Varuliikmeid ei registreerita. Sportliku ettevalmistuse tasemele piiranguid ei seata.
+Võistkonnas on viis vähemalt 16-aastast osalejat. Varuliikmeid ei registreerita. Sportliku ettevalmistuse tasemele piiranguid ei seata.
 
 Üks omavalitsus võib vabade kohtade olemasolul saata mitu võistkonda. Iga võistkond registreeritakse ja tasutakse eraldi ning võistleb iseseisvalt. Eri omavalitsuste ühendvõistkonnad ei ole lubatud.
 

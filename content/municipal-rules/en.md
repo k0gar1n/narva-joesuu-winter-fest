@@ -14,7 +14,7 @@ Teams are formed, entered and paid for by a city or rural municipal government. 
 
 Eligible organisations include municipal schools, kindergartens, libraries, cultural, sporting and social institutions, and municipal enterprises. Living in the municipality or receiving funding from its budget does not, on its own, establish eligibility.
 
-Each team has five participants aged 18 or over. No reserve participants are registered. There are no restrictions on sporting ability or competitive level.
+Each team has five participants aged 16 or over. No reserve participants are registered. There are no restrictions on sporting ability or competitive level.
 
 A municipality may enter multiple teams subject to availability. Each team registers, pays and competes separately. Joint teams representing different municipalities are not permitted.
 
