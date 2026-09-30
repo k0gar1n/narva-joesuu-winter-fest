@@ -32,8 +32,8 @@ Hind kehtib viieliikmelisele võistkonnale ja on lõplik.
 
 | Periood | Hind |
 | --- | ---: |
-| Kuni 31. detsembrini 2026 kaasa arvatud | 90 € |
-| 1.–10. jaanuar 2027 | 120 € |
+| Kuni 31. detsembrini 2026 kaasa arvatud | 100 € |
+| 1.–10. jaanuar 2027 | 125 € |
 | 11.–17. jaanuar 2027 | 150 € |
 
 Hind fikseeritakse Fientas avalduse esitamise kuupäeva järgi. Tasumine toimub esitatud arve alusel.

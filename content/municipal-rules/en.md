@@ -32,8 +32,8 @@ Prices are final and apply to a team of five.
 
 | Application period | Price |
 | --- | ---: |
-| Until 31 December 2026 inclusive | €90 |
-| 1–10 January 2027 | €120 |
+| Until 31 December 2026 inclusive | €100 |
+| 1–10 January 2027 | €125 |
 | 11–17 January 2027 | €150 |
 
 The price is fixed on the date the application is submitted through Fienta. Payment is made against the invoice issued.

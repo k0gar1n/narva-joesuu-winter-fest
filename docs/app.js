@@ -23,10 +23,15 @@
  Object.assign(copy.en,{allActivities:'All activities',fullProgramme:'Full programme',privacyLink:'Privacy',visitSource:'Your trip and useful addresses'});
  const menu=$('#mobile-menu'),detail=$('#detail-dialog'),menuButton=$('.menu-toggle');
  let currentDay='22',activeDetail=null,lastFocus=null,lang='ru';
+
+ Object.assign(copy.ru,{"heroCup": "Winter Cup · 22 января — соревнования команд", "activityDate": "23 ЯНВАРЯ · ОТКРЫТЫЙ ФЕСТИВАЛЬ", "footerKicker": "23 ЯНВАРЯ 2027", "programmeTitle": "ДВА ДНЯ<br>ДВА ФОРМАТА", "a1": "Вход на открытый фестиваль 23 января свободный. Еда, прокат и отдельные услуги оплачиваются отдельно. Участие в Winter Cup 22 января — по регистрации.", "q3": "Что будет 22 января?", "a3": "22 января проходят командные соревнования Winter Cup. Можно прийти поболеть. Ярмарка, открытый каток, банная деревня и концерт Winter After Dark — 23 января.", "cupExplanation": "22 января команды проходят испытания вместе, набирают очки и борются за победу в своей категории. Зрителей приглашаем поболеть."});
+ Object.assign(copy.et,{"heroCup": "Winter Cup · 22. jaanuar — võistkonnavõistlused", "activityDate": "23. JAANUAR · AVATUD FESTIVAL", "footerKicker": "23. JAANUAR 2027", "programmeTitle": "KAKS PÄEVA<br>KAKS FORMAATI", "a1": "23. jaanuari avatud festivalile on sissepääs tasuta. Toit, laenutus ja üksikteenused on eraldi tasulised. Winter Cupil osalemiseks 22. jaanuaril on vaja registreeruda.", "q3": "Mis toimub 22. jaanuaril?", "a3": "22. jaanuaril toimuvad Winter Cupi võistkonnavõistlused. Pealtvaatajad on oodatud kaasa elama. Laat, avalik uisutamine, saunaküla ja Winter After Darki kontsert toimuvad 23. jaanuaril.", "cupExplanation": "22. jaanuaril läbivad võistkonnad koos ülesandeid, koguvad punkte ja võistlevad oma kategooria võidu nimel. Pealtvaatajad on oodatud kaasa elama."});
+ Object.assign(copy.en,{"heroCup": "Winter Cup · 22 January — team competitions", "activityDate": "23 JANUARY · OPEN FESTIVAL", "footerKicker": "23 JANUARY 2027", "programmeTitle": "TWO DAYS<br>TWO FORMATS", "a1": "Entry to the open festival on 23 January is free. Food, rentals and individual services cost extra. Winter Cup on 22 January requires registration.", "q3": "What happens on 22 January?", "a3": "22 January is for Winter Cup team competitions, with spectators welcome. The market, public skating, sauna village and Winter After Dark concert take place on 23 January.", "cupExplanation": "On 22 January, teams complete challenges together, collect points and compete in their category. Spectators are welcome to cheer them on."});
  const t=key=>copy[lang][key]??ru[key]??key;
  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function renderDay(){
-   $('#day-panel').innerHTML=`<div class="programme-pending"><p>${escape(t('programmeSoon'))}</p><span>${escape(t('programmeUpdates'))}</span></div>`;
+   const dayInfo = currentDay==='22' ? ['Winter Cup · 22.01', ['Командные соревнования. Для зрителей — поддержка команд; ярмарка и открытые активности начнутся 23 января.','Võistkonnavõistlused. Pealtvaatajad saavad kaasa elada; laat ja avatud tegevused algavad 23. jaanuaril.','Team competitions. Spectators are welcome; the market and public activities start on 23 January.'][{ru:0,et:1,en:2}[lang]]] : ['Winter Fest · 23.01', ['Открытый фестиваль: каток, ярмарка, банная деревня и Winter After Dark.','Avatud festival: liuväli, laat, saunaküla ja Winter After Dark.','Open festival: skating, market, sauna village and Winter After Dark.'][{ru:0,et:1,en:2}[lang]]];
+   $('#day-panel').innerHTML=`<h3>${dayInfo[0]}</h3><p>${dayInfo[1]}</p><div class="programme-pending"><p>${escape(t('programmeSoon'))}</p><span>${escape(t('programmeUpdates'))}</span></div>`;
    $('#day-panel').setAttribute('aria-labelledby',`day-tab-${currentDay}`);
    $$('[data-day]').forEach(b=>{const active=b.dataset.day===currentDay;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});
  }
@@ -40,7 +45,7 @@
    $('.languages').setAttribute('aria-label',lang==='ru'?'Язык':lang==='et'?'Keel':'Language');
    $('.brand').setAttribute('aria-label',`Winter Fest — ${lang==='ru'?'главная':lang==='et'?'avaleht':'home'}`);
    $('.hero-explore').setAttribute('aria-label',t('heroExplore'));menuButton.setAttribute('aria-label',t('menu'));
-   $('meta[name="description"]').content=lang==='ru'?'22–23 января 2027. Зимний спорт, Winter Cup, музыка и ярмарка у моря в Нарва-Йыэсуу. Вход свободный.':lang==='et'?'22.–23. jaanuar 2027. Talisport, Winter Cup, muusika ja laat Narva-Jõesuus mere ääres. Tasuta sissepääs.':'22–23 January 2027. Winter sports, Winter Cup, music and a seaside market in Narva-Jõesuu. Free entry.';
+   $('meta[name="description"]').content=lang==='ru'?'23 января 2027 — открытый фестиваль у моря в Нарва-Йыэсуу. 22 января — командные соревнования Winter Cup. Вход свободный.':lang==='et'?'23. jaanuar 2027 — avatud festival Narva-Jõesuus. 22. jaanuar — Winter Cupi võistkonnavõistlused. Tasuta sissepääs.':'23 January 2027 — open festival in Narva-Jõesuu. 22 January — Winter Cup team competitions. Free entry.';
    $$('[data-site-route]').forEach(a=>{a.href=(window.WF_BASE||'')+(lang==='ru'?'':'/'+lang)+a.dataset.siteRoute;});
    renderDay();if(activeDetail)renderDetail();
    if(persist){try{localStorage.setItem('winter-fest-language',lang);}catch{}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);}
@@ -65,7 +70,7 @@
  $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
  $$('[data-day]').forEach(b=>{
    b.addEventListener('click',()=>{currentDay=b.dataset.day;renderDay();});
-   b.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();currentDay=event.key==='Home'?'22':event.key==='End'?'22':currentDay==='22'?'22':'22';renderDay();$(`#day-tab-${currentDay}`).focus();}});
+   b.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();currentDay=event.key==='Home'?'22':event.key==='End'?'23':currentDay==='22'?'23':'22';renderDay();$(`#day-tab-${currentDay}`).focus();}});
  });
  $$('[data-activity]').forEach(b=>b.addEventListener('click',()=>openDetail('activity',b.dataset.activity)));
  $$('[data-cup]').forEach(b=>b.addEventListener('click',()=>openDetail('cup',b.dataset.cup)));

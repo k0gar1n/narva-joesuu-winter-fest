@@ -4,12 +4,21 @@ PRODID:-//MTU Noorteaeg//Winter Fest 2027//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:winterfest2027@noorteaeg.ee
-DTSTAMP:20260915T120000Z
+UID:wintercup2027@winterfest.ee
+DTSTAMP:20260930T120000Z
 DTSTART;VALUE=DATE:20270122
-DTEND;VALUE=DATE:20270124
-SUMMARY:NARVA-JÕESUU WINTER FEST 2027
+DTEND;VALUE=DATE:20270123
+SUMMARY:Winter Cup — team competitions
 LOCATION:Narva-Jõesuu\, Estonia
-DESCRIPTION:Winter sports\, music and a seaside market. Free entry.
+DESCRIPTION:Team entry by registration. Spectators welcome. No public market or open activities on this day.
+END:VEVENT
+BEGIN:VEVENT
+UID:winterfest2027@noorteaeg.ee
+DTSTAMP:20260930T120000Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:ESTONIA WINTER FEST 2027
+LOCATION:Narva-Jõesuu\, Estonia
+DESCRIPTION:Open festival\, ice rink\, market\, sauna village and Winter After Dark. Free festival entry. Individual services may cost extra.
 END:VEVENT
 END:VCALENDAR

@@ -53,3 +53,6 @@
 
 .mc-arrival{margin:0 var(--pad) 24px;padding:32px;background:#e8edf3;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}.municipal-page .mc-arrival h2{font-size:clamp(27px,2.7vw,40px)}.mc-arrival p{max-width:760px;margin-top:16px!important;font-size:14px;color:var(--mc-muted)}.mc-arrival-actions{display:flex;flex-direction:column;align-items:flex-start;gap:20px}.mc-arrival-actions .text-link{display:flex;gap:18px;font-size:13px;color:var(--blue);font-weight:800}
 @media(max-width:760px){.mc-arrival{grid-template-columns:1fr;padding:24px;gap:24px}.mc-programme-link .button{white-space:normal;line-height:1.5}}
+
+/* Open Cup: a shared route, not separate sports tournaments. */
+.oc-format{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:24px var(--pad);padding:22px 0;border-top:1px solid #cbd2d9;border-bottom:1px solid #cbd2d9;color:#173DDA;font-weight:800}.oc-format b{font-size:22px}.oc-stations-note{max-width:780px;margin:0 0 28px;line-height:1.65;color:#536577}@media(max-width:600px){.oc-format{gap:10px;font-size:13px;align-items:flex-start}.oc-format b{font-size:16px}.oc-format span{flex:1}.oc-stations-note{font-size:15px}}
