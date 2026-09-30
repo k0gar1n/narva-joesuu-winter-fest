@@ -227,3 +227,13 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 .cup-landing .cup-story { padding:0; }
 .cup-landing .cup-choices { margin-top:32px; }
 @media(max-width:760px) { .cup-landing { padding-top:28px; padding-bottom:36px; } .cup-landing .cup-heading { display:block; } .cup-landing-date { margin-top:16px; font-size:14px; } .cup-landing .cup-body { display:flex; flex-direction:column-reverse; gap:24px; } .cup-landing .cup-photo { width:100%; } .cup-landing .cup-choice-icon { float:none; } }
+
+/* Compact single-date calendar; preserve the approved mobile masthead. */
+@media(min-width:761px){
+ .hero-calendar{width:clamp(148px,11vw,190px);justify-self:end;transform:none}
+ .hero-calendar .hero-date{aspect-ratio:1;padding:32px 16px 20px;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%)}
+ .hero-calendar .hero-date:after{width:28px;height:28px}
+ .hero-calendar .date-number{font-size:clamp(62px,4.6vw,80px);line-height:1;letter-spacing:0}
+ .hero-calendar .date-meta{justify-content:center;gap:12px;margin-top:12px;font-size:clamp(16px,1.15vw,20px);line-height:1.2}
+ .hero-calendar>.free-entry{font-size:clamp(22px,1.6vw,28px);margin-top:8px;line-height:1.15}
+}
