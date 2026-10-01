@@ -28,6 +28,7 @@ async function build(relative=''){
   if(/\.(html|js|css|xml|ics)$/.test(name)){
    let content=await readFile(from,'utf8');
    content=content.replaceAll(githubOrigin,origin).replaceAll(githubBase+'/','/');
+   if(name.endsWith('.html'))content=content.replaceAll('href="/?lang=et"','href="/et/"').replaceAll('href="/?lang=en"','href="/en/"').replaceAll('href="/?lang=ru"','href="/"');
    if(name.endsWith('.html'))content=content.replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?(")/g,(match,start,url,end)=>assetVersions.has(url)?`${start}${url}?v=${assetVersions.get(url)}${end}`:match);
    if(name==='config.js')content=content.replace('window.WF_BASE="'+githubBase+'";','window.WF_BASE="";');
    await writeFile(to,content);

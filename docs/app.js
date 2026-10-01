@@ -45,7 +45,6 @@
    $('.languages').setAttribute('aria-label',lang==='ru'?'Язык':lang==='et'?'Keel':'Language');
    $('.brand').setAttribute('aria-label',`Winter Fest — ${lang==='ru'?'главная':lang==='et'?'avaleht':'home'}`);
    $('.hero-explore').setAttribute('aria-label',t('heroExplore'));menuButton.setAttribute('aria-label',t('menu'));
-   $('meta[name="description"]').content=lang==='ru'?'23 января 2027 — открытый фестиваль у моря в Нарва-Йыэсуу. 22 января — командные соревнования Winter Cup. Вход свободный.':lang==='et'?'23. jaanuar 2027 — avatud festival Narva-Jõesuus. 22. jaanuar — Winter Cupi võistkonnavõistlused. Tasuta sissepääs.':'23 January 2027 — open festival in Narva-Jõesuu. 22 January — Winter Cup team competitions. Free entry.';
    $$('[data-site-route]').forEach(a=>{a.href=(window.WF_BASE||'')+(lang==='ru'?'':'/'+lang)+a.dataset.siteRoute;});
    renderDay();if(activeDetail)renderDetail();
    if(persist){try{localStorage.setItem('winter-fest-language',lang);}catch{}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);}
@@ -56,7 +55,7 @@
    const {type,id}=activeDetail;let html='';
    if(type==='activity'){
      const ski=id==='ski';
-     html=`<img class="detail-image" src="assets/${ski?'ski':'skates'}-800.webp" alt="${escape(t(ski?'skiAlt':'rinkAlt'))}"><div class="detail-inner"><p class="eyebrow">${t('activityDate')}</p><h2 id="detail-title">${t(ski?'skiTitle':'rinkTitle')}</h2><p>${t(ski?'skiDetail':'rinkDetail')}</p><p class="small">${t(ski?'skiPending':'rinkPending')}</p><a class="button" href="#programme" data-close-detail><span>${t('viewProgramme')}</span><span aria-hidden="true">↗</span></a></div>`;
+     html=`<img class="detail-image" src="${window.WF_BASE||''}/assets/${ski?'ski':'skates'}-800.webp" alt="${escape(t(ski?'skiAlt':'rinkAlt'))}"><div class="detail-inner"><p class="eyebrow">${t('activityDate')}</p><h2 id="detail-title">${t(ski?'skiTitle':'rinkTitle')}</h2><p>${t(ski?'skiDetail':'rinkDetail')}</p><p class="small">${t(ski?'skiPending':'rinkPending')}</p><a class="button" href="#programme" data-close-detail><span>${t('viewProgramme')}</span><span aria-hidden="true">↗</span></a></div>`;
    }else if(type==='cup'){
      const names={gymnasium:'GÜMNAASIUM CUP',business:'BUSINESS CUP',open:'OPEN CUP'},keys={gymnasium:'gymDetail',business:'businessDetail',open:'openDetail'};
      const target=window.WF_CONFIG.registration[id]||`${window.WF_CONFIG.fientaFallback}/${lang}`;
@@ -67,7 +66,7 @@
    $('#detail-content').innerHTML=html;
  }
  function openDetail(type,id){lastFocus=document.activeElement;activeDetail={type,id};renderDetail();detail.showModal();lockScroll(true);}
- $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+ $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>{const next=b.dataset.lang;location.href=(window.WF_BASE||'')+(next==='ru'?'/':'/'+next+'/');}));
  $$('[data-day]').forEach(b=>{
    b.addEventListener('click',()=>{currentDay=b.dataset.day;renderDay();});
    b.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();currentDay=event.key==='Home'?'22':event.key==='End'?'23':currentDay==='22'?'23':'22';renderDay();$(`#day-tab-${currentDay}`).focus();}});
@@ -83,8 +82,10 @@
  });
  $$('#mobile-menu nav a').forEach(a=>a.addEventListener('click',()=>closeDialog(menu)));
  detail.addEventListener('click',event=>{if(event.target.closest('[data-close-detail]'))closeDialog(detail);});
- const requested=new URL(location.href).searchParams.get('lang');let saved;try{saved=localStorage.getItem('winter-fest-language');}catch{}
- setLang(copy[requested]?requested:copy[saved]?saved:'ru',false);
+ const requested=new URL(location.href).searchParams.get('lang');
+ const pageLanguage=document.documentElement.lang;
+ if(copy[requested]&&requested!==pageLanguage){location.replace((window.WF_BASE||'')+(requested==='ru'?'/':'/'+requested+'/')+location.hash);return;}
+ setLang(copy[pageLanguage]?pageLanguage:'ru',false);
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  if('IntersectionObserver'in window&&!reduce.matches){
    document.documentElement.classList.add('js');
