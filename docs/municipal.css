@@ -56,3 +56,6 @@
 
 /* Open Cup: a shared route, not separate sports tournaments. */
 .oc-format{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:24px var(--pad);padding:22px 0;border-top:1px solid #cbd2d9;border-bottom:1px solid #cbd2d9;color:#173DDA;font-weight:800}.oc-format b{font-size:22px}.oc-stations-note{max-width:780px;margin:0 0 28px;line-height:1.65;color:#536577}@media(max-width:600px){.oc-format{gap:10px;font-size:13px;align-items:flex-start}.oc-format b{font-size:16px}.oc-format span{flex:1}.oc-stations-note{font-size:15px}}
+
+/* Quantity-based team pricing */
+.mc-tier-status{display:block;font:500 12px/1.6 Manrope,sans-serif;margin-top:3px}.mc-tier-sold{opacity:.6}.mc-tier-sold strong{text-decoration:line-through}
