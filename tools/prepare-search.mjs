@@ -76,7 +76,7 @@ for(const [route,data] of Object.entries(pages))for(const [i,lang] of langs.entr
  head+=`\n<link rel="alternate" hreflang="x-default" href="${url('et',route)}">\n<meta property="og:type" content="website"><meta property="og:site_name" content="Estonia Winter Fest"><meta property="og:title" content="${esc(data.titles[i])}"><meta property="og:description" content="${esc(data.descriptions[i])}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${image}"><meta property="og:locale" content="${{ru:'ru_EE',et:'et_EE',en:'en_GB'}[lang]}"><meta name="twitter:card" content="summary_large_image">\n<script type="application/ld+json" id="wf-search-data">${JSON.stringify({'@context':'https://schema.org','@graph':graph}).replaceAll('<','\\u003c')}</script>\n`;
  await fs.writeFile(f,html.replace('</head>',head+'</head>'));
 }
-const urls=[...Object.keys(pages), 'festival/ski-lessons/'].flatMap(route=>langs.map(l=>url(l,route)));
+const urls=[...Object.keys(pages), 'festival/ski-lessons/', 'festival/skating/'].flatMap(route=>langs.map(l=>url(l,route)));
 await fs.writeFile(path.join(docs,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>`  <url><loc>${u}</loc></url>`).join('\n')+'\n</urlset>\n');
 await fs.writeFile(path.join(docs,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 console.log('Prepared 15 priority pages and sitemap.');
