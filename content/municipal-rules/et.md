@@ -6,7 +6,7 @@ Versioon 1.0 · 22. september 2026
 
 Võistlused toimuvad 22. jaanuaril 2027 Narva-Jõesuus Estonia Winter Festi raames. Korraldaja on MTÜ Noorteaeg. Osalemisega seotud küsimuste kontakt: info@winterfest.ee.
 
-Programmi orienteeruv aeg on 11.00–19.00. Päeva algus ja lõpp on kõigile võistkondadele ühised. Iga võistkond saab oma ajakava võistlusalade läbimiseks, toitlustuseks ja puhkuseks. Täpsed kellaajad, kogunemiskoht ja liikumisteekond saadetakse kontaktisikule.
+Programm toimub kell 12.00–16.00. Päeva algus ja lõpp on kõigile võistkondadele ühised. Iga võistkond saab oma ajakava võistlusalade läbimiseks, toitlustuseks ja puhkuseks. Täpsed kellaajad, kogunemiskoht ja liikumisteekond saadetakse kontaktisikule.
 
 ## 2. Osalemisõigus
 

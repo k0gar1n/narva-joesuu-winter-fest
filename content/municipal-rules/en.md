@@ -6,7 +6,7 @@ Version 1.0 · 22 September 2026
 
 The competition takes place on 22 January 2027 in Narva-Jõesuu as part of Estonia Winter Fest. The organiser is MTÜ Noorteaeg. For participation enquiries, contact info@winterfest.ee.
 
-The programme is provisionally scheduled for 11:00–19:00. All teams share the same start and finish times. Each team receives its own schedule for challenges, meals and rest. Exact times, the meeting point and the route will be sent to the designated coordinator.
+The programme runs from 12:00 to 16:00. All teams share the same start and finish times. Each team receives its own schedule for challenges, meals and rest. Exact times, the meeting point and the route will be sent to the designated coordinator.
 
 ## 2. Eligibility
 
