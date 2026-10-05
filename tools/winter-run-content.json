@@ -1,0 +1,479 @@
+{
+  "ru": {
+    "nav": [
+      "О забеге",
+      "Программа",
+      "Маршрут",
+      "Участнику",
+      "Регламент"
+    ],
+    "menu": "Разделы забега",
+    "register": "Регистрация",
+    "date": "23 января 2027",
+    "place": "Нарва-Йыэсуу · старт у порта",
+    "title": "Зимний забег в Нарва-Йыэсуу",
+    "desc": "Winter Run 23 января 2027 в Нарва-Йыэсуу. Дистанции 3,5 и 7 км, детский забег 300 м. Медаль на финише, бесплатное посещение бань и концерт фестиваля.",
+    "km": "км",
+    "kids": "Детский забег",
+    "lap": [
+      "Один круг",
+      "Два круга",
+      "Без зачёта мест"
+    ],
+    "start": "Старт",
+    "price": "Участие",
+    "until": "до 31 декабря",
+    "after": "С 1 января",
+    "adult": "3,5 и 7 км",
+    "onsite": "На месте",
+    "fees": "Онлайн до 31.12.2026: 10 € / детский 5 €. С 01.01.2027 и на месте: 15 € / детский 8 €.",
+    "included": "После финиша",
+    "benefits": [
+      [
+        "Медаль каждому",
+        "Все финишировавшие получают памятную металлическую медаль. В детском забеге награждаем каждого ребёнка."
+      ],
+      [
+        "Бесплатные бани",
+        "Один бесплатный вход с 13:45 до 15:00. Возьмите полотенце, купальные принадлежности и тапочки."
+      ],
+      [
+        "Концерт и фестиваль",
+        "Ярмарка, зимние активности и концерт Winter After Dark. Вход на фестиваль и концерт свободный; условия отдельных активностей отличаются."
+      ]
+    ],
+    "more": "Информация участнику",
+    "festival": "Программа фестиваля",
+    "times": [
+      [
+        "11:00–12:00",
+        "Выдача номеров",
+        "В стартовом городке у порта. Приходите заранее."
+      ],
+      [
+        "12:00",
+        "Детский забег · 300 м",
+        "Без определения мест. Медаль каждому ребёнку."
+      ],
+      [
+        "12:30",
+        "Старт · 7 км",
+        "Два круга по 3,5 км."
+      ],
+      [
+        "12:40",
+        "Старт · 3,5 км",
+        "Один круг."
+      ],
+      [
+        "≈ 13:30",
+        "Награждение",
+        "Три лучших мужчины и три лучшие женщины на каждой дистанции. Место награждения уточним."
+      ],
+      [
+        "13:45–15:00",
+        "Бани для участников",
+        "Один бесплатный вход по стартовому номеру."
+      ]
+    ],
+    "scheduleNote": "Время награждения ориентировочное. Актуальные изменения появятся здесь.",
+    "routeIntro": "Старт и финиш у порта. По улице Aia в сторону Meresuu, обратно по пешеходной дорожке Vabaduse.",
+    "routeDetails": [
+      "Один круг 3,5 км. После возвращения к порту финишируете.",
+      "Два одинаковых круга. После первого круга у порта продолжаете на второй.",
+      "Короткая дистанция 300 м у стартового городка. Детский маршрут не показан на общей карте."
+    ],
+    "map": "Карта маршрута",
+    "zoom": "Увеличить карту",
+    "download": "Скачать карту",
+    "close": "Закрыть",
+    "reset": "По размеру экрана",
+    "mapNote": "S/F — старт и финиш · Saunad — бани · Lava — сцена. Точное расположение сервисных зон уточним перед забегом.",
+    "infoIntro": "Всё необходимое перед стартом и после финиша.",
+    "info": [
+      [
+        "Номер и регистрация",
+        "Выдача номеров 23 января с 11:00 до 12:00 у порта, Suur-Lootsi 4. Подготовьте подтверждение регистрации Fienta. При покупке нескольких билетов данные заполняются отдельно для каждого участника. Регистрация на месте проходит в часы выдачи номеров."
+      ],
+      [
+        "Дистанция и результат",
+        "3,5 км — один круг, 7 км — два круга. На обеих дистанциях предусмотрен электронный хронометраж. Детский забег 300 м проходит без определения мест. Ссылку на результаты опубликуем здесь после забега."
+      ],
+      [
+        "Что взять с собой",
+        "Одежду для зимнего бега, перчатки, шапку и обувь с хорошим сцеплением. После финиша пригодится сухая тёплая одежда. Для бани возьмите свои полотенце, купальные принадлежности и тапочки."
+      ],
+      [
+        "Вещи, переодевание и душ",
+        "На территории фестиваля предусмотрены место для вещей, переодевалка, душ и туалеты. Расположение покажем в информации перед стартом."
+      ],
+      [
+        "Бани после забега",
+        "С 13:45 до 15:00 участник может один раз бесплатно посетить банную зону, предъявив стартовый номер. Сохраните номер после финиша. Принадлежности нужно принести с собой."
+      ],
+      [
+        "Медали и награждение",
+        "Медаль получает каждый финишировавший. На дистанциях 3,5 и 7 км отдельно награждаем трёх лучших мужчин и трёх лучших женщин. В детском забеге места не определяются. Награждение планируется около 13:30, место уточним."
+      ],
+      [
+        "Погода и изменения",
+        "Следите за этой страницей перед поездкой. При небезопасной погоде организатор может перенести или отменить забег. В случае отмены стартовый взнос возвращается полностью. Об изменениях сообщим зарегистрированным участникам."
+      ]
+    ],
+    "travel": "Как добраться",
+    "rulesIntro": "Условия участия в Winter Run · 23.01.2027",
+    "print": "Печать / PDF",
+    "rules": [
+      [
+        "Место и организатор",
+        "Winter Run проходит 23 января 2027 года в Нарва-Йыэсуу в рамках Estonia Winter Fest. Старт и финиш у порта, Suur-Lootsi 4. Организатор: MTÜ Noorteaeg. Контакт: info@winterfest.ee, +372 5557 2817."
+      ],
+      [
+        "Дистанции",
+        "3,5 км — один круг; 7 км — два круга; детский забег — 300 м. Основной маршрут проходит по улице Aia и пешеходной дорожке Vabaduse. Выберите дистанцию при регистрации."
+      ],
+      [
+        "Регистрация и стоимость",
+        "Регистрация через Fienta или на месте в часы выдачи номеров. До 31 декабря 2026 года включительно: 3,5 и 7 км — 10 €, детский забег — 5 €. С 1 января 2027 года и на месте: 3,5 и 7 км — 15 €, детский забег — 8 €. Число участников не ограничено."
+      ],
+      [
+        "Программа",
+        "Выдача номеров 11:00–12:00. Детский старт в 12:00, 7 км в 12:30, 3,5 км в 12:40. Награждение ориентировочно в 13:30. Место награждения будет объявлено дополнительно."
+      ],
+      [
+        "Хронометраж и награждение",
+        "На 3,5 и 7 км используется электронный хронометраж. На каждой дистанции награждаются три лучших мужчины и три лучшие женщины, без отдельных возрастных зачётов. В детском забеге места не определяются. Все финишировавшие получают медаль."
+      ],
+      [
+        "Что входит в участие",
+        "Участие в выбранной дистанции, стартовый номер, хронометраж на 3,5 и 7 км и медаль на финише. Один вход в банную зону с 13:45 до 15:00 по стартовому номеру. Есть место для вещей, переодевалка и душ. Банными принадлежностями участник обеспечивает себя сам. Вход на фестиваль и концерт свободный."
+      ],
+      [
+        "На трассе",
+        "Участник выбирает дистанцию с учётом своей подготовки, следует разметке и указаниям организаторов. Зимняя трасса может быть скользкой. Одевайтесь по погоде и используйте подходящую обувь. При сходе с дистанции сообщите организаторам."
+      ],
+      [
+        "Изменения и отмена",
+        "Из-за плохой погоды организатор может перенести или отменить забег. В случае отмены стартовый взнос возвращается полностью. Информацию об изменениях публикуем на сайте и направляем зарегистрированным участникам. При переносе новую дату и порядок дальнейших действий сообщим отдельно."
+      ]
+    ]
+  },
+  "et": {
+    "nav": [
+      "Jooksust",
+      "Ajakava",
+      "Rada",
+      "Osalejale",
+      "Juhend"
+    ],
+    "menu": "Jooksu menüü",
+    "register": "Registreeru",
+    "date": "23. jaanuar 2027",
+    "place": "Narva-Jõesuu · start sadamas",
+    "title": "Talvine jooks Narva-Jõesuus",
+    "desc": "Winter Run 23. jaanuaril 2027 Narva-Jõesuus. 3,5 km ja 7 km, lastejooks 300 m. Finišis medal, osalejatele tasuta saunad ja festivali kontsert.",
+    "km": "km",
+    "kids": "Lastejooks",
+    "lap": [
+      "Üks ring",
+      "Kaks ringi",
+      "Ilma paremusjärjestuseta"
+    ],
+    "start": "Start",
+    "price": "Osavõtt",
+    "until": "kuni 31. detsembrini",
+    "after": "Alates 1. jaanuarist",
+    "adult": "3,5 ja 7 km",
+    "onsite": "Kohapeal",
+    "fees": "Veebis kuni 31.12.2026: 10 € / lastejooks 5 €. Alates 01.01.2027 ja kohapeal: 15 € / lastejooks 8 €.",
+    "included": "Pärast finišit",
+    "benefits": [
+      [
+        "Medal igale lõpetajale",
+        "Kõik lõpetajad saavad mälestuseks metallist medali. Lastejooksul saab medali iga laps."
+      ],
+      [
+        "Tasuta saunad",
+        "Üks tasuta sissepääs kell 13:45–15:00. Võta kaasa rätik, ujumisriided ja plätud."
+      ],
+      [
+        "Kontsert ja festival",
+        "Laat, talvised tegevused ja Winter After Darki kontsert. Festivalile ja kontserdile on sissepääs tasuta; üksikute tegevuste tingimused erinevad."
+      ]
+    ],
+    "more": "Osaleja info",
+    "festival": "Festivali programm",
+    "times": [
+      [
+        "11:00–12:00",
+        "Stardinumbrite väljastamine",
+        "Võistluskeskuses sadama juures. Tule aegsasti."
+      ],
+      [
+        "12:00",
+        "Lastejooks · 300 m",
+        "Ilma paremusjärjestuseta. Medal igale lapsele."
+      ],
+      [
+        "12:30",
+        "Start · 7 km",
+        "Kaks 3,5 km pikkust ringi."
+      ],
+      [
+        "12:40",
+        "Start · 3,5 km",
+        "Üks ring."
+      ],
+      [
+        "≈ 13:30",
+        "Autasustamine",
+        "Mõlema distantsi kolm parimat meest ja kolm parimat naist. Autasustamise koht täpsustub."
+      ],
+      [
+        "13:45–15:00",
+        "Saunad osalejatele",
+        "Üks tasuta sissepääs stardinumbri alusel."
+      ]
+    ],
+    "scheduleNote": "Autasustamise aeg on orienteeruv. Võimalikud muudatused avaldame siin.",
+    "routeIntro": "Start ja finiš sadamas. Mööda Aia tänavat Meresuu poole, tagasi mööda Vabaduse tänava kõnniteed.",
+    "routeDetails": [
+      "Üks 3,5 km ring. Sadamasse tagasi jõudes finišeerid.",
+      "Kaks ühesugust ringi. Pärast esimest ringi jätkad sadama juurest teisele ringile.",
+      "300 m pikkune lastejooks võistluskeskuse juures. Lastejooksu rada ei ole üldkaardil näidatud."
+    ],
+    "map": "Rajakaart",
+    "zoom": "Suurenda kaarti",
+    "download": "Laadi kaart alla",
+    "close": "Sulge",
+    "reset": "Mahuta ekraanile",
+    "mapNote": "S/F — start ja finiš · Saunad · Lava. Teenindusalade täpsed asukohad avaldame enne jooksu.",
+    "infoIntro": "Vajalik info enne starti ja pärast finišit.",
+    "info": [
+      [
+        "Stardinumber ja registreerimine",
+        "Stardinumbreid väljastatakse 23. jaanuaril kell 11:00–12:00 sadama juures, Suur-Lootsi 4. Hoia Fienta registreerimiskinnitus käepärast. Mitme pileti ostmisel tuleb sisestada iga osaleja andmed eraldi. Kohapeal saab registreeruda numbrite väljastamise ajal."
+      ],
+      [
+        "Distants ja tulemus",
+        "3,5 km on üks ring, 7 km kaks ringi. Mõlemal distantsil on elektrooniline ajavõtt. 300 m lastejooks toimub ilma paremusjärjestuseta. Tulemuste lingi avaldame siin pärast jooksu."
+      ],
+      [
+        "Mida kaasa võtta",
+        "Talviseks jooksmiseks sobiv riietus, kindad, müts ja hea haarduvusega jalanõud. Pärast finišit on abiks kuivad soojad vahetusriided. Sauna jaoks võta kaasa oma rätik, ujumisriided ja plätud."
+      ],
+      [
+        "Asjad, riietumine ja dušš",
+        "Festivalialal on koht asjade jätmiseks, riietusruum, dušš ja tualetid. Asukohad avaldame enne starti osalejate infos."
+      ],
+      [
+        "Saunad pärast jooksu",
+        "Kell 13:45–15:00 saab osaleja stardinumbri ettenäitamisel ühe korra tasuta saunaalale. Hoia number pärast finišit alles. Saunatarbed tuleb endal kaasa võtta."
+      ],
+      [
+        "Medalid ja autasustamine",
+        "Medali saab iga lõpetaja. Nii 3,5 kui ka 7 km distantsil autasustame eraldi kolme parimat meest ja kolme parimat naist. Lastejooksul paremusjärjestust ei koostata. Autasustamine on plaanis umbes kell 13:30, koht täpsustub."
+      ],
+      [
+        "Ilm ja muudatused",
+        "Enne kohalesõitu vaata sellelt lehelt värsket infot. Ohtlike ilmaolude tõttu võib korraldaja jooksu edasi lükata või ära jätta. Ärajäämisel tagastatakse osavõtutasu täies ulatuses. Muudatustest teavitame registreeritud osalejaid."
+      ]
+    ],
+    "travel": "Kuidas kohale tulla",
+    "rulesIntro": "Winter Runi osalemistingimused · 23.01.2027",
+    "print": "Prindi / PDF",
+    "rules": [
+      [
+        "Koht ja korraldaja",
+        "Winter Run toimub 23. jaanuaril 2027 Narva-Jõesuus Estonia Winter Festi raames. Start ja finiš on sadama juures, Suur-Lootsi 4. Korraldaja: MTÜ Noorteaeg. Kontakt: info@winterfest.ee, +372 5557 2817."
+      ],
+      [
+        "Distantsid",
+        "3,5 km — üks ring; 7 km — kaks ringi; lastejooks — 300 m. Põhirada kulgeb mööda Aia tänavat ja Vabaduse tänava kõnniteed. Distants valitakse registreerimisel."
+      ],
+      [
+        "Registreerimine ja osavõtutasu",
+        "Registreerimine toimub Fientas või kohapeal stardinumbrite väljastamise ajal. Kuni 31. detsembrini 2026: 3,5 ja 7 km — 10 €, lastejooks — 5 €. Alates 1. jaanuarist 2027 ja kohapeal: 3,5 ja 7 km — 15 €, lastejooks — 8 €. Osalejate arv ei ole piiratud."
+      ],
+      [
+        "Ajakava",
+        "Stardinumbrite väljastamine kell 11:00–12:00. Lastejooks kell 12:00, 7 km start kell 12:30 ja 3,5 km start kell 12:40. Autasustamine orienteeruvalt kell 13:30. Autasustamise koht teatatakse hiljem."
+      ],
+      [
+        "Ajavõtt ja autasustamine",
+        "3,5 ja 7 km distantsil kasutatakse elektroonilist ajavõttu. Mõlemal distantsil autasustatakse kolme parimat meest ja kolme parimat naist, eraldi vanuseklasside arvestust ei ole. Lastejooksul paremusjärjestust ei koostata. Kõik lõpetajad saavad medali."
+      ],
+      [
+        "Osavõtutasu sisaldab",
+        "Osalemist valitud distantsil, stardinumbrit, ajavõttu 3,5 ja 7 km distantsil ning finišimedalit. Üks sissepääs saunaalale kell 13:45–15:00 stardinumbri alusel. Olemas on koht asjade jätmiseks, riietusruum ja dušš. Saunatarbed võtab osaleja ise kaasa. Festivalile ja kontserdile on sissepääs tasuta."
+      ],
+      [
+        "Rajal",
+        "Osaleja valib oma ettevalmistusele sobiva distantsi ning järgib rajatähistust ja korraldajate juhiseid. Talvine rada võib olla libe. Riietu vastavalt ilmale ja kasuta sobivaid jalanõusid. Katkestamisest teavita korraldajaid."
+      ],
+      [
+        "Muudatused ja ärajäämine",
+        "Halva ilma tõttu võib korraldaja jooksu edasi lükata või ära jätta. Ärajäämisel tagastatakse osavõtutasu täies ulatuses. Muudatused avaldame veebilehel ja edastame registreeritud osalejatele. Edasilükkamisel teatame uue kuupäeva ja edasised juhised eraldi."
+      ]
+    ]
+  },
+  "en": {
+    "nav": [
+      "About the run",
+      "Schedule",
+      "Course",
+      "Participant info",
+      "Rules"
+    ],
+    "menu": "Run menu",
+    "register": "Register",
+    "date": "23 January 2027",
+    "place": "Narva-Jõesuu · start at the harbour",
+    "title": "Winter running in Narva-Jõesuu",
+    "desc": "Winter Run on 23 January 2027 in Narva-Jõesuu, Estonia. 3.5 km, 7 km and a 300 m children’s run. Finisher medals, free sauna access and the festival concert.",
+    "km": "km",
+    "kids": "Children’s run",
+    "lap": [
+      "One lap",
+      "Two laps",
+      "No rankings"
+    ],
+    "start": "Start",
+    "price": "Entry",
+    "until": "until 31 December",
+    "after": "From 1 January",
+    "adult": "3.5 and 7 km",
+    "onsite": "On the day",
+    "fees": "Online until 31 December 2026: €10 / children €5. From 1 January 2027 and on the day: €15 / children €8.",
+    "included": "After the finish",
+    "benefits": [
+      [
+        "A medal for every finisher",
+        "Every finisher receives a commemorative metal medal. Every child in the children’s run receives a medal."
+      ],
+      [
+        "Free saunas",
+        "One free admission between 13:45 and 15:00. Bring your own towel, swimwear and slippers."
+      ],
+      [
+        "Concert and festival",
+        "A winter market, activities and the Winter After Dark concert. Festival and concert admission is free; individual activities have their own conditions."
+      ]
+    ],
+    "more": "Participant information",
+    "festival": "Festival programme",
+    "times": [
+      [
+        "11:00–12:00",
+        "Bib collection",
+        "At the race centre by the harbour. Please arrive early."
+      ],
+      [
+        "12:00",
+        "Children’s run · 300 m",
+        "No rankings. A medal for every child."
+      ],
+      [
+        "12:30",
+        "Start · 7 km",
+        "Two laps of 3.5 km."
+      ],
+      [
+        "12:40",
+        "Start · 3.5 km",
+        "One lap."
+      ],
+      [
+        "≈ 13:30",
+        "Awards",
+        "The top three men and women in each distance. The awards location will be announced."
+      ],
+      [
+        "13:45–15:00",
+        "Saunas for runners",
+        "One free admission with your race bib."
+      ]
+    ],
+    "scheduleNote": "The awards time is approximate. Any schedule changes will be published here.",
+    "routeIntro": "Start and finish at the harbour. Follow Aia street towards Meresuu and return along the Vabaduse pedestrian path.",
+    "routeDetails": [
+      "One 3.5 km lap. Finish when you return to the harbour.",
+      "Two identical laps. Continue onto your second lap when you first return to the harbour.",
+      "A short 300 m course near the race centre. The children’s course is not shown on the main map."
+    ],
+    "map": "Course map",
+    "zoom": "Enlarge map",
+    "download": "Download map",
+    "close": "Close",
+    "reset": "Fit to screen",
+    "mapNote": "S/F — start and finish · Saunad — saunas · Lava — stage. Exact service locations will be confirmed before the race.",
+    "infoIntro": "What you need before the start and after the finish.",
+    "info": [
+      [
+        "Bibs and registration",
+        "Collect your bib on 23 January between 11:00 and 12:00 at the harbour, Suur-Lootsi 4. Have your Fienta confirmation ready. When buying multiple tickets, enter the details of each participant separately. On-site registration is available during bib collection."
+      ],
+      [
+        "Distance and results",
+        "3.5 km is one lap; 7 km is two laps. Both distances have electronic timing. The 300 m children’s run has no rankings. A results link will be published here after the race."
+      ],
+      [
+        "What to bring",
+        "Winter running clothes, gloves, a hat and shoes with good grip. Bring dry, warm clothes to change into after the finish. For the saunas, bring your own towel, swimwear and slippers."
+      ],
+      [
+        "Bags, changing and showers",
+        "The festival has a place to leave your belongings, a changing room, a shower and toilets. Locations will be included in the pre-race information."
+      ],
+      [
+        "Saunas after the race",
+        "Between 13:45 and 15:00, runners can enter the sauna area once for free by showing their race bib. Keep your bib after finishing. Bring your own sauna essentials."
+      ],
+      [
+        "Medals and awards",
+        "Every finisher receives a medal. The top three men and women are awarded separately in the 3.5 km and 7 km races. The children’s run has no rankings. Awards are planned for approximately 13:30; the location will be confirmed."
+      ],
+      [
+        "Weather and updates",
+        "Check this page before travelling. The organiser may postpone or cancel the race in unsafe weather. If the race is cancelled, entry fees are refunded in full. Registered participants will be notified of changes."
+      ]
+    ],
+    "travel": "Getting here",
+    "rulesIntro": "Winter Run participation rules · 23 January 2027",
+    "print": "Print / PDF",
+    "rules": [
+      [
+        "Venue and organiser",
+        "Winter Run takes place on 23 January 2027 in Narva-Jõesuu as part of Estonia Winter Fest. Start and finish at the harbour, Suur-Lootsi 4. Organiser: MTÜ Noorteaeg. Contact: info@winterfest.ee, +372 5557 2817."
+      ],
+      [
+        "Distances",
+        "3.5 km — one lap; 7 km — two laps; children’s run — 300 m. The main course follows Aia street and the Vabaduse pedestrian path. Choose your distance when registering."
+      ],
+      [
+        "Registration and fees",
+        "Register through Fienta or on site during bib collection. Until 31 December 2026: 3.5 km and 7 km — €10; children’s run — €5. From 1 January 2027 and on the day: 3.5 km and 7 km — €15; children’s run — €8. There is no participant limit."
+      ],
+      [
+        "Schedule",
+        "Bib collection 11:00–12:00. Children’s start 12:00, 7 km start 12:30, 3.5 km start 12:40. Awards are planned for approximately 13:30. The awards location will be announced separately."
+      ],
+      [
+        "Timing and awards",
+        "Electronic timing is provided for 3.5 km and 7 km. The top three men and women in each distance receive awards; there are no separate age-group rankings. The children’s run has no rankings. Every finisher receives a medal."
+      ],
+      [
+        "Included with entry",
+        "Your selected race, a race bib, electronic timing for 3.5 km and 7 km, and a finisher medal. One admission to the sauna area between 13:45 and 15:00 with your bib. A place for belongings, a changing room and a shower are available. Bring your own sauna essentials. Festival and concert admission is free."
+      ],
+      [
+        "On the course",
+        "Choose a distance suitable for your fitness and follow course markings and organisers’ instructions. The winter course may be slippery. Wear suitable clothes and footwear. Tell the organisers if you withdraw from the race."
+      ],
+      [
+        "Changes and cancellation",
+        "The organiser may postpone or cancel the race due to bad weather. In the event of cancellation, entry fees are refunded in full. Changes will be published on the website and sent to registered participants. If postponed, the new date and next steps will be communicated separately."
+      ]
+    ]
+  }
+}
