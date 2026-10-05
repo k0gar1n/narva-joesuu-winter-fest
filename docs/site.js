@@ -8,6 +8,8 @@
  const validUrl=value=>{try{const u=new URL(value);return u.protocol==='https:'?u.href:null;}catch{return null;}};
  $$('[data-registration]').forEach(a=>a.href=validUrl(config.registration?.[a.dataset.registration])||`${config.fientaFallback||'https://fienta.com'}/${lang}`);
  $$('[data-application]').forEach(a=>{const href=validUrl(config.forms?.[a.dataset.application]);if(href){a.href=href;a.target='_blank';a.rel='noopener';}});
+ const volunteerForm=validUrl(config.forms?.volunteers);
+ if(volunteerForm&&document.body.dataset.route==='/volunteers/')$$('a[href="#apply"]').forEach(a=>{a.href=volunteerForm;a.target='_blank';a.rel='noopener';});
  function languageLinks(){
   $$('[data-language]').forEach(a=>{
    const u=new URL(a.href);['day','category'].forEach(k=>{if(new URL(location.href).searchParams.has(k))u.searchParams.set(k,new URL(location.href).searchParams.get(k));else u.searchParams.delete(k);});
