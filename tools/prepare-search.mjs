@@ -101,8 +101,8 @@ const pages={
   ['Стать волонтёром Estonia Winter Fest 2027','Tule Estonia Winter Fest 2027 vabatahtlikuks','Volunteer at Estonia Winter Fest 2027'],
   ['Регистрация волонтёров на Estonia Winter Fest в Нарва-Йыэсуу. Помощь гостям, спортивным зонам, сцене и организации фестиваля.','Vabatahtlike registreerimine Estonia Winter Festile Narva-Jõesuus. Abi külalistele, spordialadele, lavale ja festivali korraldusele.','Volunteer registration for Estonia Winter Fest in Narva-Jõesuu. Help visitors, activity areas, the stage and festival operations.']),
  'winter-run/':seoPage(
-  ['Winter Run — зимний забег в Нарва-Йыэсуу 23 января 2027','Winter Run — talvejooks Narva-Jõesuus 23.01.2027','Winter Run — winter race in Narva-Jõesuu, 23 January 2027'],
-  ['Зимний забег у моря в Нарва-Йыэсуу: 3,5 км, 7 км и детский забег 300 м. Медаль на финише, электронный хронометраж, бани и концерт фестиваля.','Mereäärne talvejooks Narva-Jõesuus: 3,5 km, 7 km ja 300 m lastejooks. Finišimedal, elektrooniline ajavõtt, saunad ja festivali kontsert.','A seaside winter race in Narva-Jõesuu: 3.5 km, 7 km and a 300 m children’s run. Finish medal, electronic timing, saunas and festival concert.'],'winter-run-wide.webp','run'),
+  ['Winter Run 2027 — зимний забег в Эстонии, Нарва-Йыэсуу','Winter Run 2027 — talvejooks Eestis, Narva-Jõesuus','Winter Run 2027 — winter race in Estonia, Narva-Jõesuu'],
+  ['23 января в Нарва-Йыэсуу: зимний забег на 3,5 и 7 км и детский старт 300 м. Маршрут у моря, медаль каждому участнику, бани и концерт фестиваля.','23. jaanuaril Narva-Jõesuus: mereäärne talvejooks 3,5 ja 7 km rajal ning 300 m lastejooks. Finišimedal, saunad ja festivali kontsert.','23 January in Narva-Jõesuu, Estonia: a seaside winter run with 3.5 km and 7 km races and a 300 m children’s run. Finisher medals, saunas and a festival concert.'],'winter-run-wide.webp','run'),
  'winter-run/participant-info/':seoPage(
   ['Winter Run — информация участнику зимнего забега','Winter Run — osaleja info','Winter Run — participant information'],
   ['Получение номера, старт, гардероб, душ, бани, награждение и другие важные детали Winter Run 23 января 2027 в Нарва-Йыэсуу.','Numbri väljastamine, start, riietusruum, dušš, saunad, autasustamine ja muu oluline info Winter Runil 23. jaanuaril 2027.','Bib collection, start, changing area, showers, saunas, awards and practical details for Winter Run in Narva-Jõesuu on 23 January 2027.'],'winter-run-wide.webp','run'),
@@ -126,11 +126,15 @@ const venue={
 const events={
  festival:{'@type':'Festival','@id':origin+'/#festival',name:'Estonia Winter Fest 2027',alternateName:['Winter Fest','Винтер Фест'],startDate:'2027-01-23',endDate:'2027-01-23',eventStatus:'https://schema.org/EventScheduled',eventAttendanceMode:'https://schema.org/OfflineEventAttendanceMode',url:origin+'/',image:[origin+'/assets/hero-1600.webp'],location:venue,organizer:{'@id':organization['@id']},isAccessibleForFree:true,audience:{'@type':'Audience',geographicArea:{'@type':'Country',name:'Estonia'}}},
  cup:{'@type':'SportsEvent','@id':origin+'/winter-cup/#event',name:'Winter Cup 2027',startDate:'2027-01-22',endDate:'2027-01-22',eventStatus:'https://schema.org/EventScheduled',eventAttendanceMode:'https://schema.org/OfflineEventAttendanceMode',url:origin+'/winter-cup/',image:[origin+'/assets/cup-1600.webp'],location:venue,organizer:{'@id':organization['@id']}},
- run:{'@type':'SportsEvent','@id':origin+'/winter-run/#event',name:'Winter Run 2027',startDate:'2027-01-23T12:00:00+02:00',endDate:'2027-01-23T13:30:00+02:00',eventStatus:'https://schema.org/EventScheduled',eventAttendanceMode:'https://schema.org/OfflineEventAttendanceMode',url:origin+'/winter-run/',image:[origin+'/assets/winter-run-wide.webp'],location:venue,organizer:{'@id':organization['@id']}}
+ run:{'@type':'SportsEvent','@id':origin+'/winter-run/#event',name:'Estonia Winter Run 2027',alternateName:['Winter Run','Talvejooks Narva-Jõesuus','Зимний забег в Нарва-Йыэсуу'],startDate:'2027-01-23T12:00:00+02:00',endDate:'2027-01-23T13:30:00+02:00',eventStatus:'https://schema.org/EventScheduled',eventAttendanceMode:'https://schema.org/OfflineEventAttendanceMode',url:origin+'/winter-run/',image:[origin+'/assets/winter-run-wide.webp'],location:{'@type':'Place',name:'Narva-Jõesuu sadam',address:{'@type':'PostalAddress',streetAddress:'Suur-Lootsi 4',addressLocality:'Narva-Jõesuu',addressRegion:'Ida-Virumaa',addressCountry:'EE'}},organizer:{'@id':organization['@id']}}
 };
 for(const [route,data] of Object.entries(pages))for(const [i,lang] of langs.entries()){
  const f=path.join(docs,lang==='ru'?'':lang,route,'index.html');let html=await fs.readFile(f,'utf8');
  html=html.replace(/<title>.*?<\/title>/s,'').replace(/<meta\b[^>]*(?:name="(?:description|robots|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g,'').replace(/<link\b[^>]*rel="(?:canonical|alternate)"[^>]*>/g,'').replace(/<script[^>]*id="wf-search-data"[^>]*>.*?<\/script>/sg,'');
+ // The Winter Run renderer previously emitted a second, conflicting Event block.
+ if(route.startsWith('winter-run/'))html=html.replace(/<script type="application\/ld\+json">.*?<\/script>/s,'');
+ html=html.replace(/<link\b[^>]*rel="(?:icon|shortcut icon|apple-touch-icon|manifest)"[^>]*>/gi,'');
+ html=html.replace(/\s+<\/head>/,'</head>');
  const canonical=url(lang,route),image=origin+'/assets/'+data.image,event=events[data.about];
  const webPage={'@type':'WebPage','@id':canonical+'#page',url:canonical,name:data.titles[i],description:data.descriptions[i],inLanguage:lang,isPartOf:{'@id':website['@id']},about:event?{'@id':event['@id']}:{'@id':events.festival['@id']},primaryImageOfPage:{'@type':'ImageObject',url:image}};
  const graph=[organization,website,webPage];
@@ -142,7 +146,7 @@ for(const [route,data] of Object.entries(pages))for(const [i,lang] of langs.entr
 }
 
 // Google Search needs a crawlable, stable favicon URL. Data URLs are not used here.
-const iconHead=`<link rel="icon" type="image/svg+xml" href="${base}/favicon.svg"><link rel="icon" type="image/png" sizes="48x48" href="${base}/favicon-48.png"><link rel="shortcut icon" href="${base}/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="${base}/apple-touch-icon.png"><link rel="manifest" href="${base}/site.webmanifest">`;
+const iconHead=`<link rel="icon" type="image/png" sizes="192x192" href="${base}/favicon-192.png"><link rel="icon" type="image/png" sizes="48x48" href="${base}/favicon-48.png"><link rel="shortcut icon" href="${base}/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="${base}/apple-touch-icon.png"><link rel="manifest" href="${base}/site.webmanifest">`;
 for(const f of await walkHtml(docs)){
  let html=await fs.readFile(f,'utf8');
  html=html.replace(/<link\b[^>]*rel="(?:icon|shortcut icon|apple-touch-icon|manifest)"[^>]*>/gi,'');
