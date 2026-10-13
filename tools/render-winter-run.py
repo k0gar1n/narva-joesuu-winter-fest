@@ -31,13 +31,14 @@ def render(lang,d,idx):
     cta=f'<a class="run-cta fienta-embed" href="{fienta}">{d["register"]}<span aria-hidden="true">↗</span></a>'
     links=''.join(f'<a href="{href(lang,s)}"'+(' aria-current="page"' if j==idx else '')+f'><span>{d["nav"][j]}</span><span aria-hidden="true">↗</span></a>' for j,s in enumerate(SLUGS))
     sidebar=f'<aside class="run-sidebar"><a class="run-mark" href="{href(lang)}"><span>ESTONIA</span>WINTER<br> RUN</a><button type="button" class="run-menu-toggle" aria-expanded="false" aria-controls="run-sections">{d["menu"]}<span aria-hidden="true">+</span></button><nav id="run-sections" aria-label="Winter Run">{links}</nav><div class="run-side-bottom"><span>23.01.2027</span><a href="{site(lang,"festival/")}">Winter Fest ↗</a></div></aside>'
-    sectionhead=f'<header class="run-page-heading"><div><p class="run-kicker">WINTER RUN · 23.01.2027</p><h1>{d["nav"][idx]}</h1></div>{cta}</header>'
+    sectionhead=f'<header class="run-page-heading"><h1>{d["nav"][idx]}</h1>{cta}</header>'
     if idx==0:
+        home_times=''.join(f'<div><time>{h(d["times"][j][0])}</time><span>{h(d["times"][j][1])}</span></div>' for j in (1,2,4))
         if lang in ('ru','et'):
             poster=f'winter-run-poster-{lang}.png'
-            artwork=(f'<a class="run-poster-image" href="{BASE}/assets/{poster}" target="_blank" rel="noopener" aria-label="{h(d["posterOpen"])}">'
+            artwork=(f'<div class="run-poster-image">'
                      f'<img src="{BASE}/assets/{poster}" width="1672" height="941" alt="{h(d["posterAlt"])}" fetchpriority="high">'
-                     f'<span class="run-poster-zoom">{h(d["posterOpen"])} ↗</span></a>')
+                     f'</div>')
         else:
             artwork=(f'<div class="run-poster-en">'
                      f'<img class="run-poster-en-photo" src="{BASE}/assets/winter-run-wide.webp" width="1672" height="941" alt="" fetchpriority="high">'
@@ -49,22 +50,23 @@ def render(lang,d,idx):
         content=(
             f'<h1 class="run-visually-hidden">Estonia Winter Run 2027</h1>'
             f'<section class="run-poster" aria-label="{h(d["title"])}">{artwork}</section>'
-            f'<div class="run-mobile-facts"><p>{h(d["heroDistances"])}</p><p>{h(d["mobileBenefits"])}</p></div>'
             f'<div class="run-poster-actions"><a class="run-poster-price" href="{href(lang,"participant-info/")}#fees">'
             f'<span>{h(d["adult"])} <strong data-run-price data-early="10" data-late="15">10 €</strong></span>'
             f'<span>{h(d["kids"])} <strong data-run-price data-early="5" data-late="8">5 €</strong></span>'
             f'<small data-run-price-label data-early="{h(d["until"])}" data-late="{h(d["after"])}">{h(d["until"])}</small></a>'
             f'{cta}<a class="run-text-link" href="{href(lang,"participant-info/")}">{h(d["more"])} ↗</a></div>'
+            f'<section class="run-home-next"><div><h2>{h(d["homeNextTitle"])}</h2><p>{h(d["homeNextText"])}</p></div>'
+            f'<div class="run-home-next-links"><a href="{href(lang,"route/")}">{h(d["nav"][2])} ↗</a><a href="{href(lang,"programme/")}">{h(d["nav"][1])} ↗</a></div></section>'
+            f'<div class="run-home-times">{home_times}</div>'
         )
     elif idx==1:
         rows=''.join(f'<li><time>{time}</time><div><h2>{h(name)}</h2><p>{h(text)}</p></div></li>' for time,name,text in d['times'])
-        content=sectionhead+f'<ol class="run-timeline">{rows}</ol><div class="run-bottom-note"><p>{d["scheduleNote"]}</p><a class="run-text-link" href="{site(lang,"programme/")}">{d["festival"]} ↗</a></div>'
+        content=sectionhead+f'<ol class="run-timeline">{rows}</ol>'
     elif idx==2:
-        buttons=''.join(f'<button id="distance-{j}" type="button" data-run-distance="{j}" aria-pressed="{str(j==0).lower()}" aria-controls="distance-description">{["3,5 "+d["km"] if lang!="en" else "3.5 km","7 "+d["km"],d["kids"]][j]}</button>' for j in range(3))
-        content=sectionhead+f'<div class="run-route-layout"><div class="run-map-panel"><button class="run-map-open" aria-label="{d["zoom"]}"><img src="{BASE}/assets/winter-run-route.webp" alt="{h(d["map"])}" width="1054" height="1536"><span>{d["zoom"]} ⤢</span></button></div><div class="run-route-info"><p class="run-lead">{d["routeIntro"]}</p><div class="run-course-tabs" role="group" aria-label="{d["nav"][2]}">{buttons}</div><p id="distance-description" class="run-course-description" aria-live="polite">{d["routeDetails"][0]}</p><script type="application/json" id="run-course-data">{json.dumps(d["routeDetails"],ensure_ascii=False)}</script><p class="run-map-note">{d["mapNote"]}</p><a class="run-text-link" href="{BASE}/assets/winter-run-route.png" download>{d["download"]} ↓</a></div></div><dialog class="run-map-dialog" aria-label="{h(d["map"])}"><div class="run-map-tools"><button data-map-close>{d["close"]} ×</button><div><button data-map-zoom="-" aria-label="−">−</button><button data-map-reset>{d["reset"]}</button><button data-map-zoom="+" aria-label="+">+</button></div></div><div class="run-map-scroll"><img src="{BASE}/assets/winter-run-route.png" alt="{h(d["map"])}" width="1054" height="1536"></div></dialog>'
+        content=sectionhead+f'<div class="run-route-simple"><p>{h(d["routeSimple"])}</p><img src="{BASE}/assets/winter-run-route.webp" alt="{h(d["map"])}" width="1054" height="1536"></div>'
     elif idx==3:
         rows=''.join(f'<details class="run-info-item"'+(' open' if j==0 else '')+f'><summary>{h(t)}<span aria-hidden="true">+</span></summary><p>{h(text)}</p></details>' for j,(t,text) in enumerate(d['info']))
-        content=sectionhead+f'<p class="run-lead">{d["infoIntro"]}</p><div id="fees" class="run-fees"><div><span>{d["adult"]}</span><strong><span data-run-price data-early="10" data-late="15">10 €</span></strong></div><div><span>{d["kids"]}</span><strong><span data-run-price data-early="5" data-late="8">5 €</span></strong></div><p>{d["fees"]}</p></div><div class="run-accordions">{rows}</div><div class="run-bottom-note"><a class="run-text-link" href="{site(lang,"visit/travel/")}">{d["travel"]} ↗</a><a class="run-text-link" href="{href(lang,"rules/")}">{d["nav"][4]} ↗</a></div>'
+        content=sectionhead+f'<p class="run-lead">{d["infoIntro"]}</p><div id="fees" class="run-fees"><div><span>{d["adult"]}</span><strong><span data-run-price data-early="10" data-late="15">10 €</span></strong></div><div><span>{d["kids"]}</span><strong><span data-run-price data-early="5" data-late="8">5 €</span></strong></div></div><div class="run-accordions">{rows}</div><div class="run-bottom-note"><a class="run-text-link" href="{site(lang,"visit/travel/")}">{d["travel"]} ↗</a><a class="run-text-link" href="{href(lang,"rules/")}">{d["nav"][4]} ↗</a></div>'
     else:
         rows=''.join(f'<details class="run-info-item"><summary><span>{j+1}. {h(t)}</span><span aria-hidden="true">+</span></summary><p>{h(text)}</p></details>' for j,(t,text) in enumerate(d['rules']))
         content=sectionhead+f'<div class="run-rules-tools"><p>{d["rulesIntro"]}</p><button class="run-text-link" data-run-print>{d["print"]} ↗</button></div><div class="run-accordions run-rules">{rows}</div>'

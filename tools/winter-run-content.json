@@ -79,6 +79,9 @@
       ]
     ],
     "scheduleNote": "Время награждения ориентировочное. Актуальные изменения появятся здесь.",
+    "homeNextTitle": "Старт у моря",
+    "homeNextText": "Старт и финиш у порта Нарва-Йыэсуу. Маршрут проходит по улице Aia и пешеходной дорожке Vabaduse. На 7 км бегут два круга.",
+    "routeSimple": "7 км — два круга по 3,5 км.",
     "routeIntro": "Старт и финиш у порта. По улице Aia в сторону Meresuu, обратно по пешеходной дорожке Vabaduse.",
     "routeDetails": [
       "Один круг 3,5 км. После возвращения к порту финишируете.",
@@ -240,6 +243,9 @@
       ]
     ],
     "scheduleNote": "Autasustamise aeg on orienteeruv. Võimalikud muudatused avaldame siin.",
+    "homeNextTitle": "Start mere ääres",
+    "homeNextText": "Start ja finiš on Narva-Jõesuu sadama juures. Rada kulgeb mööda Aia tänavat ja Vabaduse tänava kõnniteed. 7 km jooksjad läbivad kaks ringi.",
+    "routeSimple": "7 km — kaks 3,5 km ringi.",
     "routeIntro": "Start ja finiš sadamas. Mööda Aia tänavat Meresuu poole, tagasi mööda Vabaduse tänava kõnniteed.",
     "routeDetails": [
       "Üks 3,5 km ring. Sadamasse tagasi jõudes finišeerid.",
@@ -401,6 +407,9 @@
       ]
     ],
     "scheduleNote": "The awards time is approximate. Any schedule changes will be published here.",
+    "homeNextTitle": "Start by the sea",
+    "homeNextText": "Start and finish at Narva-Jõesuu harbour. The course follows Aia street and the Vabaduse pedestrian path. The 7 km race covers two laps.",
+    "routeSimple": "7 km — two 3.5 km laps.",
     "routeIntro": "Start and finish at the harbour. Follow Aia street towards Meresuu and return along the Vabaduse pedestrian path.",
     "routeDetails": [
       "One 3.5 km lap. Finish when you return to the harbour.",

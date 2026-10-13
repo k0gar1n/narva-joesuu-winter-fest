@@ -123,15 +123,26 @@
 .run-home .run-poster{margin:0}
 .run-poster-image{display:block;position:relative;line-height:0;background:var(--navy)}
 .run-poster-image img{display:block;width:100%;height:auto}
-.run-poster-zoom{position:absolute;bottom:12px;right:12px;background:var(--paper);color:var(--blue);font:750 11px/1.3 Manrope,sans-serif;padding:8px 10px;opacity:0;transition:opacity .2s}
-.run-poster-image:hover .run-poster-zoom,.run-poster-image:focus-visible .run-poster-zoom{opacity:1}
 .run-poster-actions{display:flex;align-items:center;gap:22px;padding:20px 0 24px;border-bottom:1px solid var(--line)}
 .run-poster-actions>.run-text-link{margin-left:auto;white-space:nowrap}
 .run-poster-price{display:flex;align-items:center;gap:18px;color:var(--navy);text-decoration:none;font-size:12px;font-weight:700}
 .run-poster-price>span{display:flex;align-items:baseline;gap:6px;white-space:nowrap}
 .run-poster-price strong{font:700 27px/1.1 Oswald,sans-serif;color:var(--blue)}
 .run-poster-price small{font-size:10px;color:var(--muted);white-space:nowrap}
-.run-mobile-facts{display:none}
+.run-home-next{display:flex;justify-content:space-between;gap:30px;align-items:end;padding:28px 0 34px}
+.run-home-next>div:first-child{max-width:62ch}
+.run-page .run-home-next h2{font:700 clamp(25px,2.4vw,35px)/1.15 Oswald,sans-serif;margin:0 0 12px;color:var(--navy)}
+.run-page .run-home-next p{font-size:14px;line-height:1.65;color:var(--muted);margin:0}
+.run-home-next-links{display:flex;gap:18px;white-space:nowrap}
+.run-home-next-links a{font-size:13px;font-weight:800;color:var(--blue);text-decoration:none}
+.run-home-next-links a:hover{text-decoration:underline}
+.run-home-times{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding:20px 0 28px;gap:20px}
+.run-home-times>div{display:grid;gap:6px}
+.run-home-times time{font:700 23px/1.2 Oswald,sans-serif;color:var(--blue)}
+.run-home-times span{font-size:13px;font-weight:700;color:var(--navy)}
+.run-route-simple{padding:22px 0 32px;text-align:center}
+.run-route-simple p{font:700 16px/1.5 Manrope,sans-serif;color:var(--navy);margin:0 0 20px}
+.run-route-simple img{display:block;width:min(100%,650px);height:auto;margin:auto}
 
 /* English artwork uses the same race photograph and supplied medal. */
 .run-poster-en{position:relative;aspect-ratio:1672/941;overflow:hidden;background:var(--navy);color:#edf7ff;font-family:Oswald,sans-serif}
@@ -159,18 +170,14 @@
   .run-poster-en-bottom strong{font-size:clamp(14px,2.2vw,23px)}
 }
 @media(max-width:600px){
-  .run-home .run-sidebar{padding-bottom:8px}
-  .run-poster-zoom{opacity:1;bottom:6px;right:6px;padding:5px 7px;font-size:9px}
-  .run-mobile-facts{display:block;padding:14px 0 3px}
-  .run-mobile-facts p{font-size:13px;line-height:1.5;margin:0 0 8px;font-weight:750;color:var(--navy)}
-  .run-mobile-facts p+p{font-size:12px;font-weight:650;color:var(--muted)}
+  .run-home .run-sidebar{padding-bottom:12px}
   .run-poster-actions{padding:7px 0 22px;display:grid;grid-template-columns:1fr;gap:15px}
   .run-poster-price{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:11px}
   .run-poster-price strong{font-size:25px}
   .run-poster-price small{width:100%;margin-top:-3px}
   .run-poster-actions>.run-cta{width:100%}
   .run-poster-actions>.run-text-link{margin:0}
-  .run-poster-en{aspect-ratio:auto;height:220px}
+  .run-poster-en{aspect-ratio:auto;height:255px}
   .run-poster-en-title{top:10%;left:5%}
   .run-poster-en-title strong{font-size:clamp(45px,13vw,66px)}
   .run-poster-en-title span{font-size:11px}
@@ -178,5 +185,32 @@
   .run-poster-en-date strong{font-size:31px}
   .run-poster-en-date span{font-size:9px}
   .run-poster-en-date small{font-size:7px;margin-top:4px}
-  .run-poster-en-bottom{display:none}
+  .run-poster-en-bottom{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:5px;left:2%;right:2%;bottom:2%}
+  .run-poster-en-bottom>div{gap:3px}
+  .run-poster-en-bottom strong{font-size:10px;line-height:1.05}
+  .run-poster-en-bottom span{font-size:8px;line-height:1.05}
+  .run-poster-en-bottom img{width:52px}
+}
+@media(max-width:800px){
+  .run-menu-toggle{background:var(--blue);color:#fff;border-color:var(--blue);font-size:14px;font-weight:800;padding:12px 17px;min-height:50px}
+  .run-menu-toggle:active{background:#102ba3}
+  .run-home .run-mark{display:none}
+  .run-home .run-menu-toggle{width:100%}
+  .run-home-next{display:block;padding:24px 0 30px}
+  .run-home-next-links{margin-top:18px}
+  .run-home-times{grid-template-columns:1fr;gap:0;padding:6px 0 24px}
+  .run-home-times>div{grid-template-columns:105px 1fr;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .run-home-times>div:last-child{border-bottom:0}
+  .run-home-times time{font-size:20px}
+}
+@media(max-width:600px){
+  .run-page main.run-layout{padding-left:12px;padding-right:12px}
+  .run-sidebar{gap:10px}
+  .run-mark{font-size:21px}
+  .run-menu-toggle{font-size:13px;padding:10px 12px}
+  .run-page-heading .run-cta{width:100%;font-size:14px;min-height:50px}
+  .run-poster-actions{padding-top:16px}
+  .run-home-next-links{gap:20px}
+  .run-route-simple{padding-top:18px}
+  .run-route-simple p{font-size:14px;margin-bottom:14px}
 }
