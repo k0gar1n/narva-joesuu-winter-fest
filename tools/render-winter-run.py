@@ -18,12 +18,13 @@ def site(lang,slug): return BASE+('/' if lang=='ru' else f'/{lang}/')+slug
 def render(lang,d,idx):
     template=(DOCS/('' if lang=='ru' else lang)/'festival/ski-lessons/index.html').read_text()
     shell=template[template.index('<body'):template.index('<main')]
-    shell=shell.replace('class="subpage "','class="subpage run-page"').replace('/festival/ski-lessons/', '/winter-run/'+SLUGS[idx])
+    shell=shell.replace('class="subpage "','class="subpage run-page'+(' run-home' if idx==0 else '')+'"').replace('/festival/ski-lessons/', '/winter-run/'+SLUGS[idx])
     shell=shell.replace(' aria-current="page" data-i18n="navFestival"',' data-i18n="navFestival"')
     url=DOMAIN+path(lang,SLUGS[idx]); title='Winter Run · '+(d['title'] if idx==0 else d['nav'][idx])
+    ogimage=DOMAIN+'/assets/'+(f'winter-run-poster-{lang}.png' if idx==0 and lang in ('ru','et') else 'winter-run-wide.webp')
     core=template[template.index('<meta charset'):template.index('<title>')]
     alternates=''.join(f'<link rel="alternate" hreflang="{l}" href="{DOMAIN+path(l,SLUGS[idx])}">' for l in D)
-    head=f'<!DOCTYPE html><html lang="{lang}"><head>{core}<title>{h(title)} | Winter Fest</title><meta name="description" content="{h(d["desc"])}"><link rel="canonical" href="{url}">{alternates}<link rel="alternate" hreflang="x-default" href="{DOMAIN+path("et",SLUGS[idx])}"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="{h(title)}"><meta property="og:description" content="{h(d["desc"])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{DOMAIN}/assets/winter-run-wide.webp"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="{BASE}/winter-run.css"><script defer src="{BASE}/winter-run.js"></script><script>window.fientaSettings={{link_selector:"a.fienta-embed",background:"rgba(7,27,57,.78)",border_radius:"0"}};</script><script defer src="https://fienta.com/embed.js"></script>'
+    head=f'<!DOCTYPE html><html lang="{lang}"><head>{core}<title>{h(title)} | Winter Fest</title><meta name="description" content="{h(d["desc"])}"><link rel="canonical" href="{url}">{alternates}<link rel="alternate" hreflang="x-default" href="{DOMAIN+path("et",SLUGS[idx])}"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="{h(title)}"><meta property="og:description" content="{h(d["desc"])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{ogimage}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="{BASE}/winter-run.css"><script defer src="{BASE}/winter-run.js"></script><script>window.fientaSettings={{link_selector:"a.fienta-embed",background:"rgba(7,27,57,.78)",border_radius:"0"}};</script><script defer src="https://fienta.com/embed.js"></script>'
     # prepare-search.mjs adds one canonical JSON-LD graph after rendering.
     head+='</head>'
     fienta='https://fienta.com/'+('ru' if lang=='ru' else 'et')+'/winter-run-2027-talvine-jooks'
@@ -32,12 +33,29 @@ def render(lang,d,idx):
     sidebar=f'<aside class="run-sidebar"><a class="run-mark" href="{href(lang)}"><span>ESTONIA</span>WINTER<br> RUN</a><button type="button" class="run-menu-toggle" aria-expanded="false" aria-controls="run-sections">{d["menu"]}<span aria-hidden="true">+</span></button><nav id="run-sections" aria-label="Winter Run">{links}</nav><div class="run-side-bottom"><span>23.01.2027</span><a href="{site(lang,"festival/")}">Winter Fest ↗</a></div></aside>'
     sectionhead=f'<header class="run-page-heading"><div><p class="run-kicker">WINTER RUN · 23.01.2027</p><h1>{d["nav"][idx]}</h1></div>{cta}</header>'
     if idx==0:
-        cards=''
-        for j,(dist,time) in enumerate([('3,5' if lang!='en' else '3.5','12:40'),('7','12:30'),('300','12:00')]):
-            unit=d['km'] if j<2 else ('м' if lang=='ru' else 'm')
-            cards+=f'<a class="run-distance" href="{href(lang,"route/")}#distance-{j}"><span class="run-distance-name">{d["kids"] if j==2 else d["lap"][j]}</span><strong>{dist}<small>{unit}</small></strong><span>{d["start"]} {time}<i aria-hidden="true">↗</i></span></a>'
-        benefits=''.join(f'<details class="run-benefit" name="run-benefits"><summary><span class="run-benefit-icon" aria-hidden="true">{["✳","≈","♪"][j]}</span>{h(t)}<span class="run-plus" aria-hidden="true">+</span></summary><p>{h(text)}</p></details>' for j,(t,text) in enumerate(d['benefits']))
-        content=f'<section class="run-hero"><picture><source media="(max-width: 700px)" srcset="{BASE}/assets/winter-run-tall.webp"><img src="{BASE}/assets/winter-run-wide.webp" width="1672" height="941" alt="{h(d["title"])}" fetchpriority="high"></picture><div class="run-hero-copy"><p>{d["date"]}</p><h1><span>ESTONIA</span>WINTER RUN</h1><p>{d["place"]}</p>{cta}</div><a class="run-hero-price" href="{href(lang,"participant-info/")}#fees"><span>{d["price"]}</span><strong data-run-price data-early="10" data-late="15">10 €</strong><small data-run-price-label data-early="{h(d["until"])}" data-late="{h(d["after"])}">{d["until"]}</small></a></section><div class="run-distances">{cards}</div><section class="run-intro"><h2>{h(d["introHeading"])}</h2><p>{h(d["introText"])}</p></section><section class="run-after"><h2>{d["included"]}</h2><div>{benefits}</div></section>'
+        if lang in ('ru','et'):
+            poster=f'winter-run-poster-{lang}.png'
+            artwork=(f'<a class="run-poster-image" href="{BASE}/assets/{poster}" target="_blank" rel="noopener" aria-label="{h(d["posterOpen"])}">'
+                     f'<img src="{BASE}/assets/{poster}" width="1672" height="941" alt="{h(d["posterAlt"])}" fetchpriority="high">'
+                     f'<span class="run-poster-zoom">{h(d["posterOpen"])} ↗</span></a>')
+        else:
+            artwork=(f'<div class="run-poster-en">'
+                     f'<img class="run-poster-en-photo" src="{BASE}/assets/winter-run-wide.webp" width="1672" height="941" alt="" fetchpriority="high">'
+                     f'<div class="run-poster-en-title"><span>ESTONIA</span><strong>WINTER<br>RUN</strong></div>'
+                     f'<div class="run-poster-en-date"><strong>23</strong><span>JANUARY 2027</span><small>NARVA-JÕESUU</small></div>'
+                     f'<div class="run-poster-en-bottom"><div><strong>MEDAL FOR EVERY FINISHER</strong><img src="{BASE}/assets/winter-run-medal.png" width="1536" height="1024" alt="{h(d["medalAlt"])}"></div>'
+                     f'<div><strong>3.5 KM · 7 KM</strong><span>+ 300 M CHILDREN’S RUN</span></div>'
+                     f'<div><strong>FREE SAUNA + CONCERT</strong><span>FOR RUNNERS AFTER THE FINISH</span></div></div></div>')
+        content=(
+            f'<h1 class="run-visually-hidden">Estonia Winter Run 2027</h1>'
+            f'<section class="run-poster" aria-label="{h(d["title"])}">{artwork}</section>'
+            f'<div class="run-mobile-facts"><p>{h(d["heroDistances"])}</p><p>{h(d["mobileBenefits"])}</p></div>'
+            f'<div class="run-poster-actions"><a class="run-poster-price" href="{href(lang,"participant-info/")}#fees">'
+            f'<span>{h(d["adult"])} <strong data-run-price data-early="10" data-late="15">10 €</strong></span>'
+            f'<span>{h(d["kids"])} <strong data-run-price data-early="5" data-late="8">5 €</strong></span>'
+            f'<small data-run-price-label data-early="{h(d["until"])}" data-late="{h(d["after"])}">{h(d["until"])}</small></a>'
+            f'{cta}<a class="run-text-link" href="{href(lang,"participant-info/")}">{h(d["more"])} ↗</a></div>'
+        )
     elif idx==1:
         rows=''.join(f'<li><time>{time}</time><div><h2>{h(name)}</h2><p>{h(text)}</p></div></li>' for time,name,text in d['times'])
         content=sectionhead+f'<ol class="run-timeline">{rows}</ol><div class="run-bottom-note"><p>{d["scheduleNote"]}</p><a class="run-text-link" href="{site(lang,"programme/")}">{d["festival"]} ↗</a></div>'

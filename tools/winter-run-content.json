@@ -11,6 +11,11 @@
     "register": "Регистрация",
     "date": "23 января 2027",
     "place": "Нарва-Йыэсуу · старт у порта",
+    "heroDistances": "3,5 и 7 км — общий старт в 12:30 · Детский забег 300 м — 12:00",
+    "medalAlt": "Проект медали Winter Run",
+    "posterAlt": "Афиша Estonia Winter Run: 23 января 2027, Нарва-Йыэсуу, дистанции 3,5 и 7 км и детский забег 300 м, медаль каждому финишеру, баня и концерт",
+    "posterOpen": "Открыть афишу крупно",
+    "mobileBenefits": "Медаль каждому финишеру · бесплатная баня · концерт",
     "title": "Зимний забег в Нарва-Йыэсуу",
     "introHeading": "Зимний забег у моря",
     "introText": "23 января в Нарва-Йыэсуу пройдёт зимний забег на 3,5 и 7 км и детский старт на 300 м. Маршрут начинается у порта и идёт по улице Aia и пешеходной дорожке Vabaduse.",
@@ -32,7 +37,7 @@
     "included": "После финиша",
     "benefits": [
       [
-        "Медаль каждому",
+        "Медаль каждому финишеру",
         "Все финишировавшие получают памятную металлическую медаль. В детском забеге награждаем каждого ребёнка."
       ],
       [
@@ -59,13 +64,8 @@
       ],
       [
         "12:30",
-        "Старт · 7 км",
-        "Два круга по 3,5 км."
-      ],
-      [
-        "12:40",
-        "Старт · 3,5 км",
-        "Один круг."
+        "Общий старт · 3,5 и 7 км",
+        "Один или два круга в зависимости от дистанции."
       ],
       [
         "≈ 13:30",
@@ -140,7 +140,7 @@
       ],
       [
         "Программа",
-        "Выдача номеров 11:00–12:00. Детский старт в 12:00, 7 км в 12:30, 3,5 км в 12:40. Награждение ориентировочно в 13:30. Место награждения будет объявлено дополнительно."
+        "Выдача номеров 11:00–12:00. Детский старт в 12:00. Общий старт дистанций 3,5 и 7 км в 12:30. Награждение ориентировочно в 13:30. Место награждения будет объявлено дополнительно."
       ],
       [
         "Хронометраж и награждение",
@@ -172,6 +172,11 @@
     "register": "Registreeru",
     "date": "23. jaanuar 2027",
     "place": "Narva-Jõesuu · start sadamas",
+    "heroDistances": "3,5 ja 7 km — ühine start 12:30 · Lastejooks 300 m — 12:00",
+    "medalAlt": "Winter Runi medali kavand",
+    "posterAlt": "Estonia Winter Runi plakat: 23. jaanuar 2027 Narva-Jõesuus, 3,5 ja 7 km, 300 m lastejooks, finišimedal, saun ja kontsert",
+    "posterOpen": "Ava plakat suurelt",
+    "mobileBenefits": "Medal igale lõpetajale · tasuta saun · kontsert",
     "title": "Talvine jooks Narva-Jõesuus",
     "introHeading": "Talvejooks mere ääres",
     "introText": "23. jaanuaril toimub Narva-Jõesuus talvine jooks 3,5 ja 7 km distantsil ning 300 m lastejooks. Rada algab sadama juurest ning kulgeb Aia tänaval ja Vabaduse kergliiklusteel.",
@@ -220,13 +225,8 @@
       ],
       [
         "12:30",
-        "Start · 7 km",
-        "Kaks 3,5 km pikkust ringi."
-      ],
-      [
-        "12:40",
-        "Start · 3,5 km",
-        "Üks ring."
+        "Ühine start · 3,5 ja 7 km",
+        "Sõltuvalt distantsist üks või kaks ringi."
       ],
       [
         "≈ 13:30",
@@ -301,7 +301,7 @@
       ],
       [
         "Ajakava",
-        "Stardinumbrite väljastamine kell 11:00–12:00. Lastejooks kell 12:00, 7 km start kell 12:30 ja 3,5 km start kell 12:40. Autasustamine orienteeruvalt kell 13:30. Autasustamise koht teatatakse hiljem."
+        "Stardinumbrite väljastamine kell 11:00–12:00. Lastejooks kell 12:00. 3,5 ja 7 km ühine start kell 12:30. Autasustamine orienteeruvalt kell 13:30. Autasustamise koht teatatakse hiljem."
       ],
       [
         "Ajavõtt ja autasustamine",
@@ -333,6 +333,11 @@
     "register": "Register",
     "date": "23 January 2027",
     "place": "Narva-Jõesuu · start at the harbour",
+    "heroDistances": "3.5 and 7 km — joint start 12:30 · Children’s 300 m — 12:00",
+    "medalAlt": "Winter Run medal concept",
+    "posterAlt": "Estonia Winter Run poster: 23 January 2027 in Narva-Jõesuu, 3.5 km, 7 km and a 300 m children’s run, finisher medal, sauna and concert",
+    "posterOpen": "Open the full-size poster",
+    "mobileBenefits": "Medal for every finisher · free sauna · concert",
     "title": "Winter running in Narva-Jõesuu",
     "introHeading": "A winter run by the sea",
     "introText": "On 23 January, Narva-Jõesuu hosts a winter run with 3.5 km and 7 km races and a 300 m children’s run. The course starts by the harbour and follows Aia Street and the Vabaduse path.",
@@ -381,13 +386,8 @@
       ],
       [
         "12:30",
-        "Start · 7 km",
-        "Two laps of 3.5 km."
-      ],
-      [
-        "12:40",
-        "Start · 3.5 km",
-        "One lap."
+        "Joint start · 3.5 and 7 km",
+        "One or two laps, depending on your distance."
       ],
       [
         "≈ 13:30",
@@ -462,7 +462,7 @@
       ],
       [
         "Schedule",
-        "Bib collection 11:00–12:00. Children’s start 12:00, 7 km start 12:30, 3.5 km start 12:40. Awards are planned for approximately 13:30. The awards location will be announced separately."
+        "Bib collection 11:00–12:00. Children’s start at 12:00. The 3.5 km and 7 km races start together at 12:30. Awards are planned for approximately 13:30. The awards location will be announced separately."
       ],
       [
         "Timing and awards",
