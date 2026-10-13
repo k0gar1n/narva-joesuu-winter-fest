@@ -128,10 +128,7 @@
 .run-poster-image img{display:block;width:100%;height:auto}
 .run-poster-actions{display:flex;align-items:center;gap:22px;padding:20px 0 24px;border-bottom:1px solid var(--line)}
 .run-poster-actions>.run-text-link{margin-left:auto;white-space:nowrap}
-.run-poster-price{display:flex;align-items:center;gap:18px;color:var(--navy);text-decoration:none;font-size:12px;font-weight:700}
-.run-poster-price>span{display:flex;align-items:baseline;gap:6px;white-space:nowrap}
-.run-poster-price strong{font:700 27px/1.1 Oswald,sans-serif;color:var(--blue)}
-.run-poster-price small{font-size:10px;color:var(--muted);white-space:nowrap}
+.run-poster-price{color:var(--blue);text-decoration:underline;text-underline-offset:4px;font-size:15px;font-weight:700;white-space:nowrap}
 .run-home-next{display:flex;justify-content:space-between;gap:30px;align-items:end;padding:28px 0 34px}
 .run-home-next>div:first-child{max-width:62ch}
 .run-page .run-home-next h2{font:700 clamp(25px,2.4vw,35px)/1.15 Oswald,sans-serif;margin:0 0 12px;color:var(--navy)}
@@ -175,9 +172,7 @@
 @media(max-width:600px){
   .run-home .run-sidebar{padding-bottom:12px}
   .run-poster-actions{padding:7px 0 22px;display:grid;grid-template-columns:1fr;gap:15px}
-  .run-poster-price{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:11px}
-  .run-poster-price strong{font-size:25px}
-  .run-poster-price small{width:100%;margin-top:-3px}
+  .run-poster-price{font-size:14px}
   .run-poster-actions>.run-cta{width:100%}
   .run-poster-actions>.run-text-link{margin:0}
   .run-poster-en{aspect-ratio:auto;height:255px}

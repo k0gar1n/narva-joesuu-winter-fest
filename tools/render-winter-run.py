@@ -50,10 +50,7 @@ def render(lang,d,idx):
         content=(
             f'<h1 class="run-visually-hidden">Estonia Winter Run 2027</h1>'
             f'<section class="run-poster" aria-label="{h(d["title"])}">{artwork}</section>'
-            f'<div class="run-poster-actions"><a class="run-poster-price" href="{href(lang,"participant-info/")}#fees">'
-            f'<span>{h(d["adult"])} <strong>10–20 €</strong></span>'
-            f'<span>{h(d["kids"])} <strong>5–10 €</strong></span>'
-            f'<small>{h(d["allPrices"])} ↗</small></a>'
+            f'<div class="run-poster-actions"><a class="run-poster-price" href="{href(lang,"participant-info/")}#fees">{h(d["allPrices"])} ↗</a>'
             f'{cta}<a class="run-text-link" href="{href(lang,"participant-info/")}">{h(d["more"])} ↗</a></div>'
             f'<section class="run-home-next"><div><h2>{h(d["homeNextTitle"])}</h2><p>{h(d["homeNextText"])}</p></div>'
             f'<div class="run-home-next-links"><a href="{href(lang,"route/")}">{h(d["nav"][2])} ↗</a><a href="{href(lang,"programme/")}">{h(d["nav"][1])} ↗</a></div></section>'
