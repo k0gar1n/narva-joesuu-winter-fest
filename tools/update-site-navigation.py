@@ -13,6 +13,17 @@ ROUTES = [
     ('/visit/', 'navVisit', ('Практическая информация', 'Praktiline info', 'Practical information')),
 ]
 LANGUAGES = ('ru', 'et', 'en')
+PRACTICAL = [
+    ('/visit/', 'practicalAll', ('Вся практическая информация', 'Kogu praktiline info', 'All practical information')),
+    ('/visit/travel/', 'practicalTravel', ('Как добраться', 'Kuidas tulla', 'Getting here')),
+    ('/visit/stay/', 'practicalStay', ('Где остановиться', 'Kus ööbida', 'Where to stay')),
+    ('/visit/explore/', 'practicalExplore', ('Что посмотреть', 'Avasta linna', 'Explore the town')),
+    ('/info/', 'practicalInfo', ('Полезная информация', 'Kasulik info', 'Useful information')),
+    ('/traders/', 'practicalTraders', ('Для торговцев', 'Kauplejatele', 'For traders')),
+    ('/volunteers/', 'practicalVolunteers', ('Для волонтёров', 'Vabatahtlikele', 'For volunteers')),
+    ('/partners/', 'practicalPartners', ('Для партнёров', 'Partneritele', 'For partners')),
+    ('/contact/', 'practicalContact', ('Контакты', 'Kontakt', 'Contact')),
+]
 MAIN_NAV = re.compile(r'(<nav class="desktop-nav"[^>]*>).*?(</nav>)', re.S)
 MOBILE_NAV = re.compile(r'(<dialog[^>]*\bid="(?:site-menu|mobile-menu)"[^>]*>.*?<nav(?: class="site-menu-links")?>).*?(</nav>)', re.S)
 
@@ -25,6 +36,24 @@ def is_active(route: str, target: str) -> bool:
 def links(language: str, route: str, mobile: bool) -> str:
     items = []
     for target, key, labels in ROUTES:
+        if target == '/visit/':
+            panel = ''.join(
+                f'<a href="{BASE}{"" if language == "ru" else "/" + language}{path}" '
+                f'data-site-route="{path}"><span data-i18n="{item_key}">'
+                f'{item_labels[LANGUAGES.index(language)]}</span></a>'
+                for path, item_key, item_labels in PRACTICAL
+            )
+            label = labels[LANGUAGES.index(language)]
+            css = 'site-menu-details' if mobile else 'site-nav-details'
+            if is_active(route, target):
+                css += ' is-active'
+            items.append(
+                f'<details class="practical-nav {css}">'
+                f'<summary><span data-i18n="{key}">{label}</span>'
+                f'<span class="site-menu-chevron" aria-hidden="true"></span></summary>'
+                f'<div class="practical-panel">{panel}</div></details>'
+            )
+            continue
         href = BASE + ('' if language == 'ru' else '/' + language) + target
         label = labels[LANGUAGES.index(language)]
         css = 'site-menu-link' if mobile else 'site-nav-link'

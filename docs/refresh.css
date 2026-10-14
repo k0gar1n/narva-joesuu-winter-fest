@@ -194,16 +194,33 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 .organizer > a { background: transparent; padding: 0; }
 .organizer img, .sub-organizer img { width: 112px; height: auto; max-height: 112px; object-fit: contain; }
 
-/* Four direct destinations; their detail pages provide the next level of navigation. */
+/* Primary navigation: three direct links and one clearly expandable section. */
 .desktop-nav{gap:clamp(14px,2vw,34px)}
 .desktop-nav .site-nav-link{display:inline-flex;align-items:center;min-height:46px;padding:0;line-height:1.35;white-space:nowrap}
 .desktop-nav .site-nav-link.is-active{color:var(--blue)}
+.desktop-nav .site-nav-details{position:relative;border:0}
+.desktop-nav .site-nav-details summary{min-height:46px;padding:0;gap:10px;font:inherit;line-height:1.35;white-space:nowrap}
+.desktop-nav .site-nav-details.is-active summary,.desktop-nav .site-nav-details[open] summary{color:var(--blue)}
+.site-menu-chevron{display:block;flex:none;width:10px;height:10px;border-right:3px solid #e9a723;border-bottom:3px solid #e9a723;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.practical-nav[open] .site-menu-chevron{transform:rotate(225deg) translateY(-2px)}
+.desktop-nav .practical-panel{position:absolute;top:calc(100% + 6px);right:0;z-index:100;width:290px;padding:10px 14px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 35px #102a4c24}
+.desktop-nav .practical-panel a{display:block;padding:10px 8px;font-size:14px;line-height:1.35;white-space:normal}
+.desktop-nav .practical-panel a:first-child{color:var(--blue);font-weight:800;border-bottom:1px solid var(--line);margin-bottom:4px}
+.desktop-nav .practical-panel a:after{display:none}
+.desktop-nav .practical-panel a:hover,.desktop-nav .practical-panel a:focus-visible{background:#173dda0c;color:var(--blue)}
 .mobile-menu[open]{display:flex;flex-direction:column;overflow-y:auto}
 .mobile-menu nav.site-menu-links{display:flex;flex-direction:column;margin-top:clamp(28px,6vh,56px)}
 .mobile-menu nav.site-menu-links>a.site-menu-link{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px;padding:17px 0;border-bottom:1px solid #ffffff64;font:750 clamp(20px,5vw,25px)/1.25 Manrope,sans-serif;text-transform:none}
 .mobile-menu .site-menu-link:first-child{border-top:1px solid #ffffff64}
 .mobile-menu .site-menu-link.is-active{color:#fff;background:#ffffff14;padding-left:12px!important;padding-right:12px!important}
 .mobile-menu .site-menu-arrow{font:400 28px/1 Manrope,sans-serif;flex:none;opacity:.9}
+.mobile-menu .site-menu-details{border-bottom:1px solid #ffffff64}
+.mobile-menu .site-menu-details summary{min-height:74px;padding:17px 0;gap:20px;font:750 clamp(20px,5vw,25px)/1.25 Manrope,sans-serif;color:var(--paper);text-transform:none}
+.mobile-menu .site-menu-details summary:focus-visible{outline-color:var(--paper)}
+.mobile-menu .site-menu-details .site-menu-chevron{margin-right:7px}
+.mobile-menu .practical-panel{display:flex;flex-direction:column;padding:0 0 14px 14px}
+.mobile-menu .practical-panel a{padding:10px 0;border-top:1px solid #ffffff38;font-size:16px;line-height:1.35}
+.mobile-menu .practical-panel a:first-child{font-weight:800}
 .mobile-menu .menu-meta,.mobile-menu .mobile-menu-bottom{margin-top:auto;padding-top:30px;font-size:12px;line-height:1.6}
 .practical-chapter { min-height:110px; }
 .practical-chapter > div { grid-column:2; }
