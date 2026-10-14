@@ -194,27 +194,25 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 .organizer > a { background: transparent; padding: 0; }
 .organizer img, .sub-organizer img { width: 112px; height: auto; max-height: 112px; object-fit: contain; }
 
-/* Practical information navigation shared by all pages. */
-.practical-nav { position: relative; }
-.practical-nav summary { display:flex; align-items:center; gap:10px; cursor:pointer; list-style:none; font:inherit; font-weight:700; }
-.practical-nav summary::-webkit-details-marker { display:none; }
-.practical-nav summary i { width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); transition:transform .2s; flex-shrink:0; }
-.practical-nav[open] summary i { transform:rotate(225deg); }
-.practical-nav summary:focus-visible { outline:2px solid var(--blue); outline-offset:6px; }
-.practical-panel { position:absolute; top:calc(100% + 18px); right:0; width:310px; padding:14px; background:var(--paper); color:var(--navy,#102a4c); border:1px solid #cbd1d5; border-top:3px solid var(--blue); box-shadow:0 16px 40px #102a4c20; z-index:100; }
-.practical-panel::before { content:''; position:absolute; top:-22px; left:0; right:0; height:22px; }
-.desktop-nav .practical-panel a { display:block; padding:10px 12px; font-size:14px; line-height:1.4; }
-.practical-panel a:hover,.practical-panel a:focus-visible { background:#173dda0c; color:var(--blue); }
-.desktop-nav { gap:clamp(14px,2vw,34px); }
-.mobile-menu .practical-nav summary { font-size:clamp(21px,5.5vw,30px); padding:12px 0; }
-.mobile-menu .practical-panel { position:static; width:auto; box-shadow:none; border:0; padding:0 0 12px 12px; background:transparent; }
-.mobile-menu .practical-panel a { display:block; font-size:17px; line-height:1.4; padding:10px 0; }
-.mobile-menu .practical-panel::before { display:none; }
+/* Four direct destinations; their detail pages provide the next level of navigation. */
+.desktop-nav{gap:clamp(14px,2vw,34px)}
+.desktop-nav .site-nav-link{display:inline-flex;align-items:center;min-height:46px;padding:0;line-height:1.35;white-space:nowrap}
+.desktop-nav .site-nav-link.is-active{color:var(--blue)}
+.mobile-menu[open]{display:flex;flex-direction:column;overflow-y:auto}
+.mobile-menu nav.site-menu-links{display:flex;flex-direction:column;margin-top:clamp(28px,6vh,56px)}
+.mobile-menu nav.site-menu-links>a.site-menu-link{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px;padding:17px 0;border-bottom:1px solid #ffffff64;font:750 clamp(20px,5vw,25px)/1.25 Manrope,sans-serif;text-transform:none}
+.mobile-menu .site-menu-link:first-child{border-top:1px solid #ffffff64}
+.mobile-menu .site-menu-link.is-active{color:#fff;background:#ffffff14;padding-left:12px!important;padding-right:12px!important}
+.mobile-menu .site-menu-arrow{font:400 28px/1 Manrope,sans-serif;flex:none;opacity:.9}
+.mobile-menu .menu-meta,.mobile-menu .mobile-menu-bottom{margin-top:auto;padding-top:30px;font-size:12px;line-height:1.6}
 .practical-chapter { min-height:110px; }
 .practical-chapter > div { grid-column:2; }
 @media(min-width:981px) and (max-width:1200px) { .desktop-nav { gap:14px; font-size:13px; } }
-.mobile-menu .practical-panel { color:inherit; }
-.mobile-menu .practical-panel a:hover,.mobile-menu .practical-panel a:focus-visible { color:inherit; background:#ffffff14; }
+@media(max-width:1100px){
+  .header .desktop-nav{display:none}
+  .header .menu-toggle{display:grid;align-content:center;gap:7px;padding:10px}
+  .header .menu-toggle span{height:2px;width:24px;background:var(--blue)}
+}
 
 /* Cup overview: short introduction and a direct choice of category. */
 .cup-landing { padding-top:42px; padding-bottom:64px; }
