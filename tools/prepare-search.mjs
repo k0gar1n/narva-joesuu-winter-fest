@@ -135,7 +135,7 @@ for(const [route,data] of Object.entries(pages))for(const [i,lang] of langs.entr
  if(route.startsWith('winter-run/'))html=html.replace(/<script type="application\/ld\+json">.*?<\/script>/s,'');
  html=html.replace(/<link\b[^>]*rel="(?:icon|shortcut icon|apple-touch-icon|manifest)"[^>]*>/gi,'');
  html=html.replace(/\s+<\/head>/,'</head>');
- const canonical=url(lang,route),image=origin+'/assets/'+data.image,event=events[data.about];
+ const canonical=url(lang,route),image=origin+'/assets/'+(data.about==='cup'?`cup-poster-${lang}-1920.webp`:data.image),event=data.about==='cup'?{...events.cup,image:[origin+`/assets/cup-poster-${lang}-1920.webp`]}:events[data.about];
  const webPage={'@type':'WebPage','@id':canonical+'#page',url:canonical,name:data.titles[i],description:data.descriptions[i],inLanguage:lang,isPartOf:{'@id':website['@id']},about:event?{'@id':event['@id']}:{'@id':events.festival['@id']},primaryImageOfPage:{'@type':'ImageObject',url:image}};
  const graph=[organization,website,webPage];
  if((data.about==='festival'&&route==='')||(data.about==='cup'&&route==='winter-cup/')||(data.about==='run'&&route==='winter-run/'))graph.push(event);

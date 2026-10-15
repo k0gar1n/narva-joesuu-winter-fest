@@ -39,6 +39,12 @@
    if(!copy[next])return;lang=next;document.documentElement.lang=lang;
    $$('[data-i18n], [data-i18n-html]').forEach(el=>{el.innerHTML=t(el.dataset.i18n||el.dataset.i18nHtml);});
    $$('[data-alt]').forEach(el=>{el.alt=t(el.dataset.alt);});
+   $$('[data-cup-poster]').forEach(el=>{
+     const asset=(window.WF_BASE||'')+'/assets/cup-poster-'+lang;
+     el.src=asset+'-1920.webp';
+     el.srcset=asset+'-960.webp 960w, '+asset+'-1920.webp 1920w';
+     el.alt={ru:'Winter Cup — зимний командный день на берегу моря',et:'Winter Cup — talvine meeskonnapäev mere ääres',en:'Winter Cup — winter team-building day by the sea'}[lang];
+   });
    $$('[data-label]').forEach(el=>{el.setAttribute('aria-label',t(el.dataset.label));});
    $$('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
    $('.desktop-nav').setAttribute('aria-label',lang==='ru'?'Основная навигация':lang==='et'?'Peamenüü':'Main navigation');
