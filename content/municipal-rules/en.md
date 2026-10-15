@@ -30,13 +30,13 @@ If a participant cannot attend, another eligible participant may replace them. N
 
 Prices are final and apply to a team of five.
 
-| Application period | Price |
+| Registration order | Price |
 | --- | ---: |
-| Until 31 December 2026 inclusive | €100 |
-| 1–10 January 2027 | €125 |
-| 11–17 January 2027 | €150 |
+| First 20 registered teams — sold out | €75 |
+| Next 20 teams (21–40) | €100 |
+| Next 20 teams (41–60) | €150 |
 
-The price is fixed on the date the application is submitted through Fienta. Payment is made against the invoice issued.
+The fee depends on the team’s registration order and is fixed when the application is submitted through Fienta. Payment is made against the invoice issued.
 
 The fee includes competition entry, necessary equipment, two meals for the five participants, access to saunas and activities included in the programme, heated changing rooms, storage facilities, the participants’ show programme, award ceremony and concert. The municipality arranges and pays for its own transport.
 

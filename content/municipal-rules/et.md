@@ -30,13 +30,13 @@ Kui osaleja ei saa tulla, võib ta asendada teise tingimustele vastava osalejaga
 
 Hind kehtib viieliikmelisele võistkonnale ja on lõplik.
 
-| Periood | Hind |
+| Registreerumise järjekord | Hind |
 | --- | ---: |
-| Kuni 31. detsembrini 2026 kaasa arvatud | 100 € |
-| 1.–10. jaanuar 2027 | 125 € |
-| 11.–17. jaanuar 2027 | 150 € |
+| Esimesed 20 registreerunud võistkonda — välja müüdud | 75 € |
+| Järgmised 20 võistkonda (21.–40.) | 100 € |
+| Järgmised 20 võistkonda (41.–60.) | 150 € |
 
-Hind fikseeritakse Fientas avalduse esitamise kuupäeva järgi. Tasumine toimub esitatud arve alusel.
+Hind sõltub võistkonna registreerumise järjekorrast ja fikseeritakse Fientas avalduse esitamisel. Tasumine toimub esitatud arve alusel.
 
 Hind sisaldab võistlustel osalemist, vajalikku varustust, kahte toidukorda viiele osalejale, saunade ja programmis ettenähtud tegevuste külastamist, köetavaid riietusruume, asjade hoiukohti, osalejate show-programmi, autasustamist ja kontserti. Transpordi korraldab ja tasub omavalitsus ise.
 
