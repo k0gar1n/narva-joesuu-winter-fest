@@ -38,7 +38,7 @@ Hind kehtib viieliikmelisele võistkonnale ja on lõplik.
 
 Hind sõltub võistkonna registreerumise järjekorrast ja fikseeritakse Fientas avalduse esitamisel. Tasumine toimub esitatud arve alusel.
 
-Hind sisaldab võistlustel osalemist, vajalikku varustust, kahte toidukorda viiele osalejale, saunade ja programmis ettenähtud tegevuste külastamist, köetavaid riietusruume, asjade hoiukohti, osalejate show-programmi, autasustamist ja kontserti. Transpordi korraldab ja tasub omavalitsus ise.
+Hind sisaldab võistlustel osalemist, vajalikku varustust, sooja lõunasööki kogu võistkonnale, saunade ja programmis ettenähtud tegevuste külastamist, köetavaid riietusruume, asjade hoiukohti, osalejate show-programmi, autasustamist ja kontserti. Transpordi korraldab ja tasub omavalitsus ise.
 
 Osalejatel tuleb kaasa võtta soojad õueriided ja vahetusriided. Kaasatulijate toitlustus võistkonnapaketti ei kuulu.
 

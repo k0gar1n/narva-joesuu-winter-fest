@@ -38,7 +38,7 @@ Prices are final and apply to a team of five.
 
 The fee depends on the team’s registration order and is fixed when the application is submitted through Fienta. Payment is made during registration in Fienta.
 
-The fee includes competition entry, necessary equipment, two meals for the five participants, access to saunas and activities included in the programme, heated changing rooms, storage facilities, the participants’ show programme, award ceremony and concert. The team arranges and pays for its own transport.
+The fee includes competition entry, necessary equipment, a hot lunch for the whole team, access to saunas and activities included in the programme, heated changing rooms, storage facilities, the participants’ show programme, award ceremony and concert. The team arranges and pays for its own transport.
 
 Participants should bring warm outdoor clothing and a change of clothes. Meals for accompanying guests are not included in the team package.
 
