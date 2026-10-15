@@ -67,8 +67,14 @@
 .mc-refund-note a{color:inherit;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 @media(max-width:760px){.mc-refund-note{padding:16px}.mc-refund-note h3{font-size:17px}}
 
-/* Show supplied posters in full, without photo decorations over the artwork. */
+/* Preserve the folded photo corners and let the date extend into the margin. */
 .mc-hero-visual.mc-hero-poster{min-height:0;height:auto;align-self:center;aspect-ratio:16/9}
-.mc-hero-poster .mc-photo{position:static;display:block;width:100%;height:auto;object-fit:contain;clip-path:none}
-.mc-hero-poster .mc-date,.mc-hero-poster .mc-hero-object{display:none}
-.mc-poster-date{display:flex;align-items:baseline;gap:10px;margin-top:20px;font-size:14px;font-weight:700}.mc-poster-date strong{font-size:22px}
+.mc-hero-poster .mc-photo{position:static;display:block;width:100%;height:auto;object-fit:contain}
+.mc-hero-poster .mc-date{left:0;transform:translateX(-75%) rotate(-3deg)}
+.mc-hero-poster .mc-hero-object{display:none}
+@media(max-width:760px){
+ .mc-hero-visual.mc-hero-poster{margin-bottom:38px}
+ .mc-hero-poster .mc-photo{clip-path:polygon(24px 0,100% 0,100% calc(100% - 24px),calc(100% - 24px) 100%,0 100%,0 24px)}
+ .mc-hero-poster .mc-date{left:-8px;bottom:-32px;padding:10px 16px;transform:rotate(-3deg)}
+ .mc-hero-poster .mc-date strong{font-size:40px}
+}
