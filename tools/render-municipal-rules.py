@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Render the rules page and its PDF from the same three Markdown sources."""
 from pathlib import Path
-import re,html,shutil
+import re,html,shutil,argparse
 from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Table,TableStyle,PageBreak,KeepTogether
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.colors import HexColor
@@ -9,6 +9,10 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 ROOT=Path(__file__).resolve().parent.parent
+parser=argparse.ArgumentParser()
+parser.add_argument('--category',choices=['municipalities','business','open'],default='municipalities')
+category=parser.parse_args().category
+source_folder={'municipalities':'municipal-rules','business':'business-rules','open':'open-rules'}[category]
 OUT=ROOT/'output/pdf';OUT.mkdir(parents=True,exist_ok=True)
 public=ROOT/'docs/assets/rules';public.mkdir(parents=True,exist_ok=True)
 pdfmetrics.registerFont(TTFont('Manrope',str(ROOT/'tools/fonts/Manrope-400.ttf')))
@@ -35,10 +39,10 @@ def chunks(md):
  return sections
 for idx,lang in enumerate(['ru','et','en']):
  def t(*xs):return xs[idx]
- md=(ROOT/f'content/municipal-rules/{lang}.md').read_text();lines=md.splitlines();title=lines[0][2:];subtitle=lines[1];version=lines[2];sections=chunks(md)
+ md=(ROOT/f'content/{source_folder}/{lang}.md').read_text();lines=md.splitlines();title=lines[0][2:];subtitle=lines[1];version=lines[2];sections=chunks(md)
  assert '[На согласовании' not in md
- pdfname=f'winter-cup-municipalities-rules-v1-{lang}.pdf';outfile=OUT/pdfname
- route='/winter-cup/municipalities/rules/';base='/narva-joesuu-winter-fest';prefix=base+('' if lang=='ru' else '/'+lang)
+ pdfname=f'winter-cup-{category}-rules-v1-{lang}.pdf';outfile=OUT/pdfname
+ route=f'/winter-cup/{category}/rules/';base='/narva-joesuu-winter-fest';prefix=base+('' if lang=='ru' else '/'+lang)
  canonical='https://www.winterfest.ee'+('' if lang=='ru' else '/'+lang)+route
  def footer(canvas,doc):
   canvas.saveState();w,h=doc.pagesize
@@ -68,18 +72,18 @@ for idx,lang in enumerate(['ru','et','en']):
   htmlsections.append(f'<section id="rule-{n}"><h2>{e(heading)}</h2>'+''.join(hb)+'</section>')
  doc.build(story,onFirstPage=footer,onLaterPages=footer)
  shutil.copyfile(outfile,public/pdfname)
- page=ROOT/'docs'/('' if lang=='ru' else lang)/'winter-cup/municipalities/rules/index.html';page.parent.mkdir(parents=True,exist_ok=True)
+ page=ROOT/'docs'/('' if lang=='ru' else lang)/f'winter-cup/{category}/rules/index.html';page.parent.mkdir(parents=True,exist_ok=True)
  template=(page.parent.parent/'index.html').read_text()
  template=re.sub(r'<link[^>]*municipal\.css[^>]*>','',template)
  template=re.sub(r'<script[^>]*municipal\.js[^>]*></script>','',template)
  template=template.replace('</head>',f'<link rel="stylesheet" href="{base}/municipal-rules.css"><script defer src="{base}/municipal-rules.js"></script></head>')
- template=template.replace('data-route="/winter-cup/municipalities/"','data-route="/winter-cup/municipalities/rules/"')
+ template=template.replace(f'data-route="/winter-cup/{category}/"',f'data-route="/winter-cup/{category}/rules/"')
  template=re.sub(r'<title>.*?</title>',f'<title>{e(title)} · {t("Общий регламент","Üldjuhend","General rules")}</title>',template)
  # Language switches point to this document; navigation links still point to category pages.
- template=re.sub(r'(<a\b[^>]*href=")([^"]*/municipalities/)("[^>]*data-language=)',lambda m:m[1]+m[2]+'rules/'+m[3],template)
- template=re.sub(r'(<link\b[^>]*rel="(?:canonical|alternate)"[^>]*href=")([^"]*/municipalities/)(")',lambda m:m[1]+m[2]+'rules/'+m[3],template)
+ template=re.sub(rf'(<a\b[^>]*href=")([^"]*/{category}/)("[^>]*data-language=)',lambda m:m[1]+m[2]+'rules/'+m[3],template)
+ template=re.sub(rf'(<link\b[^>]*rel="(?:canonical|alternate)"[^>]*href=")([^"]*/{category}/)(")',lambda m:m[1]+m[2]+'rules/'+m[3],template)
  template=re.sub(r'(<meta property="og:url" content=")[^"]*',lambda m:m[1]+canonical,template)
  template=re.sub(r'(<meta property="og:title" content=")[^"]*',lambda m:m[1]+e(title)+' · '+t('Общий регламент','Üldjuhend','General rules'),template)
- main=f'''<main id="main" class="rules-page"><header class="rules-heading"><p>ESTONIA WINTER FEST 2027</p><h1>{e(title)}</h1><div class="rules-meta"><span>{t('Общий регламент','Üldjuhend','General rules')}</span><span>{e(version)}</span></div><div class="rules-actions"><a class="button" href="{base}/assets/rules/{pdfname}" target="_blank" rel="noopener">{t('Скачать PDF','Laadi alla PDF','Download PDF')}<span aria-hidden="true">↗</span></a><button type="button" data-print-rules>{t('Распечатать','Prindi','Print')}</button></div></header><div class="rules-layout"><nav class="rules-toc" aria-label="{t('Оглавление','Sisukord','Contents')}"><p>{t('Содержание','Sisukord','Contents')}</p>{''.join(f'<a href="#rule-{n}">{e(h)}</a>' for n,(h,_) in enumerate(sections,1))}</nav><article class="rules-content">{''.join(htmlsections)}<a class="rules-back" href="{prefix}/winter-cup/municipalities/">{t('Вернуться к странице участия','Tagasi osalemise lehele','Back to participation information')} ↗</a></article></div></main>'''
+ main=f'''<main id="main" class="rules-page"><header class="rules-heading"><p>ESTONIA WINTER FEST 2027</p><h1>{e(title)}</h1><div class="rules-meta"><span>{t('Общий регламент','Üldjuhend','General rules')}</span><span>{e(version)}</span></div><div class="rules-actions"><a class="button" href="{base}/assets/rules/{pdfname}" target="_blank" rel="noopener">{t('Скачать PDF','Laadi alla PDF','Download PDF')}<span aria-hidden="true">↗</span></a><button type="button" data-print-rules>{t('Распечатать','Prindi','Print')}</button></div></header><div class="rules-layout"><nav class="rules-toc" aria-label="{t('Оглавление','Sisukord','Contents')}"><p>{t('Содержание','Sisukord','Contents')}</p>{''.join(f'<a href="#rule-{n}">{e(h)}</a>' for n,(h,_) in enumerate(sections,1))}</nav><article class="rules-content">{''.join(htmlsections)}<a class="rules-back" href="{prefix}/winter-cup/{category}/">{t('Вернуться к странице участия','Tagasi osalemise lehele','Back to participation information')} ↗</a></article></div></main>'''
  template=re.sub(r'<main\b.*?</main>',lambda _:main,template,flags=re.S);page.write_text(template)
  print(lang,outfile)

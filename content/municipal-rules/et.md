@@ -20,7 +20,7 @@ Võistkonnas on viis vähemalt 16-aastast osalejat. Varuliikmeid ei registreerit
 
 ## 3. Registreerimine, koosseis ja asendused
 
-Registreerimine toimub Fienta kaudu. Avalduses märgitakse omavalitsus, kontaktisik ja arve koostamiseks vajalikud andmed. Osalejate nimesid selles etapis ei nõuta. Avaldusi võetakse vastu kuni 17. jaanuarini 2027 kaasa arvatud või kohtade täitumiseni. Registreerimine jõustub pärast arve tasumist. Kohtade arv on piiratud.
+Registreerimine toimub Fienta kaudu. Avalduses märgitakse omavalitsus, kontaktisik ja arve koostamiseks vajalikud andmed. Osalejate nimesid selles etapis ei nõuta. Registreerimine jõustub pärast arve tasumist. Kohtade arv on piiratud.
 
 Hiljemalt 19. jaanuaril 2027 saadab kontaktisik aadressile info@winterfest.ee viie osaleja nimekirja: igaühe ees- ja perekonnanime ning töökoha. Volikogu liikme puhul märgitakse vastav volikogu. Kontaktisik kinnitab nimekirja õigsust ja osalejate vastavust osalemistingimustele. Töölepinguid ega muid tõendavaid dokumente ei nõuta.
 
@@ -72,7 +72,7 @@ Ilmastiku või muude asjaolude tõttu võib korraldaja muuta programmi, jätta �
 
 Ürituse tühistamisel tagastab korraldaja tasutud osalustasu täies ulatuses. Edasilükkamisel valib omavalitsus uuel kuupäeval osalemise või osalustasu täieliku tagastamise. Tagastamise küsimustes tuleb kirjutada aadressile info@winterfest.ee.
 
-Kui halb ilm või muud ettenägematud asjaolud takistavad võistkonna osalemist, tagastab korraldaja kogu tasutud summa. Tagastust saab taotleda igal ajal, kirjutades aadressile info@winterfest.ee. Osalejaid võib ka asendada punktis 3 kirjeldatud korras.
+Kui halb ilm või muud ettenägematud asjaolud takistavad võistkonna osalemist, tagastab korraldaja kogu tasutud summa. Osalejaid võib ka asendada punktis 3 kirjeldatud korras.
 
 ## 9. Suhtlus korraldajaga
 

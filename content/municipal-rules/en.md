@@ -20,7 +20,7 @@ A municipality may enter multiple teams subject to availability. Each team regis
 
 ## 3. Registration, roster and replacements
 
-Registration is through Fienta. The application must identify the municipality, its coordinator and the billing details. Participant names are not required at this stage. Applications are accepted until 17 January 2027 inclusive, or until places are filled. Registration is confirmed once the invoice is paid. Places are limited.
+Registration is through Fienta. The application must identify the municipality, its coordinator and the billing details. Participant names are not required at this stage. Registration is confirmed once the invoice is paid. Places are limited.
 
 By 19 January 2027, the coordinator must email info@winterfest.ee with the five participants’ first and last names and workplaces. For council members, specify the relevant council. The coordinator confirms that the roster is accurate and the participants are eligible. Employment contracts and other supporting documents are not required.
 
@@ -72,7 +72,7 @@ Weather or other circumstances may require the organiser to change the programme
 
 If the event is cancelled, the organiser refunds the full entry fee paid. If it is postponed, the municipality may choose to attend on the new date or receive a full refund. Contact info@winterfest.ee about refunds.
 
-If bad weather or other unforeseen circumstances prevent a team from taking part, the organiser refunds the full amount paid. A refund may be requested at any time by emailing info@winterfest.ee. Participants may also be replaced as described in section 3.
+If bad weather or other unforeseen circumstances prevent a team from taking part, the organiser refunds the full amount paid. Participants may also be replaced as described in section 3.
 
 ## 9. Contact and team communication
 
