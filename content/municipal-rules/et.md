@@ -72,7 +72,7 @@ Ilmastiku või muude asjaolude tõttu võib korraldaja muuta programmi, jätta �
 
 Ürituse tühistamisel tagastab korraldaja tasutud osalustasu täies ulatuses. Edasilükkamisel valib omavalitsus uuel kuupäeval osalemise või osalustasu täieliku tagastamise. Tagastamise küsimustes tuleb kirjutada aadressile info@winterfest.ee.
 
-Kui võistkond loobub osalemisest pärast tasumist, osalustasu ei tagastata. Osalejate asendamine on lubatud punktis 3 kirjeldatud korras.
+Kui halb ilm või muud ettenägematud asjaolud takistavad võistkonna osalemist, tagastab korraldaja kogu tasutud summa. Tagastust saab taotleda igal ajal, kirjutades aadressile info@winterfest.ee. Osalejaid võib ka asendada punktis 3 kirjeldatud korras.
 
 ## 9. Suhtlus korraldajaga
 

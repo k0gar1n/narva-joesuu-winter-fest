@@ -59,3 +59,10 @@
 
 /* Quantity-based team pricing */
 .mc-tier-status{display:block;font:500 12px/1.6 Manrope,sans-serif;margin-top:3px}.mc-tier-sold{opacity:.6}.mc-tier-sold strong{text-decoration:line-through}
+
+/* Refund information next to the team fee. */
+.mc-refund-note{margin-top:20px;padding:18px;background:var(--paper,#f3f4ef);color:var(--navy,#102a4c)}
+.mc-refund-note h3{font:800 18px/1.3 Manrope,sans-serif;letter-spacing:-.02em;margin:0 0 8px}
+.mc-refund-note p{font-size:13px;line-height:1.6;margin:0}
+.mc-refund-note a{color:inherit;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media(max-width:760px){.mc-refund-note{padding:16px}.mc-refund-note h3{font-size:17px}}

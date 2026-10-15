@@ -72,7 +72,7 @@ Weather or other circumstances may require the organiser to change the programme
 
 If the event is cancelled, the organiser refunds the full entry fee paid. If it is postponed, the municipality may choose to attend on the new date or receive a full refund. Contact info@winterfest.ee about refunds.
 
-If a team withdraws after payment, its entry fee is not refunded. Participants may be replaced as described in section 3.
+If bad weather or other unforeseen circumstances prevent a team from taking part, the organiser refunds the full amount paid. A refund may be requested at any time by emailing info@winterfest.ee. Participants may also be replaced as described in section 3.
 
 ## 9. Contact and team communication
 
