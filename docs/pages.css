@@ -66,3 +66,6 @@
  .programme-page .agenda-row:hover{padding-left:0;padding-right:0}
 }
 @media print{.programme-page .agenda-day-tabs button{clip-path:none;box-shadow:none}.programme-page .agenda-day-tabs button[aria-selected=false]{display:none}.programme-page .agenda-row{grid-template-columns:60px 100px 1fr;gap:12px}.programme-page .agenda-illustration{width:50px;height:50px}}
+
+.programme-page .agenda-timing-note{margin:0 0 22px;padding:14px 18px;border-left:3px solid var(--blue);background:var(--ice);color:var(--navy);font-size:14px;line-height:1.6}
+@media(max-width:760px){.programme-page .agenda-timing-note{padding:12px 14px;margin-bottom:18px;font-size:13px}}
