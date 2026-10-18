@@ -36,25 +36,21 @@
  }
  filters.forEach(b=>b.addEventListener('click',()=>{updateQuery('category',b.dataset.filter,'all');renderCatalog();}));
  renderCatalog();
- const days=$$('[data-agenda-day]'),categories=$$('[data-agenda-category]'),rows=$$('.agenda-row');
+ const days=$$('[data-agenda-day]'),rows=$$('.agenda-row');
  function renderAgenda(){
   if(!days.length)return;
-  const params=new URL(location.href).searchParams,day=params.get('day')==='23'?'23':'22';
-  const category=categories.some(b=>b.dataset.agendaCategory===params.get('category'))?params.get('category'):'all';
+  const url=new URL(location.href),day=url.searchParams.get('day')==='23'?'23':'22';
+  if(url.searchParams.has('category')){url.searchParams.delete('category');history.replaceState(null,'',url);}
   days.forEach(b=>{const selected=b.dataset.agendaDay===day;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
-  categories.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.agendaCategory===category)));
   $('#agenda-list').setAttribute('aria-labelledby',`agenda-tab-${day}`);
-  let count=0;rows.forEach(r=>{r.hidden=!r.dataset.days.split(' ').includes(day)||(category!=='all'&&r.dataset.category!==category);if(!r.hidden)count++;});
-  $('.empty-agenda').hidden=count!==0;
+  let count=0;rows.forEach(r=>{r.hidden=!r.dataset.days.split(' ').includes(day);if(!r.hidden)count++;});
   $('.agenda-count').textContent=wording([`${day} января · пунктов программы: ${count}`,`${day}. jaanuar · kavas: ${count}`,`January ${day} · ${count} programme items`]);
+  languageLinks();
  }
  days.forEach(b=>{
   b.addEventListener('click',()=>{updateQuery('day',b.dataset.agendaDay,'22');renderAgenda();});
   b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(e.key))return;e.preventDefault();const day=e.key==='Home'?'22':e.key==='End'?'23':b.dataset.agendaDay==='22'?'23':'22';updateQuery('day',day,'22');renderAgenda();$(`#agenda-tab-${day}`).focus();});
  });
- categories.forEach(b=>b.addEventListener('click',()=>{updateQuery('category',b.dataset.agendaCategory,'all');renderAgenda();}));
- $('.reset-agenda')?.addEventListener('click',()=>{updateQuery('category','all','all');renderAgenda();categories[0].focus();});
- $('.print-programme')?.addEventListener('click',()=>window.print());
  renderAgenda();addEventListener('popstate',()=>{renderCatalog();renderAgenda();languageLinks();});
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  if('IntersectionObserver' in window&&!reduce.matches){
