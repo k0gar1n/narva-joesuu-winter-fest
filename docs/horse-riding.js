@@ -4,7 +4,6 @@
   if (!root) return;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const frame = root.querySelector('.horse-frame');
-  const photo = root.querySelector('.horse-photo-button');
   frame.addEventListener('pointermove', event => {
     if (reduce.matches || event.pointerType !== 'mouse' || innerWidth <= 760) return;
     const box = frame.getBoundingClientRect();
@@ -15,19 +14,7 @@
     frame.style.setProperty('--photo-x', '0px');
     frame.style.setProperty('--photo-y', '0px');
   });
-  const dialog = document.querySelector('.horse-lightbox');
-  photo.addEventListener('click', () => {
-    dialog.showModal();
-    document.documentElement.classList.add('horse-dialog-open');
-  });
-  dialog.querySelector('button').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-  dialog.addEventListener('close', () => {
-    document.documentElement.classList.remove('horse-dialog-open');
-    photo.focus({ preventScroll: true });
-  });
-
-  const counts = { adults: 1, children: 1 };
+  const counts = { adults: 0, children: 0 };
   const calculator = root.querySelector('.horse-calculator');
   const total = calculator.querySelector('[data-total]');
   const party = calculator.querySelector('.horse-party');
@@ -90,10 +77,4 @@
       walking = false;
     }, reduce.matches ? 300 : 2300);
   });
-  root.querySelectorAll('.horse-herd-animal').forEach(animal => animal.addEventListener('click', () => {
-    animal.classList.remove('is-nodding');
-    void animal.offsetWidth;
-    animal.classList.add('is-nodding');
-    setTimeout(() => animal.classList.remove('is-nodding'), 750);
-  }));
 })();

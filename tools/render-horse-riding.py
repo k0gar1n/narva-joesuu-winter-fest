@@ -96,39 +96,32 @@ def esc(value):
 def counter(c, kind, label):
     return f'''<div class="horse-counter"><span id="horse-{kind}-label">{label}</span>
     <div class="horse-counter-controls" role="group" aria-labelledby="horse-{kind}-label">
-    <button type="button" data-kind="{kind}" data-delta="-1" aria-label="{c['less']}: {label}">−</button>
-    <output data-count="{kind}" aria-label="{label}">1</output>
+    <button type="button" data-kind="{kind}" data-delta="-1" aria-label="{c['less']}: {label}" disabled>−</button>
+    <output data-count="{kind}" aria-label="{label}">0</output>
     <button type="button" data-kind="{kind}" data-delta="1" aria-label="{c['more']}: {label}">+</button>
     </div></div>'''
 
 
 def main(lang, c):
-    animals = ''.join(f'''<button class="horse-herd-animal" type="button" aria-label="{c['horse'] if i < 3 else c['pony']}{' ' + str(i+1) if i < 3 else ''}"><img src="{ASSET}horse-ribbon.webp" width="768" height="512" alt="" loading="lazy"></button>''' for i in range(4))
     return f'''<main id="main" class="horse-page">
     <section class="horse-hero" aria-labelledby="horse-title">
       <div class="horse-meta"><a class="horse-back" href="{local(lang, '/festival/')}"><span aria-hidden="true">←</span>{c['back']}</a><time datetime="2027-01-23">23.01.2027 · NARVA-JÕESUU</time></div>
       <div class="horse-hero-grid">
         <div class="horse-intro"><h1 class="horse-title" id="horse-title">{c['title']}</h1>
-          <p>{c['intro']}</p>
-          <div class="horse-actions"><a class="horse-action" href="#ride-plan">{c['action']}<span class="brand-arrow" aria-hidden="true"></span></a><a class="horse-cost-link" href="#ride-cost">{c['cost']}</a></div>
           <div class="horse-intro-track"><button class="horse-pet" type="button" aria-label="{c['pet']}"><img src="{ASSET}horse-ribbon.webp" width="768" height="512" alt=""></button></div>
-          <p class="horse-track-tip">{c['tip']}</p>
         </div>
-        <figure class="horse-frame"><button class="horse-photo-button" type="button" aria-label="{c['open']}"><img src="{ASSET}horse-riding.webp" width="990" height="614" alt="{c['photo']}" fetchpriority="high"><span class="horse-photo-open" aria-hidden="true">⤢</span></button><figcaption class="horse-price"><strong>5 €</strong><span>{c['price']}<br>{c['pay']}</span></figcaption></figure>
+        <figure class="horse-frame"><div class="horse-photo"><img src="{ASSET}horse-riding.webp" width="990" height="614" alt="{c['photo']}" fetchpriority="high"></div><figcaption class="horse-price"><strong>5 €</strong><span>{c['price']}<br>{c['pay']}</span></figcaption></figure>
       </div>
     </section>
     <dl class="horse-facts"><div><dt>{c['when']}</dt><dd>{c['date']}</dd></div><div><dt>{c['who']}</dt><dd>{c['audience']}</dd></div><div><dt>{c['how']}</dt><dd>{c['pay']}</dd></div></dl>
-    <section class="horse-plan" id="ride-plan" aria-labelledby="horse-plan-title">
-      <div class="horse-plan-copy"><h2 id="horse-plan-title">{c['plan']}</h2><p>{c['planText']}</p></div>
+    <section class="horse-plan" id="ride-plan" aria-label="{c['cost']}">
       <div class="horse-calculator" id="ride-cost" role="group" aria-label="{c['cost']}">
         {counter(c, 'adults', c['adults'])}{counter(c, 'children', c['children'])}
-        <div class="horse-total" role="status" aria-live="polite" aria-atomic="true"><span>{c['sum']}</span><strong data-total>10 €</strong></div>
+        <div class="horse-total" role="status" aria-live="polite" aria-atomic="true"><span>{c['sum']}</span><strong data-total>0 €</strong></div>
         <div class="horse-party" aria-hidden="true"></div><p>{c['costNote']}</p>
       </div>
     </section>
-    <section class="horse-herd" aria-labelledby="horse-herd-title"><div class="horse-herd-head"><h2 id="horse-herd-title">{c['herd']}</h2><p class="horse-herd-note">{c['herdText']}</p></div><div class="horse-herd-scene">{animals}</div><div class="horse-herd-caption"><span>WINTER FEST · 23.01.2027</span><span>{c['herdTip']}</span></div></section>
     <nav class="horse-related" aria-label="{c['back']}"><a href="{local(lang, '/festival/')}">{c['back']}<span class="brand-arrow" aria-hidden="true"></span></a><a href="{local(lang, '/programme/')}?day=23">{c['programme']}<span class="brand-arrow" aria-hidden="true"></span></a></nav>
-    <dialog class="horse-lightbox" aria-label="{c['open']}"><button class="horse-lightbox-close" type="button" aria-label="{c['close']}" autofocus>×</button><img src="{ASSET}horse-riding.webp" width="990" height="614" alt="{c['photo']}"></dialog>
     </main>'''
 
 
