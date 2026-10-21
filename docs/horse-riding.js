@@ -14,38 +14,6 @@
     frame.style.setProperty('--photo-x', '0px');
     frame.style.setProperty('--photo-y', '0px');
   });
-  const counts = { adults: 0, children: 0 };
-  const calculator = root.querySelector('.horse-calculator');
-  const total = calculator.querySelector('[data-total]');
-  const party = calculator.querySelector('.horse-party');
-  function update(animate = false) {
-    for (const [kind, number] of Object.entries(counts)) {
-      calculator.querySelector(`[data-count="${kind}"]`).value = number;
-      calculator.querySelector(`[data-kind="${kind}"][data-delta="-1"]`).disabled = number === 0;
-      calculator.querySelector(`[data-kind="${kind}"][data-delta="1"]`).disabled = number === 20;
-    }
-    total.textContent = `${(counts.adults + counts.children) * 5} €`;
-    if (animate && !reduce.matches) {
-      total.classList.remove('is-updated');
-      void total.offsetWidth;
-      total.classList.add('is-updated');
-    }
-    party.replaceChildren();
-    for (const [kind, number] of Object.entries(counts)) {
-      for (let i = 0; i < number; i++) {
-        const person = document.createElement('span');
-        person.className = `horse-person${kind === 'children' ? ' is-child' : ''}`;
-        party.append(person);
-      }
-    }
-  }
-  calculator.querySelectorAll('[data-delta]').forEach(button => button.addEventListener('click', () => {
-    const kind = button.dataset.kind;
-    counts[kind] = Math.max(0, Math.min(20, counts[kind] + Number(button.dataset.delta)));
-    update(true);
-  }));
-  update();
-
   const pet = root.querySelector('.horse-pet');
   const track = root.querySelector('.horse-intro-track');
   let walking = false;

@@ -93,15 +93,6 @@ def esc(value):
     return html.escape(value, quote=True)
 
 
-def counter(c, kind, label):
-    return f'''<div class="horse-counter"><span id="horse-{kind}-label">{label}</span>
-    <div class="horse-counter-controls" role="group" aria-labelledby="horse-{kind}-label">
-    <button type="button" data-kind="{kind}" data-delta="-1" aria-label="{c['less']}: {label}" disabled>−</button>
-    <output data-count="{kind}" aria-label="{label}">0</output>
-    <button type="button" data-kind="{kind}" data-delta="1" aria-label="{c['more']}: {label}">+</button>
-    </div></div>'''
-
-
 def main(lang, c):
     return f'''<main id="main" class="horse-page">
     <section class="horse-hero" aria-labelledby="horse-title">
@@ -114,13 +105,6 @@ def main(lang, c):
       </div>
     </section>
     <dl class="horse-facts"><div><dt>{c['when']}</dt><dd>{c['date']}</dd></div><div><dt>{c['who']}</dt><dd>{c['audience']}</dd></div><div><dt>{c['how']}</dt><dd>{c['pay']}</dd></div></dl>
-    <section class="horse-plan" id="ride-plan" aria-label="{c['cost']}">
-      <div class="horse-calculator" id="ride-cost" role="group" aria-label="{c['cost']}">
-        {counter(c, 'adults', c['adults'])}{counter(c, 'children', c['children'])}
-        <div class="horse-total" role="status" aria-live="polite" aria-atomic="true"><span>{c['sum']}</span><strong data-total>0 €</strong></div>
-        <div class="horse-party" aria-hidden="true"></div><p>{c['costNote']}</p>
-      </div>
-    </section>
     <nav class="horse-related" aria-label="{c['back']}"><a href="{local(lang, '/festival/')}">{c['back']}<span class="brand-arrow" aria-hidden="true"></span></a><a href="{local(lang, '/programme/')}?day=23">{c['programme']}<span class="brand-arrow" aria-hidden="true"></span></a></nav>
     </main>'''
 
