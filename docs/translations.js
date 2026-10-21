@@ -58,3 +58,7 @@ Object.assign(window.WF_TRANSLATIONS.en, {"navFestival":"All activities","navCup
 Object.assign(window.WF_TRANSLATIONS.et, {"cupNavBusiness":"Ettevõtetele","cupNavMunicipalities":"Omavalitsustele","cupNavOpen":"Kõigile soovijatele"});
 
 Object.assign(window.WF_TRANSLATIONS.en, {"cupNavBusiness":"For companies","cupNavMunicipalities":"For municipalities","cupNavOpen":"Open to everyone"});
+
+// Horse riding activity card, including the language-aware homepage renderer.
+Object.assign(window.WF_TRANSLATIONS.et,{horseRidingTitle:'Hobuse- ja ponisõit',horseRidingAlt:'Laps hobuse seljas lumises metsas'});
+Object.assign(window.WF_TRANSLATIONS.en,{horseRidingTitle:'Horse and pony rides',horseRidingAlt:'A child riding a horse in a snow-covered forest'});

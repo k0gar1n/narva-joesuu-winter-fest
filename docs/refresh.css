@@ -257,3 +257,18 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 .cup .cup-photo{aspect-ratio:16/9;clip-path:polygon(32px 0,100% 0,100% calc(100% - 32px),calc(100% - 32px) 100%,0 100%,0 32px)}
 .cup .cup-photo img{display:block;width:100%;height:auto;object-fit:contain}
 @media(max-width:760px){.cup .cup-photo{clip-path:polygon(20px 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 20px)}}
+
+/* Four featured activities; keep the horse card within the existing grid. */
+.activity-horse .photo-wrap{clip-path:polygon(24px 0,100% 0,100% calc(100% - 24px),calc(100% - 24px) 100%,0 100%,0 24px)}
+@media(min-width:1101px){
+ .sports-grid:has(.activity-horse){grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+ .sports-grid .activity-horse .photo-wrap{aspect-ratio:1.15}
+ .sports-grid:has(.activity-horse) .activity-caption{grid-template-columns:minmax(0,1fr) 48px 20px;gap:8px}
+ .sports-grid:has(.activity-horse) .activity-figure{width:48px;height:55px}
+ .sports-grid:has(.activity-horse) .activity-caption h3{font-size:clamp(18px,1.5vw,24px)}
+}
+@media(min-width:761px) and (max-width:1100px){
+ .sports-grid:has(.activity-horse){grid-template-columns:repeat(2,minmax(0,1fr));row-gap:38px}
+ .sports-grid:has(.activity-horse) .activity:nth-child(n){padding-top:0}
+ .sports-grid:has(.activity-horse) .photo-wrap{aspect-ratio:1.4}
+}

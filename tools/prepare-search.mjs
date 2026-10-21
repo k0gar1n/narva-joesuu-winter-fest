@@ -52,6 +52,9 @@ const pages={
  'festival/':seoPage(
   ['Активности Winter Fest 2027 — спорт, каток, бани и ярмарка','Winter Fest 2027 tegevused — sport, liuväli, saunad ja laat','Winter Fest 2027 activities — sport, skating, saunas and market'],
   ['Все активности Estonia Winter Fest 23 января в Нарва-Йыэсуу: каток у моря, лыжи, ярмарка, банная деревня, семейные занятия и концерт.','Kõik Estonia Winter Festi tegevused 23. jaanuaril Narva-Jõesuus: mereäärne liuväli, suusatamine, laat, saunaküla, peretegevused ja kontsert.','All Estonia Winter Fest activities in Narva-Jõesuu on 23 January: seaside skating, skiing, winter market, sauna village, family activities and concert.']),
+ 'festival/horse-riding/':seoPage(
+  ['Катание на лошадях и пони | Winter Fest 2027','Hobuse- ja ponisõit | Winter Fest 2027','Horse and pony rides | Winter Fest 2027'],
+  ['Катание на лошадях и пони на Winter Fest 23 января 2027 в Нарва-Йыэсуу. Для детей и взрослых. 5 € за катание, оплата на месте.','Hobuse- ja ponisõit Winter Festil 23. jaanuaril 2027 Narva-Jõesuus. Lastele ja täiskasvanutele. Üks sõit 5 €, tasumine kohapeal.','Horse and pony rides at Winter Fest in Narva-Jõesuu on 23 January 2027. For children and adults. €5 per ride, paid on site.'],'horse-riding.webp'),
  'festival/ski-lessons/':seoPage(
   ['Бесплатные уроки лыж для начинающих в Нарва-Йыэсуу','Tasuta suusatunnid algajatele Narva-Jõesuus','Free beginner ski lessons in Narva-Jõesuu'],
   ['Бесплатные уроки беговых лыж 23 января 2027 в Нарва-Йыэсуу. Дети и взрослые, четыре группы по 25 человек. Лыжи, палки и ботинки предоставляются.','Tasuta murdmaasuusatunnid 23. jaanuaril 2027 Narva-Jõesuus. Laste ja täiskasvanute rühmad, varustus on kohapeal olemas. Vajalik registreerimine.','Free cross-country ski lessons in Narva-Jõesuu on 23 January 2027. Groups for children and adults, with skis, poles and boots provided. Registration required.'],'ski-lessons-1600.webp'),
