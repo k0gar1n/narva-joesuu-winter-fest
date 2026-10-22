@@ -62,3 +62,8 @@ Object.assign(window.WF_TRANSLATIONS.en, {"cupNavBusiness":"For companies","cupN
 // Horse riding activity card, including the language-aware homepage renderer.
 Object.assign(window.WF_TRANSLATIONS.et,{horseRidingTitle:'Hobuse- ja ponisõit',horseRidingAlt:'Laps hobuse seljas lumises metsas'});
 Object.assign(window.WF_TRANSLATIONS.en,{horseRidingTitle:'Horse and pony rides',horseRidingAlt:'A child riding a horse in a snow-covered forest'});
+
+// BEGIN mobile activity catalogue
+Object.assign(window.WF_TRANSLATIONS.et,{"mobileActivityWinterRunTitle": "Winter Run · 3,5 / 7 km", "mobileActivityWinterRunAlt": "Talvine jooks Narva-Jõesuus", "mobileActivitySkiLessonsTitle": "Tasuta suusatunnid", "mobileActivitySkiLessonsAlt": "Murdmaasuusatajad lumisel rajal", "mobileActivityFamilyTitle": "Peremängud", "mobileActivityFamilyAlt": "Peretegevused", "mobileActivityMarketTitle": "Talveturg", "mobileActivityMarketAlt": "Laat ja toit"});
+Object.assign(window.WF_TRANSLATIONS.en,{"mobileActivityWinterRunTitle": "Winter Run · 3,5 / 7 km", "mobileActivityWinterRunAlt": "Winter running in Narva-Jõesuu", "mobileActivitySkiLessonsTitle": "Free ski lessons", "mobileActivitySkiLessonsAlt": "Cross-country skiers on a snowy trail", "mobileActivityFamilyTitle": "Family games", "mobileActivityFamilyAlt": "Family activities", "mobileActivityMarketTitle": "Winter market", "mobileActivityMarketAlt": "Market & food"});
+// END mobile activity catalogue
