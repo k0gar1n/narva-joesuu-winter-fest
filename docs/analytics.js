@@ -19,7 +19,7 @@
     'horse-riding': 'horse_riding', family: 'snow_games'
   };
   function activityFromPath(path) {
-    const clean = path.replace(/^\/(?:et|en|ru)(?=\/)/, '').replace(/^\/narva-joesuu-winter-fest(?=\/)/, '');
+    const clean = path.replace(/^\/narva-joesuu-winter-fest(?=\/)/, '').replace(/^\/(?:et|en|ru)(?=\/)/, '');
     if (/^\/winter-run(?:\/|$)/.test(clean)) return 'winter_run';
     const cup = clean.match(/^\/winter-cup\/(municipalities|business|open)(?:\/|$)/);
     if (cup) return 'winter_cup_' + cup[1];
@@ -68,7 +68,7 @@
     }
     if (target.origin !== location.origin) return;
     const activity = activityFromPath(target.pathname);
-    if (activity && target.pathname !== location.pathname) send('select_activity', { activity });
+    if (activity && activity !== activityFromPath(location.pathname)) send('select_activity', { activity });
   }, true);
 
   // Trust only the actual Fienta checkout frame, never arbitrary window messages.
