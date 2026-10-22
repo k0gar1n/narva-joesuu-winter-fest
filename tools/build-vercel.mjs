@@ -27,6 +27,7 @@ const googleTag=`<!-- Google tag (gtag.js) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('set', 'linker', {domains: ['winterfest.ee', 'fienta.com'], accept_incoming: true});
   gtag('js', new Date());
   gtag('config', 'G-Y2YC35PEE2');
 </script>`;
