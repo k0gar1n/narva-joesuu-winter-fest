@@ -259,7 +259,7 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
 @media(max-width:760px){.cup .cup-photo{clip-path:polygon(20px 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 20px)}}
 
 /* Four featured cards, then six smaller cards; retain the mobile swipe strip. */
-.activity-horse .photo-wrap{clip-path:polygon(24px 0,100% 0,100% calc(100% - 24px),calc(100% - 24px) 100%,0 100%,0 24px)}
+.sports-grid .photo-wrap{--activity-corner:clamp(12px,1.6vw,24px);clip-path:polygon(var(--activity-corner) 0,100% 0,100% calc(100% - var(--activity-corner)),calc(100% - var(--activity-corner)) 100%,0 100%,0 var(--activity-corner))}
 @media(min-width:761px){
  .sports-grid:has(.activity-horse){grid-template-columns:repeat(12,minmax(0,1fr));gap:40px 24px;align-items:start}
  .sports-grid:has(.activity-horse)>.activity:nth-child(n){display:block;grid-column:span 3;padding-top:0;margin:0}
@@ -269,20 +269,20 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
  .sports-grid:has(.activity-horse) .activity-caption{grid-template-columns:minmax(0,1fr) 48px 32px;gap:8px}
  .sports-grid:has(.activity-horse) .activity-figure{width:48px;height:55px}
  .sports-grid:has(.activity-horse) .activity-caption h3{font-size:clamp(16px,1.5vw,24px)}
- .sports-grid:has(.activity-horse)>.mobile-extra:nth-child(n){grid-column:span 2}
- .sports-grid:has(.activity-horse)>.mobile-extra .photo-wrap{aspect-ratio:1.25}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5){grid-column:span 2}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .photo-wrap{aspect-ratio:1.25;--activity-corner:14px}
  .sports-grid:has(.activity-horse) .activity-arrow{min-width:0;min-height:28px}
- .sports-grid:has(.activity-horse)>.mobile-extra .activity-caption{grid-template-columns:minmax(0,1fr) 30px 24px;gap:6px;min-height:68px;align-items:start;margin-top:16px}
- .sports-grid:has(.activity-horse)>.mobile-extra .activity-caption h3{font-size:clamp(14px,1.2vw,18px);line-height:1.25}
- .sports-grid:has(.activity-horse)>.mobile-extra .activity-figure{width:30px;height:38px}
- .sports-grid:has(.activity-horse)>.mobile-extra .activity-arrow{padding-top:3px}
- .sports-grid:has(.activity-horse)>.mobile-extra .activity-arrow .brand-arrow{width:18px!important;height:13px!important;min-width:18px}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .activity-caption{grid-template-columns:minmax(0,1fr) 30px 24px;gap:6px;min-height:68px;align-items:start;margin-top:16px}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .activity-caption h3{font-size:clamp(14px,1.2vw,18px);line-height:1.25}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .activity-figure{width:30px;height:38px}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .activity-arrow{padding-top:3px}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .activity-arrow .brand-arrow{width:18px!important;height:13px!important;min-width:18px}
 }
 @media(min-width:761px) and (max-width:1279px){
  .sports-grid:has(.activity-horse){column-gap:20px}
  .sports-grid:has(.activity-horse) .activity-caption{grid-template-columns:minmax(0,1fr) 32px 28px;gap:6px}
  .sports-grid:has(.activity-horse) .activity-figure{width:32px;height:42px}
  .sports-grid:has(.activity-horse) .activity-arrow .brand-arrow{width:22px!important;height:16px!important;min-width:22px}
- .sports-grid:has(.activity-horse)>.mobile-extra:nth-child(n){grid-column:span 4}
- .sports-grid:has(.activity-horse)>.mobile-extra .activity-caption h3{font-size:16px}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5){grid-column:span 4}
+ .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .activity-caption h3{font-size:16px}
 }

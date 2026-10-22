@@ -3,6 +3,7 @@ from pathlib import Path
 import html
 import json
 import re
+from home_activity_order import sort_home_activities
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
@@ -147,6 +148,8 @@ for lang, c in COPY.items():
             text, count = re.subn(r'(<div class="sports-grid">)', lambda m: m[0] + card(lang, c, homepage=True), text, count=1)
         if count != 1:
             raise ValueError(f'Insertion anchor missing in {f}')
+        if relative == 'index.html':
+            text = sort_home_activities(text)
         f.write_text(text)
 
     f = folder / 'programme/index.html'

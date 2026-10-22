@@ -4,6 +4,7 @@ from html import escape, unescape
 from html.parser import HTMLParser
 import json
 import re
+from home_activity_order import sort_home_activities
 
 DOCS = Path(__file__).resolve().parent.parent / 'docs'
 BASE = '/narva-joesuu-winter-fest'
@@ -54,7 +55,7 @@ for lang in ('ru', 'et', 'en'):
         copy[key + 'Alt'] = photo.get('alt', title)
         existing.add(href)
     end = originals[-1].end()
-    home.write_text(text[:end] + ''.join(additions) + text[end:])
+    home.write_text(sort_home_activities(text[:end] + ''.join(additions) + text[end:]))
     translations[lang] = copy
     print(f'{lang}: added {len(additions)} mobile cards')
 
