@@ -50,6 +50,9 @@ async function build(relative=''){
    if(name.endsWith('.html')){
     if(!content.includes('<head>'))throw Error(`Missing <head> in ${name}`);
     content=content.replace('<head>',`<head>${googleTag}${clarityTag}`);
+    // One shared embed per page; the source pages keep their editable settings.
+    content=content.replace(/<script\b[^>]*\bsrc=["']https:\/\/fienta\.com\/embed\.js["'][^>]*>\s*<\/script>/gi,'');
+    content=content.replace('</body>','<script src="/analytics.js" defer></script><script src="https://fienta.com/embed.js" defer></script></body>');
     content=content.replaceAll('href="/?lang=et"','href="/et/"').replaceAll('href="/?lang=en"','href="/en/"').replaceAll('href="/?lang=ru"','href="/"');
    }
    if(name.endsWith('.html'))content=content.replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?(")/g,(match,start,url,end)=>assetVersions.has(url)?`${start}${url}?v=${assetVersions.get(url)}${end}`:match);
