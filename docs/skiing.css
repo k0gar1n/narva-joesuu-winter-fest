@@ -1,0 +1,188 @@
+/* WINTER SKI — a coastal event within the Winter Fest shell. */
+.ski-page{--ski-ice:#ecf6fb;--ski-ink:#102a4c;--ski-line:#102a4c26;--ski-pad:clamp(22px,4.2vw,76px);background:var(--ski-ice)}
+.ski-page .header{background:var(--ski-ice)}
+.ski-page .header.header-hidden{transform:none;pointer-events:auto}
+.ski-page .ski-main{overflow:clip}
+.ski-page [data-reveal]{opacity:1!important;transform:none!important}
+.ski-page svg{display:block;width:24px;height:24px;flex-shrink:0}
+.ski-container{padding-inline:var(--ski-pad);max-width:1680px;margin-inline:auto}
+.ski-page .ski-hero{background:var(--ski-ink);color:var(--ski-ice)}
+.ski-hero-mast{padding:28px var(--ski-pad) 23px;display:grid;grid-template-columns:minmax(0,1fr) 151px;gap:40px;align-items:end;max-width:1680px;margin:auto}
+.ski-country{display:block;font-size:clamp(14px,1.35vw,22px);font-weight:800;line-height:1;letter-spacing:.04em;margin-bottom:12px}
+.ski-page h1#ski-title{font:400 clamp(90px,13.5vw,212px)/1 Anton,sans-serif;letter-spacing:-.025em;white-space:nowrap;margin-left:-.025em}
+.ski-date{align-self:stretch;background:var(--ski-ice);color:var(--ski-ink);clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:20px 15px 18px;display:flex;flex-direction:column;justify-content:center;position:relative;text-align:center}
+.ski-date:after{content:'';position:absolute;right:0;top:0;border:12px solid transparent;border-left-color:#d2dff6;border-bottom-color:#d2dff6}
+.ski-date-day{font:400 clamp(48px,5.4vw,87px)/1 Anton,sans-serif}
+.ski-date-month{font:700 15px/1.4 Oswald,sans-serif;display:flex;justify-content:center;gap:9px;margin-top:12px}
+html[lang=ru] .ski-date-month{font-family:'WF Condensed',sans-serif;font-weight:900}
+.ski-image-strip{height:clamp(210px,22vw,350px);position:relative;overflow:hidden;background:#37506b}
+.ski-image-strip img{position:absolute;width:max(125%,1300px);max-width:none;height:auto;left:50%;top:50%;transform:translate(-50%,-44%)}
+.ski-hero-bottom{max-width:1680px;margin:auto;padding:27px var(--ski-pad) 32px;display:flex;justify-content:space-between;gap:40px;align-items:center}
+.ski-location{font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px;color:#c1d6e7;letter-spacing:.015em;margin-bottom:8px}
+.ski-location svg{width:15px;height:17px}
+.ski-page .ski-intro{font:800 clamp(24px,2.55vw,40px)/1.22 Manrope,sans-serif;letter-spacing:-.04em}
+.ski-intro br{display:none}.ski-intro br:after{content:' '}
+.ski-hero-action{width:300px;flex-shrink:0}
+.ski-register{width:100%;min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:16px 21px;background:#173dda;color:#fff;font-size:14px;font-weight:800;line-height:1.35;border:1px solid #7491ff;border-radius:0}
+.ski-register:disabled{cursor:default;background:#274dc7;color:#e5edff;border-color:#6080db}
+.ski-register svg{opacity:.75}
+.ski-status{margin-top:9px;font-size:11px;text-align:center;color:#bdccdf}
+.ski-jump{display:flex;align-items:center;gap:clamp(22px,3vw,48px);padding:0 var(--ski-pad);min-height:66px;border-bottom:1px solid var(--ski-line);background:var(--ski-ice);position:sticky;top:96px;z-index:12}
+.ski-jump a{font-size:13px;font-weight:750;white-space:nowrap;min-height:66px;display:flex;align-items:center;position:relative;gap:12px}
+.ski-jump a:hover{color:var(--blue)}
+.ski-jump a:after{content:'';height:3px;background:var(--blue);position:absolute;bottom:-1px;left:0;right:0;transform:scaleX(0);transition:transform .2s}
+.ski-jump a:hover:after,.ski-jump a.is-current:after{transform:scaleX(1)}
+.ski-jump .ski-jump-poster{margin-left:auto;font-weight:600;color:var(--muted)}
+.ski-jump-poster svg{width:18px;height:18px}
+.ski-page .ski-distances{padding-top:65px;padding-bottom:66px;scroll-margin-top:170px}
+.ski-distance-heading{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:34px}
+.ski-page .ski-distance-heading h2,.ski-page .ski-guide-heading h2,.ski-page .ski-included h2{font:800 clamp(25px,3vw,42px)/1.2 Manrope,sans-serif;letter-spacing:-.045em}
+.ski-distance-heading p{font-size:13px;line-height:1.7;color:var(--muted);min-width:260px}
+.ski-distance-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-block:1px solid var(--ski-line)}
+.ski-distance{padding:23px 30px 30px;position:relative;text-align:left;border-right:1px solid var(--ski-line);transition:background .22s,color .22s;min-width:0;overflow:hidden}
+.ski-distance:last-child{border-right:0}
+.ski-distance[aria-pressed=true]{background:var(--blue);color:#fff}
+.ski-distance[aria-pressed=true]:after{content:'';position:absolute;right:0;top:0;border:13px solid transparent;border-top-color:var(--ski-ice);border-right-color:var(--ski-ice)}
+.ski-distance:not([aria-pressed=true]):hover{background:#dce7f3}
+.ski-distance-caption{display:block;font-size:12px;line-height:1.4;font-weight:650;min-height:18px}
+.ski-distance-amount{font:400 clamp(72px,8.8vw,140px)/1.15 Anton,sans-serif;letter-spacing:-.02em;display:flex;align-items:baseline;gap:14px;margin-top:13px}
+.ski-distance-amount small{font:700 clamp(18px,2vw,28px)/1 Manrope,sans-serif;letter-spacing:0}
+.ski-distance-indicator{position:absolute;right:25px;bottom:37px;transition:rotate .3s;rotate:-45deg}
+.ski-distance[aria-pressed=true] .ski-distance-indicator{rotate:0deg}
+.ski-distance-selection{display:flex;gap:20px;align-items:center;margin-top:22px;min-height:24px;font-size:12px}
+.ski-distance-selection p{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.ski-distance-selection [data-ski-selected]{font-weight:800}
+.ski-selection-separator{color:#778ba4}
+.ski-distance-selection a{margin-left:auto;display:flex;align-items:center;gap:18px;font-weight:800;color:var(--blue)}
+.ski-distance-track{height:6px;position:relative;width:80px;flex-shrink:0;background:#cbd9e9}
+.ski-distance-track span{position:absolute;left:0;top:0;height:100%;width:60%;background:var(--blue);transition:width .45s var(--ease)}
+.ski-page .ski-guide{padding-top:0;padding-bottom:65px;scroll-margin-top:180px}
+.ski-guide-heading{padding-block:10px 30px}
+.ski-guide-layout{display:grid;grid-template-columns:230px minmax(0,1fr);border:1px solid var(--ski-line);background:#fff}
+.ski-tabs{padding:13px 0;border-right:1px solid var(--ski-line);background:#e4eef7}
+.ski-tabs a{display:flex;align-items:center;justify-content:space-between;padding:23px 23px;font-size:15px;font-weight:750;position:relative;gap:12px}
+.ski-tabs a svg{width:20px;height:20px;opacity:0;transform:translateX(-5px);transition:transform .2s,opacity .2s}
+.ski-tabs a:hover{color:var(--blue)}
+.ski-tabs a.is-active{color:var(--blue);background:#fff}
+.ski-tabs a.is-active:before{content:'';position:absolute;left:-1px;top:0;bottom:0;width:3px;background:var(--blue)}
+.ski-tabs a.is-active svg{opacity:1;transform:translateX(0)}
+.ski-panels{min-width:0}
+.ski-page .ski-panel{min-height:380px;display:grid;grid-template-columns:1fr 1fr;position:relative;scroll-margin-top:180px;overflow:hidden}
+.ski-page .ski-panel-copy{padding:42px 36px;display:flex;flex-direction:column;align-items:start;justify-content:center;min-width:0}
+.ski-page .ski-panel h3{font:800 clamp(25px,2.4vw,37px)/1.17 Manrope,sans-serif;letter-spacing:-.045em}
+.ski-panel-copy p{font-size:14px;line-height:1.75;color:var(--muted);margin-top:16px;max-width:35ch}
+.ski-outline-button{display:inline-flex;gap:20px;align-items:center;justify-content:space-between;min-height:48px;padding:12px 16px;border:1px solid #7c91aa;font-size:12px;font-weight:750;margin-top:27px;line-height:1.4}
+.ski-outline-button svg{width:18px;height:18px}
+.ski-outline-button:disabled{color:#65768b;border-color:#bdc8d5;cursor:default}
+.ski-outline-button:not(:disabled):hover{background:var(--blue);color:white;border-color:var(--blue)}
+.ski-coast{position:relative;background:#102a4c;color:var(--ski-ice);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.ski-coast-line{height:85px;width:180%;position:absolute;top:25px;left:-20%;transform:rotate(-14deg);border-top:1px solid #c7e6ff35;border-bottom:1px solid #c7e6ff35}
+.ski-coast-line:after{content:'';position:absolute;inset:22px 0;border-block:1px solid #c7e6ff35}
+.ski-coast-caption{position:relative;display:flex;align-items:start;gap:13px;margin:48px 28px 28px;font-size:15px;font-weight:800;line-height:1.7;letter-spacing:.015em}
+.ski-coast-caption svg{margin-top:3px}
+.ski-coast-caption small{font:400 12px/1.5 Manrope,sans-serif;color:#b6ccdf;letter-spacing:0}
+.ski-coast-photo{height:160px;position:relative;overflow:hidden;flex-shrink:0}
+.ski-coast-photo img{position:absolute;width:1100px;max-width:none;height:auto;left:53%;top:50%;transform:translate(-50%,-43.5%)}
+.ski-page .ski-programme-panel,.ski-page .ski-rules-panel{grid-template-columns:38% 1fr;align-items:center}
+.ski-calendar-tile{margin:35px 0 35px 35px;padding:30px 15px;background:var(--blue);color:#fff;text-align:center;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);display:flex;flex-direction:column;gap:12px}
+.ski-calendar-tile>span{font-size:11px;letter-spacing:.05em;font-weight:700}
+.ski-calendar-tile strong{font:400 110px/1 Anton,sans-serif}
+.ski-page .ski-prices-panel{display:block;padding:32px 36px 24px}
+.ski-page .ski-prices-panel .ski-panel-copy{padding:0;display:block}
+.ski-price-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:24px;text-align:left}
+.ski-price-table th,.ski-price-table td{padding:11px 8px;border-top:1px solid var(--ski-line)}
+.ski-price-table thead th{font-size:10px;font-weight:600;color:var(--muted);border:0}
+.ski-price-table th:last-child,.ski-price-table td{text-align:right;font-weight:500;color:var(--muted)}
+.ski-price-table tbody th{font-size:19px;line-height:1.4}
+.ski-price-table th small{display:block;font-size:10px;font-weight:500}
+.ski-price-table tr.is-selected{background:#edf3ff}
+.ski-document-art{margin:38px 0 38px 32px;min-height:235px;background:#edf3fb;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transform:rotate(-4deg);color:var(--blue)}
+.ski-document-art svg{width:88px;height:110px}
+.ski-document-art>span{font:400 21px/1 Anton,sans-serif}
+.ski-page .ski-included{padding-top:0;padding-bottom:65px}
+.ski-included h2{margin-bottom:27px}
+.ski-included-grid{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--ski-line);gap:0}
+.ski-included-grid>div{display:flex;align-items:center;gap:22px;padding:24px;border-right:1px solid var(--ski-line)}
+.ski-included-grid>div:first-child{padding-left:0}.ski-included-grid>div:last-child{border:0;padding-right:0}
+.ski-included-grid img,.ski-medal-icon{width:70px;height:70px;object-fit:contain;flex-shrink:0}
+.ski-medal-icon{color:var(--blue);display:grid;place-items:center}.ski-medal-icon svg{width:58px;height:58px}
+.ski-included-grid p{display:flex;flex-direction:column;gap:6px}
+.ski-included-grid strong{font-size:16px;line-height:1.35;letter-spacing:-.025em}
+.ski-included-grid p>span{font-size:11px;color:var(--muted);line-height:1.5}
+.ski-contact{padding-top:0;padding-bottom:55px;display:flex;align-items:end;justify-content:space-between;gap:30px}
+.ski-contact p{font-size:13px;color:var(--muted);margin-bottom:7px}
+.ski-contact a{display:flex;align-items:center;gap:22px}
+.ski-contact>div>a{font-size:clamp(19px,2.3vw,30px);font-weight:800;letter-spacing:-.045em;color:var(--blue)}
+.ski-contact .ski-festival-link{font-size:13px;font-weight:700}
+.ski-mobile-register{display:none}
+.ski-poster-dialog{width:min(1200px,95vw);max-height:94dvh;padding:0;border:0;background:var(--navy);overflow:auto}
+.ski-poster-dialog::backdrop{background:#05182cd9;backdrop-filter:blur(8px)}
+.ski-poster-dialog>img{width:100%;height:auto}
+.ski-poster-close{position:sticky;display:grid;place-items:center;margin-left:auto;top:10px;right:10px;width:44px;height:44px;background:#fff;color:var(--navy);z-index:1;margin-bottom:-54px;translate:-10px 10px}
+.ski-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ski-page:has(.ski-poster-dialog[open]){overflow:hidden}
+@media(min-width:1680px){.ski-jump{padding-inline:max(var(--ski-pad),calc((100vw - 1528px)/2))}.ski-hero-mast{grid-template-columns:minmax(0,1fr) 190px}.ski-date-month{font-size:18px}}
+@media(max-width:1100px){.ski-hero-mast{grid-template-columns:minmax(0,1fr) 125px;gap:25px}.ski-page h1#ski-title{font-size:13vw}.ski-guide-layout{grid-template-columns:180px minmax(0,1fr)}.ski-tabs a{padding-inline:18px;font-size:13px}.ski-page .ski-panel-copy{padding:30px 25px}.ski-page .ski-panel h3{font-size:28px}.ski-included-grid>div{gap:13px;padding-inline:20px}.ski-included-grid img,.ski-medal-icon{width:55px;height:55px}.ski-distance-indicator{right:16px;bottom:30px}.ski-jump{gap:25px}.ski-jump .ski-jump-poster{font-size:11px;gap:5px}}
+@media(max-width:960px){.ski-jump{top:82px}.ski-page .ski-intro{font-size:26px}.ski-intro br{display:block}.ski-intro br:after{content:none}.ski-hero-action{width:270px}.ski-guide-layout{grid-template-columns:1fr}.ski-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:0;border-right:0;border-bottom:1px solid var(--ski-line)}.ski-tabs a{justify-content:center;min-height:60px;padding:16px 12px}.ski-tabs a svg{display:none}.ski-tabs a.is-active:before{left:0;right:0;bottom:-1px;top:auto;width:auto;height:3px}.ski-jump .ski-jump-poster{display:none}.ski-page .ski-panel{min-height:350px}.ski-included-grid strong{font-size:14px}.ski-distance{padding-inline:23px}}
+@media(max-width:760px){
+ .ski-page{--ski-pad:22px;padding-bottom:82px}
+ .ski-page .header{position:relative;will-change:auto}
+ .ski-hero-mast{display:flex;align-items:end;justify-content:space-between;gap:14px;padding:23px 22px 24px}
+ .ski-wordmark{min-width:0}.ski-country{font-size:12px;margin-bottom:9px}
+ .ski-page h1#ski-title{font-size:clamp(40px,10.9vw,80px);letter-spacing:-.025em}
+ .ski-date{padding:9px 8px 10px;min-width:61px;max-width:80px;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%)}
+ .ski-date:after{border-width:6px}.ski-date-day{font-size:32px}.ski-date-month{font-size:8px;gap:4px;margin-top:5px;display:flex;flex-wrap:wrap;justify-content:center;line-height:1}
+ .ski-image-strip{height:210px}.ski-image-strip img{width:1300px;left:41%;transform:translate(-50%,-44%)}
+ .ski-hero-bottom{display:block;padding:23px 22px 27px}.ski-location{font-size:11px;margin-bottom:9px}.ski-location svg{width:14px;height:15px}
+ .ski-page .ski-intro{font-size:29px;line-height:1.18;letter-spacing:-.04em}
+ .ski-intro br{display:none}.ski-intro br:after{content:' '}
+ .ski-hero-action{width:100%;margin-top:24px}.ski-hero-action .ski-register{min-height:52px}.ski-status{text-align:left;font-size:10px;margin-top:8px}
+ .ski-jump{top:0;min-height:54px;gap:23px;padding-inline:22px;overflow-x:auto;scrollbar-width:none}.ski-jump::-webkit-scrollbar{display:none}
+ .ski-jump a{min-height:54px;font-size:12px;flex-shrink:0}
+ .ski-page .ski-distances{padding-top:39px;padding-bottom:42px;scroll-margin-top:75px}
+ .ski-distance-heading{display:block;margin-bottom:23px}.ski-page .ski-distance-heading h2,.ski-page .ski-guide-heading h2,.ski-page .ski-included h2{font-size:27px;letter-spacing:-.05em}
+ .ski-distance-heading p{font-size:12px;margin-top:12px;min-width:0;line-height:1.65}
+ .ski-distance{padding:15px 12px 20px;min-height:142px}.ski-distance-caption{font-size:9px;line-height:1.4;min-height:27px;max-width:90px}
+ .ski-distance-amount{font-size:57px;gap:5px;margin-top:5px}.ski-distance-amount small{font-size:13px}.ski-distance[data-ski-distance=kids] .ski-distance-amount{font-size:39px;line-height:1.7;letter-spacing:-.03em;gap:3px}
+ .ski-distance-indicator{display:none}.ski-distance[aria-pressed=true]:after{border-width:8px}
+ .ski-distance-selection{gap:12px;margin-top:16px;font-size:10px;flex-wrap:wrap;justify-content:space-between}
+ .ski-distance-track{display:none}.ski-distance-selection p{gap:8px}.ski-distance-selection p [data-ski-selected-name]{display:none}.ski-selection-separator{display:none}.ski-distance-selection a{gap:8px}.ski-distance-selection svg{width:18px;height:18px}
+ .ski-page .ski-guide{padding-bottom:40px;scroll-margin-top:76px}.ski-guide-heading{padding:0 0 23px}.ski-guide-layout{margin-inline:-22px;border-inline:0}
+ .ski-tabs a{font-size:12px;min-height:54px;padding:14px 7px}.ski-tabs a.is-active:before{height:3px;left:14px;right:14px}
+ .ski-page .ski-panel{grid-template-columns:1fr;min-height:0;scroll-margin-top:75px}
+ .ski-page .ski-panel-copy{padding:29px 22px;min-height:244px;justify-content:start}
+ .ski-page .ski-panel h3{font-size:26px}.ski-panel-copy p{font-size:13px;max-width:42ch;margin-top:12px}.ski-outline-button{margin-top:22px;min-height:46px;font-size:11px}
+ .ski-coast{min-height:205px;display:flex;flex-direction:row;align-items:center}.ski-coast-caption{margin:24px 22px;font-size:13px;max-width:180px;gap:8px;flex-shrink:0}.ski-coast-caption svg{width:20px;height:20px}.ski-coast-caption small{font-size:10px}.ski-coast-line{top:0}
+ .ski-coast-photo{height:205px;width:43%;flex-shrink:0;align-self:stretch;margin-left:auto}.ski-coast-photo img{width:1250px;left:50%;top:50%;transform:translate(-50%,-44%)}
+ .ski-page .ski-programme-panel,.ski-page .ski-rules-panel{grid-template-columns:105px minmax(0,1fr);padding:0 22px;gap:18px;min-height:300px}
+ .ski-page .ski-programme-panel .ski-panel-copy,.ski-page .ski-rules-panel .ski-panel-copy{padding:30px 0;min-height:0;justify-content:center}
+ .ski-page .ski-programme-panel h3,.ski-page .ski-rules-panel h3{font-size:23px}
+ .ski-calendar-tile{margin:0;padding:22px 7px;gap:13px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+ .ski-calendar-tile strong{font-size:66px}.ski-calendar-tile>span{font-size:8px;letter-spacing:0}
+ .ski-programme-panel .ski-outline-button,.ski-rules-panel .ski-outline-button{gap:8px;padding:10px;font-size:10px}
+ .ski-document-art{margin:0;min-height:170px;gap:12px;transform:rotate(-3deg)}.ski-document-art svg{width:61px;height:79px}.ski-document-art>span{font-size:16px}
+ .ski-page .ski-prices-panel{padding:29px 22px 23px;min-height:365px}.ski-page .ski-prices-panel .ski-panel-copy{min-height:0;padding:0}.ski-price-table{font-size:12px}.ski-price-table tbody th{font-size:21px}
+ .ski-page .ski-included{padding-bottom:38px}.ski-included h2{margin-bottom:22px}.ski-included-grid{grid-template-columns:1fr}
+ .ski-included-grid>div,.ski-included-grid>div:first-child,.ski-included-grid>div:last-child{border-right:0;border-bottom:1px solid var(--ski-line);padding:18px 0;gap:21px}.ski-included-grid>div:last-child{border-bottom:0}
+ .ski-included-grid img,.ski-medal-icon{width:56px;height:56px}.ski-medal-icon svg{width:46px;height:46px}.ski-included-grid strong{font-size:16px}.ski-included-grid p>span{font-size:11px}
+ .ski-contact{padding-bottom:40px;display:block}.ski-contact p{font-size:12px}.ski-contact>div>a{font-size:23px;gap:14px}.ski-contact .ski-festival-link{margin-top:24px;font-size:12px;gap:12px}
+ .ski-mobile-register{position:fixed;bottom:0;left:0;right:0;z-index:18;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:#f6fafff5;backdrop-filter:blur(14px);border-top:1px solid #c7d7e7;box-shadow:0 -5px 24px #102a4c07}
+ .ski-mobile-register>div{display:flex;flex-direction:column;min-width:72px}.ski-mobile-register strong{font-size:20px;line-height:1.2;letter-spacing:-.025em}.ski-mobile-register>div>span{font-size:9px;color:var(--muted);margin-top:4px}
+ .ski-mobile-register .ski-register{width:auto;flex:1;max-width:300px;min-height:49px;padding:13px 15px;font-size:12px;gap:10px}.ski-mobile-register svg{width:20px;height:20px}
+ .ski-page:has(#site-menu[open]) .ski-mobile-register,.ski-page:has(.ski-poster-dialog[open]) .ski-mobile-register{visibility:hidden}
+ .ski-poster-dialog{width:96vw;max-width:96vw}.ski-poster-dialog>img{min-width:700px}.ski-poster-close{left:calc(100vw - 60px)}
+}
+@media(max-width:370px){.ski-page{--ski-pad:18px}.ski-hero-mast{padding-inline:18px;gap:9px}.ski-page h1#ski-title{font-size:10.6vw}.ski-date{min-width:56px}.ski-page .ski-intro{font-size:25px}.ski-hero-bottom{padding-inline:18px}.ski-distance{padding-inline:9px}.ski-distance-caption{font-size:8px}.ski-distance-amount{font-size:49px}.ski-distance[data-ski-distance=kids] .ski-distance-amount{font-size:33px}.ski-guide-layout{margin-inline:-18px}.ski-tabs a{font-size:11px}.ski-page .ski-programme-panel,.ski-page .ski-rules-panel{grid-template-columns:90px minmax(0,1fr);gap:14px;padding-inline:18px}.ski-coast-caption{margin-inline:18px;max-width:165px}.ski-mobile-register{gap:9px;padding-inline:14px}.ski-mobile-register .ski-register{font-size:11px;padding-inline:11px}.ski-mobile-register>div{min-width:65px}}
+@media(prefers-reduced-motion:reduce){.ski-page *{scroll-behavior:auto!important;transition:none!important}}
+@media print{.ski-jump,.ski-tabs,.ski-mobile-register,.ski-register,.ski-hero-action,.ski-poster-dialog{display:none!important}.ski-page{padding:0}.ski-page .ski-panel[hidden]{display:grid!important}.ski-guide-layout{display:block}.ski-page .ski-hero{color:#102a4c;background:white}.ski-page .ski-image-strip{height:160px}.ski-page .ski-panel{break-inside:avoid}}
+
+/* The phone masthead gives the event name its own full-width line. */
+@media(max-width:760px){
+ .ski-hero-mast{display:block;position:relative;padding-top:25px;padding-bottom:24px}
+ .ski-country{margin-bottom:20px}
+ .ski-page h1#ski-title{font-size:18.7vw;line-height:1.05}
+ .ski-date{position:absolute;top:18px;right:22px;display:flex;flex-direction:row;align-items:center;gap:7px;min-width:0;max-width:none;padding:7px 15px 7px 9px}
+ .ski-date-day{font-size:19px}.ski-date-month{font-size:9px;gap:5px;margin-top:0;flex-wrap:nowrap}
+}
+@media(max-width:370px){.ski-date{right:18px}}
+.ski-page .ski-panel:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}

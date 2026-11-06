@@ -9,7 +9,7 @@ ACTIVITY_ORDER = [
     '/festival/market/',
     '/festival/ski-lessons/',
     '/winter-run/',
-    '/festival/skiing/',
+    '/skiing/',
     '/festival/sports/',
     '/festival/horse-riding/',
     '/festival/family/',

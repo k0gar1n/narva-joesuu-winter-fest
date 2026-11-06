@@ -29,6 +29,21 @@
       ],
       "destination": "/en/",
       "permanent": true
+    },
+    {
+      "source": "/festival/skiing/",
+      "destination": "/skiing/",
+      "permanent": true
+    },
+    {
+      "source": "/et/festival/skiing/",
+      "destination": "/et/skiing/",
+      "permanent": true
+    },
+    {
+      "source": "/en/festival/skiing/",
+      "destination": "/en/skiing/",
+      "permanent": true
     }
   ]
 }

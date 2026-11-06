@@ -20,6 +20,7 @@
   };
   function activityFromPath(path) {
     const clean = path.replace(/^\/narva-joesuu-winter-fest(?=\/)/, '').replace(/^\/(?:et|en|ru)(?=\/)/, '');
+    if (/^\/skiing(?:\/|$)/.test(clean)) return 'ski_race';
     if (/^\/winter-run(?:\/|$)/.test(clean)) return 'winter_run';
     const cup = clean.match(/^\/winter-cup\/(municipalities|business|open)(?:\/|$)/);
     if (cup) return 'winter_cup_' + cup[1];

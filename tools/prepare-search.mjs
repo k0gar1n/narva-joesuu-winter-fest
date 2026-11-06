@@ -160,7 +160,7 @@ for(const f of await walkHtml(docs)){
  await fs.writeFile(f,html);
 }
 
-const indexableRoutes=[...new Set([...Object.keys(pages),'festival/family/','festival/skiing/','festival/sports/','visit/explore/','partners/','contact/','winter-cup/municipalities/rules/'])];
+const indexableRoutes=[...new Set([...Object.keys(pages),'festival/family/','skiing/','festival/sports/','visit/explore/','partners/','contact/','winter-cup/municipalities/rules/'])];
 const sitemap=indexableRoutes.flatMap(route=>langs.map(lang=>`  <url><loc>${url(lang,route)}</loc>${langs.map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${url(l,route)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${url('et',route)}"/></url>`)).join('\n');
 await fs.writeFile(path.join(docs,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemap}\n</urlset>\n`);
 await fs.writeFile(path.join(docs,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
