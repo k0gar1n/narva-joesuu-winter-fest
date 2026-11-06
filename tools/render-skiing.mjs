@@ -27,6 +27,7 @@ for(const [lang,c] of Object.entries(copy)){
  }[lang];
  const tabs=['distances','route','programme','prices','rules'];
  const poster=`${base}/assets/winter-ski/poster-${lang}-v2.webp`;
+ const desktopPoster=lang==='en'?poster:`${base}/assets/winter-ski/poster-${lang}-desktop.webp`;
  const posterAlt=`WINTER SKI. ${c.date}. Narva-Jõesuu. 3 ${c.km}, 5 ${c.km}. ${c.kids}: 500 ${c.m}. ${c.medal}: ${c.medalSub}. ${c.concert}, ${c.sauna}: ${c.free}.`;
  const distances=[['3',c.km,'3',c.adult],['5',c.km,'5',c.adult],['500',c.m,'kids',c.kids]];
  const html=`<!DOCTYPE html>
@@ -35,7 +36,7 @@ for(const [lang,c] of Object.entries(copy)){
 ${['ru','et','en'].map(l=>`<link rel="alternate" hreflang="${l}" href="https://www.winterfest.ee${l==='ru'?'':'/'+l}/skiing/">`).join('\n')}
 <link rel="alternate" hreflang="x-default" href="https://www.winterfest.ee/et/skiing/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Estonia Winter Fest"><meta property="og:title" content="WINTER SKI · ${c.date}"><meta property="og:description" content="${c.description}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://www.winterfest.ee/assets/winter-ski/poster-${lang}-v2.webp"><meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="font" type="font/ttf" crossorigin href="${base}/assets/Anton-Regular.ttf"><link rel="preload" as="image" href="${poster}">
+<link rel="preload" as="font" type="font/ttf" crossorigin href="${base}/assets/Anton-Regular.ttf"><link rel="preload" as="image" href="${poster}" media="(max-width:760px)"><link rel="preload" as="image" href="${desktopPoster}" media="(min-width:761px)">
 ${['style','pages','refresh','skiing'].map(f=>`<link rel="stylesheet" href="${base}/${f}.css">`).join('\n')}
 ${['config','site','brand-arrows','navigation','skiing'].map(f=>`<script defer src="${base}/${f}.js"></script>`).join('\n')}
 <link rel="icon" href="${base}/favicon.ico"><link rel="apple-touch-icon" href="${base}/apple-touch-icon.png">
@@ -44,8 +45,8 @@ ${header}
 <main id="main" class="ski-main">
  <section class="ski-hero" aria-labelledby="ski-title">
   <h1 class="ski-sr" id="ski-title">WINTER SKI</h1>
-  <img class="ski-hero-poster" src="${poster}" width="1672" height="941" fetchpriority="high" alt="${posterAlt}">
-  <div class="ski-hero-bottom"><div class="ski-hero-action">${registration()}</div></div>
+  <div class="ski-hero-frame${lang==='en'?' ski-hero-frame-en':''}"><picture><source media="(min-width:761px)" srcset="${desktopPoster}"><img class="ski-hero-poster" src="${poster}" width="1672" height="941" fetchpriority="high" alt="${posterAlt}"></picture>
+  <div class="ski-hero-bottom"><div class="ski-hero-action">${registration()}</div></div></div>
  </section>
  <nav class="ski-jump" aria-label="${c.tabLabel}">${tabs.map((t,i)=>`<a href="#${t}" id="ski-tab-${t}" data-ski-tab="${t}"${i===0?' class="is-active"':''}>${c[t]}</a>`).join('')}</nav>
  <div class="ski-panels ski-container" id="ski-content">
