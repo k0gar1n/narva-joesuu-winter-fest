@@ -286,3 +286,10 @@ html[lang=ru] .hero-calendar>.free-entry{font-family:WF Condensed,Oswald,sans-se
  .sports-grid:has(.activity-horse)>.activity:nth-child(n+5){grid-column:span 4}
  .sports-grid:has(.activity-horse)>.activity:nth-child(n+5) .activity-caption h3{font-size:16px}
 }
+
+/* Ski race artwork stays complete, including its translated labels. */
+.tile-skiing .tile-photo,.activity-skiing .photo-wrap{aspect-ratio:1672/941!important}
+.tile-skiing .tile-photo img,.activity-skiing .photo-wrap img{object-fit:contain!important}
+.tile-skiing a:hover .tile-photo img,.activity-skiing:hover .photo-wrap img{transform:none}
+.activity-cover:has([data-ski-poster]){aspect-ratio:1672/941}
+.activity-cover img[data-ski-poster]{object-fit:contain}

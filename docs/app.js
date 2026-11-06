@@ -37,6 +37,7 @@
  }
  function setLang(next,persist=true){
    if(!copy[next])return;lang=next;document.documentElement.lang=lang;
+   $$('[data-ski-poster]').forEach(el=>{el.src=el.src.replace(/poster-(ru|et|en)-(desktop|v2)\.webp/,`poster-${lang}-${lang==='en'?'v2':'desktop'}.webp`);});
    $$('[data-i18n], [data-i18n-html]').forEach(el=>{el.innerHTML=t(el.dataset.i18n||el.dataset.i18nHtml);});
    $$('[data-alt]').forEach(el=>{el.alt=t(el.dataset.alt);});
    $$('[data-cup-poster]').forEach(el=>{

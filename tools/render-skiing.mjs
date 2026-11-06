@@ -26,7 +26,7 @@ for(const [lang,c] of Object.entries(copy)){
  en:{now:'Current price',range:'Participants 21–100',first:'First 20 participants',sold:'Sold out',next:'Participants 101–200',last:'From participant 201 and on site',main:'3 and 5 km',child:'Children’s race · 500 m',later:'Next price tiers',note:'The entry fee depends on the number of registered participants.'}
  }[lang];
  const tabs=['distances','route','programme','prices','rules'];
- const poster=`${base}/assets/winter-ski/poster-${lang}-v2.webp`;
+ const poster=`${base}/assets/winter-ski/poster-${lang}-${lang==='en'?'v2':'desktop'}.webp`;
  const desktopPoster=lang==='en'?poster:`${base}/assets/winter-ski/poster-${lang}-desktop.webp`;
  const posterAlt=`WINTER SKI. ${c.date}. Narva-Jõesuu. 3 ${c.km}, 5 ${c.km}. ${c.kids}: 500 ${c.m}. ${c.medal}: ${c.medalSub}. ${c.concert}, ${c.sauna}: ${c.free}.`;
  const distances=[['3',c.km,'3',c.adult],['5',c.km,'5',c.adult],['500',c.m,'kids',c.kids]];
@@ -35,7 +35,7 @@ for(const [lang,c] of Object.entries(copy)){
 <title>WINTER SKI · ${c.title} | 23.01.2027</title><meta name="description" content="${c.description}"><link rel="canonical" href="${url}">
 ${['ru','et','en'].map(l=>`<link rel="alternate" hreflang="${l}" href="https://www.winterfest.ee${l==='ru'?'':'/'+l}/skiing/">`).join('\n')}
 <link rel="alternate" hreflang="x-default" href="https://www.winterfest.ee/et/skiing/">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Estonia Winter Fest"><meta property="og:title" content="WINTER SKI · ${c.date}"><meta property="og:description" content="${c.description}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://www.winterfest.ee/assets/winter-ski/poster-${lang}-v2.webp"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Estonia Winter Fest"><meta property="og:title" content="WINTER SKI · ${c.date}"><meta property="og:description" content="${c.description}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://www.winterfest.ee/assets/winter-ski/poster-${lang}-${lang==='en'?'v2':'desktop'}.webp"><meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="font" type="font/ttf" crossorigin href="${base}/assets/Anton-Regular.ttf"><link rel="preload" as="image" href="${poster}" media="(max-width:760px)"><link rel="preload" as="image" href="${desktopPoster}" media="(min-width:761px)">
 ${['style','pages','refresh','skiing'].map(f=>`<link rel="stylesheet" href="${base}/${f}.css">`).join('\n')}
 ${['config','site','brand-arrows','navigation','skiing'].map(f=>`<script defer src="${base}/${f}.js"></script>`).join('\n')}
