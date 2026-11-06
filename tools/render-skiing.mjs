@@ -27,7 +27,7 @@ for(const [lang,c] of Object.entries(copy)){
  }[lang];
  const tabs=['distances','route','programme','prices','rules'];
  const poster=`${base}/assets/winter-ski/poster-${lang}-${lang==='en'?'v2':'desktop'}.webp`;
- const desktopPoster=lang==='en'?poster:`${base}/assets/winter-ski/poster-${lang}-desktop.webp`;
+ const desktopPoster=lang==='en'?poster:`${base}/assets/winter-ski/poster-${lang}-wide.webp`;
  const posterAlt=`WINTER SKI. ${c.date}. Narva-Jõesuu. 3 ${c.km}, 5 ${c.km}. ${c.kids}: 500 ${c.m}. ${c.medal}: ${c.medalSub}. ${c.concert}, ${c.sauna}: ${c.free}.`;
  const distances=[['3',c.km,'3',c.adult],['5',c.km,'5',c.adult],['500',c.m,'kids',c.kids]];
  const html=`<!DOCTYPE html>

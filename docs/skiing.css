@@ -82,23 +82,27 @@
 @media print{.ski-jump,.ski-mobile-register,.ski-register{display:none!important}.ski-page{padding:0}.ski-page .ski-panel[hidden]{display:grid!important}.ski-page .ski-hero-poster{max-height:none}.ski-panel{break-inside:avoid}}
 
 .ski-register.fienta-embed{background:var(--blue);color:#fff;border-color:var(--blue);cursor:pointer;text-decoration:none}.ski-register.fienta-embed:hover{background:#1235bf}.ski-register.fienta-embed:focus-visible{outline:3px solid #fff;outline-offset:3px}
-/* Full-screen desktop poster, with registration anchored to its artwork. */
+/* Desktop opening screen: visible site navigation, intact poster and full-width tabs. */
 @media(min-width:761px){
- .ski-page .header,.ski-page .header.header-hidden{position:fixed;inset:0 0 auto;transform:translateY(-100%);pointer-events:auto;z-index:30;transition:transform .22s ease}
- .ski-page .header:hover,.ski-page .header:focus-within,.ski-page:has(#site-menu[open]) .header{transform:translateY(0)}
- .ski-page .ski-hero{height:100svh;background:#8b9fb5;display:flex;align-items:center;justify-content:center;overflow:hidden}
- .ski-hero-frame{position:relative;width:100%;height:100%;container-type:size}
+ .ski-page{--ski-header-height:96px;--ski-tabs-height:76px}
+ .ski-page .header,.ski-page .header.header-hidden{position:sticky;top:0;transform:none;pointer-events:auto;z-index:30;height:var(--ski-header-height)}
+ .ski-page .ski-hero{background:#8b9fb5;display:flex;justify-content:center;overflow:hidden}
+ .ski-hero-frame{position:relative;width:min(100%,calc((100svh - var(--ski-header-height) - var(--ski-tabs-height))*2.09));aspect-ratio:2.09;height:auto}
  .ski-hero-frame picture{display:block;width:100%;height:100%}
- .ski-page .ski-hero-poster{width:100%;height:100%;max-height:none;object-fit:fill}
- .ski-hero-bottom{position:absolute;right:5.6%;bottom:3.2%;padding:0;width:22.5%;min-width:230px;max-width:none;margin:0}
+ .ski-page .ski-hero-poster{width:100%;height:100%;max-height:none;object-fit:contain}
+ .ski-hero-bottom{position:absolute;right:5.6%;bottom:2.5%;padding:0;width:22.5%;min-width:230px;max-width:none;margin:0}
  .ski-hero-action{width:100%}
- .ski-hero-action .ski-register{min-height:52px;height:7.1cqh;padding:12px 20px;font-size:clamp(12px,1.05vw,18px);box-shadow:0 6px 24px #102a4c24;border:0}
- .ski-jump{top:0}
- .ski-page .ski-panels{scroll-margin-top:66px}
- .ski-page .ski-panel{scroll-margin-top:85px}
- .ski-hero-frame-en picture{height:88%}.ski-hero-frame-en{background:#a4b5c8}
+ .ski-hero-action .ski-register{min-height:46px;padding:12px 18px;font-size:clamp(12px,1vw,17px);box-shadow:0 6px 24px #102a4c24;border:0}
+ .ski-jump{top:var(--ski-header-height);display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0;min-height:var(--ski-tabs-height)}
+ .ski-jump a{justify-content:center;min-height:var(--ski-tabs-height);font-size:clamp(15px,1.25vw,20px);font-weight:800;border-right:1px solid var(--ski-line);transition:background .2s,color .2s}
+ .ski-jump a:last-child{border-right:0}.ski-jump a.is-active{background:#dfeaf7;color:var(--blue)}
+ .ski-jump a:hover{background:#e2edf8}.ski-jump a:after{height:4px}
+ .ski-page .ski-panels{scroll-margin-top:calc(var(--ski-header-height) + var(--ski-tabs-height))}
+ .ski-page .ski-panel{scroll-margin-top:calc(var(--ski-header-height) + var(--ski-tabs-height) + 18px)}
+ .ski-hero-frame-en{aspect-ratio:1672/941;width:min(100%,calc((100svh - var(--ski-header-height) - var(--ski-tabs-height))*1.777))}
+ .ski-hero-frame-en .ski-hero-bottom{bottom:1%;right:50%;transform:translateX(50%)}
 }
-@media(min-width:761px) and (hover:none){.ski-page .header,.ski-page .header.header-hidden{transform:none}.ski-page .ski-hero{padding-top:82px}}
+@media(min-width:761px) and (max-width:960px){.ski-page{--ski-header-height:82px;--ski-tabs-height:68px}}
 @media(max-width:760px){
  .ski-hero,.ski-hero-frame{background:var(--ski-ice)}
  .ski-hero-frame picture{display:block}
@@ -108,7 +112,7 @@
  .ski-mobile-register .ski-register{min-height:52px;border:1px solid #ffffff55;box-shadow:0 5px 22px #102a4c35}
 }
 
-@media(min-width:761px) and (hover:hover){.ski-page .header:after{content:"";position:absolute;top:100%;left:0;right:0;height:14px;background:transparent}}
+
 
 /* Plain entry-fee table, shared by all three languages. */
 .ski-page .ski-prices-panel{display:block;background:transparent;border:0;padding:0;min-height:0}
