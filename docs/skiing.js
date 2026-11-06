@@ -3,7 +3,7 @@
  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
  const tabs=$$('[data-ski-tab]'),panels=$$('.ski-panel'),navigation=$('.ski-jump'),content=$('#ski-content');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const validPanel=id=>tabs.some(t=>t.dataset.skiTab===id)?id:'distances';
+ const validPanel=id=>tabs.some(t=>t.dataset.skiTab===id)?id:'route';
  let currentPanel=validPanel(location.hash.slice(1));
  function syncLanguages(){
   $$('[data-language]').forEach(link=>{const url=new URL(link.href);url.hash=location.hash;url.searchParams.delete('distance');link.href=url.href;});

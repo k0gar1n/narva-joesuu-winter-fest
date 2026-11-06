@@ -93,7 +93,7 @@
  .ski-hero-bottom{position:absolute;right:5.6%;bottom:2.5%;padding:0;width:22.5%;min-width:230px;max-width:none;margin:0}
  .ski-hero-action{width:100%}
  .ski-hero-action .ski-register{min-height:46px;padding:12px 18px;font-size:clamp(12px,1vw,17px);box-shadow:0 6px 24px #102a4c24;border:0}
- .ski-jump{top:var(--ski-header-height);display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0;min-height:var(--ski-tabs-height)}
+ .ski-jump{top:var(--ski-header-height);display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0;min-height:var(--ski-tabs-height)}
  .ski-jump a{justify-content:center;min-height:var(--ski-tabs-height);font-size:clamp(15px,1.25vw,20px);font-weight:800;border-right:1px solid var(--ski-line);transition:background .2s,color .2s}
  .ski-jump a:last-child{border-right:0}.ski-jump a.is-active{background:#dfeaf7;color:var(--blue)}
  .ski-jump a:hover{background:#e2edf8}.ski-jump a:after{height:4px}

@@ -25,11 +25,10 @@ for(const [lang,c] of Object.entries(copy)){
  et:{now:'Praegu',range:'Osalejad 21–100',first:'Esimesed 20 osalejat',sold:'Välja müüdud',next:'Osalejad 101–200',last:'Alates 201. osalejast ja kohapeal',main:'3 ja 5 km',child:'Lastesõit · 500 m',later:'Järgmised hinnavoorud',note:'Osalustasu sõltub registreerunud osalejate arvust.'},
  en:{now:'Current price',range:'Participants 21–100',first:'First 20 participants',sold:'Sold out',next:'Participants 101–200',last:'From participant 201 and on site',main:'3 and 5 km',child:'Children’s race · 500 m',later:'Next price tiers',note:'The entry fee depends on the number of registered participants.'}
  }[lang];
- const tabs=['distances','route','programme','prices','rules'];
+ const tabs=['route','programme','prices','rules'];
  const poster=`${base}/assets/winter-ski/poster-${lang}-${lang==='en'?'v2':'desktop'}.webp`;
  const desktopPoster=lang==='en'?poster:`${base}/assets/winter-ski/poster-${lang}-wide.webp?v=2`;
  const posterAlt=`WINTER SKI. ${c.date}. Narva-Jõesuu. 3 ${c.km}, 5 ${c.km}. ${c.kids}: 500 ${c.m}. ${c.medal}: ${c.medalSub}. ${c.concert}, ${c.sauna}: ${c.free}.`;
- const distances=[['3',c.km,'3',c.adult],['5',c.km,'5',c.adult],['500',c.m,'kids',c.kids]];
  const html=`<!DOCTYPE html>
 <html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102A4C">
 <title>WINTER SKI · ${c.title} | 23.01.2027</title><meta name="description" content="${c.description}"><link rel="canonical" href="${url}">
@@ -50,7 +49,6 @@ ${header}
  </section>
  <nav class="ski-jump" aria-label="${c.tabLabel}">${tabs.map((t,i)=>`<a href="#${t}" id="ski-tab-${t}" data-ski-tab="${t}"${i===0?' class="is-active"':''}>${c[t]}</a>`).join('')}</nav>
  <div class="ski-panels ski-container" id="ski-content">
-  <section class="ski-panel ski-distances-panel" id="distances" aria-labelledby="distances-title"><h2 class="ski-sr" id="distances-title">${c.distances}</h2><div class="ski-distance-summary"><p><strong>3 <span>${c.km}</span></strong></p><p><strong>5 <span>${c.km}</span></strong></p><p><strong>500 <span>${c.m}</span></strong><span>${c.kids}</span></p></div></section>
   <section class="ski-panel ski-route-panel" id="route" aria-label="${c.route}"><p>${{ru:'Маршрут дорабатывается — схема появится позже.',et:'Rada on täpsustamisel — rajakaart avaldatakse hiljem.',en:'The route is being finalised — the map will be published later.'}[lang]}</p></section>
   <section class="ski-panel ski-programme-panel" id="programme" aria-labelledby="programme-title"><div class="ski-calendar-tile"><span>${c.day}</span><strong>23</strong><span>${c.month} 2027</span></div><div class="ski-panel-copy"><h2 id="programme-title">${c.programmeTitle}</h2><p>${c.programmePending}</p><a class="ski-outline-button" href="${base}/skiing/winter-ski.ics" download>${c.calendar}${arrow}</a></div></section>
   <section class="ski-panel ski-prices-panel" id="prices" aria-labelledby="prices-title">
