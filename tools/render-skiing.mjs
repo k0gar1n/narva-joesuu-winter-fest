@@ -54,11 +54,10 @@ ${header}
   <section class="ski-panel ski-route-panel" id="route" aria-labelledby="route-title"><div class="ski-panel-copy"><h2 id="route-title">${c.routeTitle}</h2><p>${c.routePending}</p><button type="button" class="ski-outline-button" disabled>${c.routeButton}${arrow}</button></div><img class="ski-route-photo" src="${base}/assets/winter-ski/coast-photo.webp" width="1535" height="1025" alt="" loading="lazy"></section>
   <section class="ski-panel ski-programme-panel" id="programme" aria-labelledby="programme-title"><div class="ski-calendar-tile"><span>${c.day}</span><strong>23</strong><span>${c.month} 2027</span></div><div class="ski-panel-copy"><h2 id="programme-title">${c.programmeTitle}</h2><p>${c.programmePending}</p><a class="ski-outline-button" href="${base}/skiing/winter-ski.ics" download>${c.calendar}${arrow}</a></div></section>
   <section class="ski-panel ski-prices-panel" id="prices" aria-labelledby="prices-title">
-   <header class="ski-price-heading"><h2 id="prices-title">${c.pricesTitle}</h2><p>${priceCopy.note}</p></header>
-   <div class="ski-pricing-layout">
-    <div class="ski-current-price"><div class="ski-price-status">${priceCopy.now}</div><h3>${priceCopy.range}</h3><div class="ski-price-pair"><div><span>${priceCopy.main}</span><strong>10 <small>€</small></strong></div><div><span>${priceCopy.child}</span><strong>5 <small>€</small></strong></div></div>${registration()}</div>
-    <div class="ski-price-stages"><div class="ski-sold-price"><div><h3>${priceCopy.first}</h3><span>${priceCopy.main} · ${priceCopy.sold}</span></div><s>7 €</s></div><h3 class="ski-next-label">${priceCopy.later}</h3>${[[priceCopy.next,'15','7'],[priceCopy.last,'20','10']].map(([label,adult,child])=>`<div class="ski-next-price"><h4>${label}</h4><dl><div><dt>${priceCopy.main}</dt><dd>${adult} €</dd></div><div><dt>${priceCopy.child}</dt><dd>${child} €</dd></div></dl></div>`).join('')}</div>
-   </div>
+   <h2 id="prices-title">${c.pricesTitle}</h2>
+   <table class="ski-fees-table"><thead><tr><th scope="col">${{ru:'Участники',et:'Osalejad',en:'Participants'}[lang]}</th><th scope="col">${priceCopy.main}</th><th scope="col">${c.kids}<small>500 ${c.m}</small></th></tr></thead><tbody>
+   ${[[priceCopy.first,'7','—',true],[priceCopy.range,'10','5',false],[priceCopy.next,'15','7',false],[priceCopy.last,'20','10',false]].map(([label,adult,child,sold])=>`<tr${sold?' class="is-sold"':''}><th scope="row">${label}${sold?`<small>${priceCopy.sold}</small>`:''}</th><td>${adult} €</td><td>${child==='—'?'—':child+' €'}</td></tr>`).join('')}
+   </tbody></table>
   </section>
   <section class="ski-panel ski-rules-panel" id="rules" aria-labelledby="rules-title"><div class="ski-document-art" aria-hidden="true">${svgDocument}<span>WINTER SKI</span></div><div class="ski-panel-copy"><h2 id="rules-title">${c.rulesTitle}</h2><p>${c.rulesPending}</p><button type="button" class="ski-outline-button" disabled>${c.rulesButton}${arrow}</button></div></section>
  </div>
