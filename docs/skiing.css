@@ -130,3 +130,5 @@
  .ski-fees-table tbody th,.ski-fees-table td{padding-top:19px;padding-bottom:19px}
  .ski-fees-table td{font-size:26px}.ski-fees-table small{font-size:10px}
 }
+
+.ski-fees-table .is-sold td:nth-child(2){text-decoration:line-through;text-decoration-thickness:2px}
