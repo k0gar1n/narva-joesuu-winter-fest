@@ -7,8 +7,6 @@ const copy={
  en:{title:'Seaside cross-country skiing',description:'WINTER SKI in Narva-Jõesuu on 23 January 2027. 3 km and 5 km distances and a 500 m children’s race. Route, programme, entry fees and rules.',date:'23 January 2027',month:'JANUARY',day:'Saturday',place:'Narva-Jõesuu, Estonia',intro:'Cross-country skiing.<br> By the sea.',register:'Register',notOpen:'Registration is not open yet',distances:'Distances',choose:'Choose your distance',km:'km',m:'m',adult:'Ski race',kids:'Children’s race',distanceNote:'3 and 5 km along the coast.<br>A separate 500 m race for children.',distanceLabel:'Selected distance',pricesLink:'Entry and fees',route:'Route',programme:'Programme',prices:'Entry fees',rules:'Rules',info:'Participant information',routeTitle:'A course by the sea',routeCopy:'Narva-Jõesuu coastline',routePending:'The detailed route map is being prepared.',routeButton:'View route map',programmeTitle:'Race day',programmePending:'Start times will be published later.',calendar:'Add to calendar',pricesTitle:'Entry fees',pricesPending:'Fees and registration deadlines are being finalised.',priceColumn:'Entry fee',pending:'To be confirmed',rulesTitle:'Full race rules',rulesPending:'The rules are being prepared. Participation requirements and race rules will be published here.',rulesButton:'Read race rules',included:'For participants',medal:'A finisher’s medal',medalSub:'For every finisher',concert:'Concert',sauna:'Sauna',free:'Free for participants',question:'A question about the race?',contact:'Contact the organisers',photo:'Cross-country skiers on a snowy seashore',poster:'WINTER SKI poster',posterOpen:'View poster',close:'Close',tabLabel:'Race information',back:'Back to the festival',selected:'Selected'}
 };
 const arrow='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7"/></svg>';
-const pin='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>';
-const medal='<svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="m17 5 15 25L47 5M10 5h14l8 14 8-14h14L40 31H24L10 5Z" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="42" r="16" stroke="currentColor" stroke-width="2"/><path d="m32 32 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" fill="currentColor"/></svg>';
 const svgDocument='<svg viewBox="0 0 96 120" fill="none" aria-hidden="true"><path d="M12 3h48l24 24v90H12V3Z" stroke="currentColor" stroke-width="2"/><path d="M60 3v24h24M28 51h40M28 65h40M28 79h25" stroke="currentColor" stroke-width="2"/></svg>';
 for(const [lang,c] of Object.entries(copy)){
  const prefix=lang==='ru'?'':`/${lang}`, url=`https://www.winterfest.ee${prefix}/skiing/`;
@@ -21,53 +19,40 @@ for(const [lang,c] of Object.entries(copy)){
  });
  header=header.replace(/ class="([^"]*)is-active([^"]*)"/g,' class="$1$2"').replaceAll(' aria-current="page"','');
  const footer=shell.slice(shell.indexOf('<footer'),shell.indexOf('</footer>')+9);
- const registration=(extra='')=>`<button class="ski-register ${extra}" type="button" disabled aria-describedby="ski-registration-status">${c.register}${arrow}</button>`;
- const tabs=['route','programme','prices','rules'];
+ const registration=(extra='')=>`<button class="ski-register ${extra}" type="button" disabled>${c.register}${arrow}</button>`;
+ const tabs=['distances','route','programme','prices','rules'];
+ const poster=`${base}/assets/winter-ski/poster-${lang}-v2.webp`;
+ const posterAlt=`WINTER SKI. ${c.date}. Narva-Jõesuu. 3 ${c.km}, 5 ${c.km}. ${c.kids}: 500 ${c.m}. ${c.medal}: ${c.medalSub}. ${c.concert}, ${c.sauna}: ${c.free}.`;
  const distances=[['3',c.km,'3',c.adult],['5',c.km,'5',c.adult],['500',c.m,'kids',c.kids]];
  const html=`<!DOCTYPE html>
 <html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102A4C">
 <title>WINTER SKI · ${c.title} | 23.01.2027</title><meta name="description" content="${c.description}"><link rel="canonical" href="${url}">
 ${['ru','et','en'].map(l=>`<link rel="alternate" hreflang="${l}" href="https://www.winterfest.ee${l==='ru'?'':'/'+l}/skiing/">`).join('\n')}
 <link rel="alternate" hreflang="x-default" href="https://www.winterfest.ee/et/skiing/">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Estonia Winter Fest"><meta property="og:title" content="WINTER SKI · ${c.date}"><meta property="og:description" content="${c.description}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://www.winterfest.ee/assets/winter-ski/poster.webp"><meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="font" type="font/ttf" crossorigin href="${base}/assets/Anton-Regular.ttf"><link rel="preload" as="image" href="${base}/assets/winter-ski/poster.webp">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Estonia Winter Fest"><meta property="og:title" content="WINTER SKI · ${c.date}"><meta property="og:description" content="${c.description}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://www.winterfest.ee/assets/winter-ski/poster-${lang}-v2.webp"><meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/ttf" crossorigin href="${base}/assets/Anton-Regular.ttf"><link rel="preload" as="image" href="${poster}">
 ${['style','pages','refresh','skiing'].map(f=>`<link rel="stylesheet" href="${base}/${f}.css">`).join('\n')}
 ${['config','site','brand-arrows','navigation','skiing'].map(f=>`<script defer src="${base}/${f}.js"></script>`).join('\n')}
 <link rel="icon" href="${base}/favicon.ico"><link rel="apple-touch-icon" href="${base}/apple-touch-icon.png">
-</head><body class="subpage ski-page" id="top" data-route="/skiing/"><a class="skip" href="#main">${c.info}</a>
+</head><body class="subpage ski-page" id="top" data-route="/skiing/"><a class="skip" href="#main">WINTER SKI</a>
 ${header}
 <main id="main" class="ski-main">
  <section class="ski-hero" aria-labelledby="ski-title">
-  <div class="ski-hero-mast">
-   <div class="ski-wordmark"><span class="ski-country">ESTONIA</span><h1 id="ski-title">WINTER SKI</h1></div>
-   <div class="ski-date" aria-label="${c.date}"><span class="ski-date-day">23</span><span class="ski-date-month">${c.month}<span>2027</span></span></div>
-  </div>
-  <div class="ski-image-strip"><img src="${base}/assets/winter-ski/poster.webp" width="1672" height="941" fetchpriority="high" alt="${c.photo}"></div>
-  <div class="ski-hero-bottom"><div><p class="ski-location">${pin}${c.place}</p><p class="ski-intro">${c.intro}</p></div><div class="ski-hero-action">${registration()}<p id="ski-registration-status" class="ski-status">${c.notOpen}</p></div></div>
+  <h1 class="ski-sr" id="ski-title">WINTER SKI</h1>
+  <img class="ski-hero-poster" src="${poster}" width="1672" height="941" fetchpriority="high" alt="${posterAlt}">
+  <div class="ski-hero-bottom"><div class="ski-hero-action">${registration()}</div></div>
  </section>
- <nav class="ski-jump" aria-label="${c.tabLabel}"><a href="#distances">${c.distances}</a>${tabs.map(t=>`<a href="#${t}" data-ski-open="${t}">${c[t]}</a>`).join('')}<a class="ski-jump-poster" href="${base}/assets/winter-ski/poster.webp" data-ski-poster>${c.posterOpen}${arrow}</a></nav>
- <section class="ski-distances ski-container" id="distances" aria-labelledby="distances-title">
-  <div class="ski-distance-heading"><h2 id="distances-title">${c.choose}</h2><p>${c.distanceNote}</p></div>
-  <div class="ski-distance-controls" role="group" aria-label="${c.choose}">${distances.map(([n,u,id,name],i)=>`<button class="ski-distance" type="button" data-ski-distance="${id}" aria-pressed="${i===0}" data-ski-number="${n}" data-ski-unit="${u}" data-ski-name="${name}"><span class="ski-distance-caption">${name}</span><span class="ski-distance-amount">${n}<small>${u}</small></span><span class="ski-distance-indicator" aria-hidden="true">${arrow}</span></button>`).join('')}</div>
-  <div class="ski-distance-selection"><div class="ski-distance-track" aria-hidden="true"><span></span></div><p aria-live="polite"><span data-ski-selected>3 ${c.km}</span><span class="ski-selection-separator">/</span><span data-ski-selected-name>${c.adult}</span></p><a href="#prices" data-ski-open="prices">${c.pricesLink}${arrow}</a></div>
- </section>
- <section class="ski-guide ski-container" id="participant-info" aria-labelledby="ski-guide-title">
-  <div class="ski-guide-heading"><h2 id="ski-guide-title">${c.info}</h2></div>
-  <div class="ski-guide-layout">
-   <nav class="ski-tabs" aria-label="${c.tabLabel}">${tabs.map((t,i)=>`<a href="#${t}" id="ski-tab-${t}" data-ski-tab="${t}"${i===0?' class="is-active"':''}>${c[t]}${arrow}</a>`).join('')}</nav>
-   <div class="ski-panels">
-    <section class="ski-panel ski-route-panel" id="route" aria-labelledby="route-title"><div class="ski-panel-copy"><h3 id="route-title">${c.routeTitle}</h3><p>${c.routePending}</p><button type="button" class="ski-outline-button" disabled>${c.routeButton}${arrow}</button></div><div class="ski-coast" aria-hidden="true"><span class="ski-coast-line"></span><div class="ski-coast-caption">${pin}<span>NARVA-JÕESUU<br><small>${c.routeCopy}</small></span></div><div class="ski-coast-photo"><img src="${base}/assets/winter-ski/poster.webp" width="1672" height="941" alt="" loading="lazy"></div></div></section>
-    <section class="ski-panel ski-programme-panel" id="programme" aria-labelledby="programme-title"><div class="ski-calendar-tile"><span>${c.day}</span><strong>23</strong><span>${c.month} 2027</span></div><div class="ski-panel-copy"><h3 id="programme-title">${c.programmeTitle}</h3><p>${c.programmePending}</p><a class="ski-outline-button" href="${base}/skiing/winter-ski.ics" download>${c.calendar}${arrow}</a></div></section>
-    <section class="ski-panel ski-prices-panel" id="prices" aria-labelledby="prices-title"><div class="ski-panel-copy"><h3 id="prices-title">${c.pricesTitle}</h3><p>${c.pricesPending}</p></div><table class="ski-price-table"><caption class="ski-sr">${c.pricesTitle}</caption><thead><tr><th scope="col">${c.distances}</th><th scope="col">${c.priceColumn}</th></tr></thead><tbody>${distances.map(([n,u,id,name])=>`<tr data-ski-price="${id}"><th scope="row">${n} ${u}${id==='kids'?`<small>${name}</small>`:''}</th><td>${c.pending}</td></tr>`).join('')}</tbody></table></section>
-    <section class="ski-panel ski-rules-panel" id="rules" aria-labelledby="rules-title"><div class="ski-document-art" aria-hidden="true">${svgDocument}<span>WINTER SKI</span></div><div class="ski-panel-copy"><h3 id="rules-title">${c.rulesTitle}</h3><p>${c.rulesPending}</p><button type="button" class="ski-outline-button" disabled>${c.rulesButton}${arrow}</button></div></section>
-   </div>
-  </div>
- </section>
- <section class="ski-included ski-container" aria-labelledby="included-title"><h2 id="included-title">${c.included}</h2><div class="ski-included-grid"><div><span class="ski-medal-icon">${medal}</span><p><strong>${c.medal}</strong><span>${c.medalSub}</span></p></div><div><img src="${base}/assets/07-stage.webp" width="90" height="90" alt="" loading="lazy"><p><strong>${c.concert}</strong><span>${c.free}</span></p></div><div><img src="${base}/assets/13-sauna.webp" width="90" height="90" alt="" loading="lazy"><p><strong>${c.sauna}</strong><span>${c.free}</span></p></div></div></section>
+ <nav class="ski-jump" aria-label="${c.tabLabel}">${tabs.map((t,i)=>`<a href="#${t}" id="ski-tab-${t}" data-ski-tab="${t}"${i===0?' class="is-active"':''}>${c[t]}</a>`).join('')}</nav>
+ <div class="ski-panels ski-container" id="ski-content">
+  <section class="ski-panel ski-distances-panel" id="distances" aria-labelledby="distances-title"><h2 class="ski-sr" id="distances-title">${c.distances}</h2><div class="ski-distance-summary"><p><strong>3 <span>${c.km}</span></strong></p><p><strong>5 <span>${c.km}</span></strong></p><p><strong>500 <span>${c.m}</span></strong><span>${c.kids}</span></p></div></section>
+  <section class="ski-panel ski-route-panel" id="route" aria-labelledby="route-title"><div class="ski-panel-copy"><h2 id="route-title">${c.routeTitle}</h2><p>${c.routePending}</p><button type="button" class="ski-outline-button" disabled>${c.routeButton}${arrow}</button></div><img class="ski-route-photo" src="${base}/assets/winter-ski/coast-photo.webp" width="1535" height="1025" alt="" loading="lazy"></section>
+  <section class="ski-panel ski-programme-panel" id="programme" aria-labelledby="programme-title"><div class="ski-calendar-tile"><span>${c.day}</span><strong>23</strong><span>${c.month} 2027</span></div><div class="ski-panel-copy"><h2 id="programme-title">${c.programmeTitle}</h2><p>${c.programmePending}</p><a class="ski-outline-button" href="${base}/skiing/winter-ski.ics" download>${c.calendar}${arrow}</a></div></section>
+  <section class="ski-panel ski-prices-panel" id="prices" aria-labelledby="prices-title"><div class="ski-panel-copy"><h2 id="prices-title">${c.pricesTitle}</h2><p>${c.pricesPending}</p></div><table class="ski-price-table"><caption class="ski-sr">${c.pricesTitle}</caption><thead><tr><th scope="col">${c.distances}</th><th scope="col">${c.priceColumn}</th></tr></thead><tbody>${distances.map(([n,u,id,name])=>`<tr><th scope="row">${n} ${u}${id==='kids'?`<small>${name}</small>`:''}</th><td>${c.pending}</td></tr>`).join('')}</tbody></table></section>
+  <section class="ski-panel ski-rules-panel" id="rules" aria-labelledby="rules-title"><div class="ski-document-art" aria-hidden="true">${svgDocument}<span>WINTER SKI</span></div><div class="ski-panel-copy"><h2 id="rules-title">${c.rulesTitle}</h2><p>${c.rulesPending}</p><button type="button" class="ski-outline-button" disabled>${c.rulesButton}${arrow}</button></div></section>
+ </div>
  <div class="ski-contact ski-container"><div><p>${c.question}</p><a href="mailto:info@winterfest.ee">info@winterfest.ee${arrow}</a></div><a class="ski-festival-link" href="${base}${prefix}/">${c.back}${arrow}</a></div>
- <div class="ski-mobile-register"><div><strong data-ski-selected>3 ${c.km}</strong><span>23.01.2027</span></div>${registration()}</div>
+ <div class="ski-mobile-register">${registration()}</div>
 </main>
-<dialog class="ski-poster-dialog" aria-label="${c.poster}"><button class="ski-poster-close" type="button" aria-label="${c.close}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2"/></svg></button><img src="${base}/assets/winter-ski/poster.webp" alt="${c.poster}" width="1672" height="941"></dialog>
 ${footer}</body></html>`;
  const dir=new URL(`${prefix.slice(1)}${prefix?'/':''}skiing/`,root);await mkdir(dir,{recursive:true});await writeFile(new URL('index.html',dir),html);
 }
