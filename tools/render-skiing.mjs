@@ -20,6 +20,11 @@ for(const [lang,c] of Object.entries(copy)){
  header=header.replace(/ class="([^"]*)is-active([^"]*)"/g,' class="$1$2"').replaceAll(' aria-current="page"','');
  const footer=shell.slice(shell.indexOf('<footer'),shell.indexOf('</footer>')+9);
  const registration=(extra='')=>`<a class="ski-register fienta-embed ${extra}" href="https://fienta.com/${lang==='ru'?'ru':'et'}/214887">${c.register}${arrow}</a>`;
+ const priceCopy={
+ ru:{now:'Сейчас',range:'Участники 21–100',first:'Первые 20 участников',sold:'Распродано',next:'Участники 101–200',last:'С 201-го участника и на месте',main:'3 и 5 км',child:'Детский заезд · 500 м',later:'Следующие этапы',note:'Стоимость зависит от количества зарегистрированных участников.'},
+ et:{now:'Praegu',range:'Osalejad 21–100',first:'Esimesed 20 osalejat',sold:'Välja müüdud',next:'Osalejad 101–200',last:'Alates 201. osalejast ja kohapeal',main:'3 ja 5 km',child:'Lastesõit · 500 m',later:'Järgmised hinnavoorud',note:'Osalustasu sõltub registreerunud osalejate arvust.'},
+ en:{now:'Current price',range:'Participants 21–100',first:'First 20 participants',sold:'Sold out',next:'Participants 101–200',last:'From participant 201 and on site',main:'3 and 5 km',child:'Children’s race · 500 m',later:'Next price tiers',note:'The entry fee depends on the number of registered participants.'}
+ }[lang];
  const tabs=['distances','route','programme','prices','rules'];
  const poster=`${base}/assets/winter-ski/poster-${lang}-v2.webp`;
  const posterAlt=`WINTER SKI. ${c.date}. Narva-Jõesuu. 3 ${c.km}, 5 ${c.km}. ${c.kids}: 500 ${c.m}. ${c.medal}: ${c.medalSub}. ${c.concert}, ${c.sauna}: ${c.free}.`;
@@ -47,7 +52,13 @@ ${header}
   <section class="ski-panel ski-distances-panel" id="distances" aria-labelledby="distances-title"><h2 class="ski-sr" id="distances-title">${c.distances}</h2><div class="ski-distance-summary"><p><strong>3 <span>${c.km}</span></strong></p><p><strong>5 <span>${c.km}</span></strong></p><p><strong>500 <span>${c.m}</span></strong><span>${c.kids}</span></p></div></section>
   <section class="ski-panel ski-route-panel" id="route" aria-labelledby="route-title"><div class="ski-panel-copy"><h2 id="route-title">${c.routeTitle}</h2><p>${c.routePending}</p><button type="button" class="ski-outline-button" disabled>${c.routeButton}${arrow}</button></div><img class="ski-route-photo" src="${base}/assets/winter-ski/coast-photo.webp" width="1535" height="1025" alt="" loading="lazy"></section>
   <section class="ski-panel ski-programme-panel" id="programme" aria-labelledby="programme-title"><div class="ski-calendar-tile"><span>${c.day}</span><strong>23</strong><span>${c.month} 2027</span></div><div class="ski-panel-copy"><h2 id="programme-title">${c.programmeTitle}</h2><p>${c.programmePending}</p><a class="ski-outline-button" href="${base}/skiing/winter-ski.ics" download>${c.calendar}${arrow}</a></div></section>
-  <section class="ski-panel ski-prices-panel" id="prices" aria-labelledby="prices-title"><div class="ski-panel-copy"><h2 id="prices-title">${c.pricesTitle}</h2></div><table class="ski-price-table"><caption class="ski-sr">${c.pricesTitle}</caption><thead><tr><th scope="col">${c.distances}</th><th scope="col">${c.priceColumn}</th></tr></thead><tbody>${distances.map(([n,u,id,name])=>`<tr><th scope="row">${n} ${u}${id==='kids'?`<small>${name}</small>`:''}</th><td>${id==='kids'?'5':'10'} €</td></tr>`).join('')}</tbody></table></section>
+  <section class="ski-panel ski-prices-panel" id="prices" aria-labelledby="prices-title">
+   <header class="ski-price-heading"><h2 id="prices-title">${c.pricesTitle}</h2><p>${priceCopy.note}</p></header>
+   <div class="ski-pricing-layout">
+    <div class="ski-current-price"><div class="ski-price-status">${priceCopy.now}</div><h3>${priceCopy.range}</h3><div class="ski-price-pair"><div><span>${priceCopy.main}</span><strong>10 <small>€</small></strong></div><div><span>${priceCopy.child}</span><strong>5 <small>€</small></strong></div></div>${registration()}</div>
+    <div class="ski-price-stages"><div class="ski-sold-price"><div><h3>${priceCopy.first}</h3><span>${priceCopy.main} · ${priceCopy.sold}</span></div><s>7 €</s></div><h3 class="ski-next-label">${priceCopy.later}</h3>${[[priceCopy.next,'15','7'],[priceCopy.last,'20','10']].map(([label,adult,child])=>`<div class="ski-next-price"><h4>${label}</h4><dl><div><dt>${priceCopy.main}</dt><dd>${adult} €</dd></div><div><dt>${priceCopy.child}</dt><dd>${child} €</dd></div></dl></div>`).join('')}</div>
+   </div>
+  </section>
   <section class="ski-panel ski-rules-panel" id="rules" aria-labelledby="rules-title"><div class="ski-document-art" aria-hidden="true">${svgDocument}<span>WINTER SKI</span></div><div class="ski-panel-copy"><h2 id="rules-title">${c.rulesTitle}</h2><p>${c.rulesPending}</p><button type="button" class="ski-outline-button" disabled>${c.rulesButton}${arrow}</button></div></section>
  </div>
  <div class="ski-contact ski-container"><div><p>${c.question}</p><a href="mailto:info@winterfest.ee">info@winterfest.ee${arrow}</a></div><a class="ski-festival-link" href="${base}${prefix}/">${c.back}${arrow}</a></div>

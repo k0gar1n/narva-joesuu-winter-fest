@@ -82,3 +82,17 @@
 @media print{.ski-jump,.ski-mobile-register,.ski-register{display:none!important}.ski-page{padding:0}.ski-page .ski-panel[hidden]{display:grid!important}.ski-page .ski-hero-poster{max-height:none}.ski-panel{break-inside:avoid}}
 
 .ski-register.fienta-embed{background:var(--blue);color:#fff;border-color:var(--blue);cursor:pointer;text-decoration:none}.ski-register.fienta-embed:hover{background:#1235bf}.ski-register.fienta-embed:focus-visible{outline:3px solid #fff;outline-offset:3px}
+/* Price tiers: current entry fee first, with the full progression alongside. */
+.ski-page .ski-prices-panel{background:transparent;border:0;padding:0;overflow:visible}
+.ski-price-heading{margin-bottom:28px}.ski-price-heading p{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.6}
+.ski-pricing-layout{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
+.ski-current-price{background:var(--ski-ink);color:#fff;padding:32px;display:flex;flex-direction:column}
+.ski-price-status{font-size:11px;font-weight:800;letter-spacing:.04em;color:#b7d3ff;margin-bottom:16px}
+.ski-current-price h3{font-size:22px;line-height:1.3;letter-spacing:-.025em}
+.ski-price-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:30px 0 34px}.ski-price-pair>div+div{border-left:1px solid #ffffff35;padding-left:24px}
+.ski-price-pair span{display:block;font-size:12px;line-height:1.5;color:#d7e3f4;min-height:36px}.ski-price-pair strong{display:block;font:400 76px/1.2 Anton,sans-serif;margin-top:10px}.ski-price-pair small{font:500 28px Manrope,sans-serif}
+.ski-current-price .ski-register{margin-top:auto}.ski-price-stages h3,.ski-price-stages h4{font-size:15px;line-height:1.5}
+.ski-sold-price{display:flex;justify-content:space-between;align-items:center;gap:18px;border-bottom:1px solid var(--ski-line);padding-bottom:22px;color:#63758b}.ski-sold-price span{font-size:11px;display:block;margin-top:5px}.ski-sold-price s{font:400 30px Anton,sans-serif;white-space:nowrap;text-decoration-thickness:1px}
+.ski-price-stages .ski-next-label{font-size:11px;color:var(--muted);font-weight:600;margin-top:24px}
+.ski-next-price{padding:15px 0 18px;border-bottom:1px solid var(--ski-line)}.ski-next-price dl{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px}.ski-next-price dt{font-size:11px;color:var(--muted);line-height:1.5}.ski-next-price dd{font:400 29px/1.3 Anton,sans-serif;margin:7px 0 0}
+@media(max-width:760px){.ski-page .ski-prices-panel{padding:0;min-height:0}.ski-price-heading{margin-bottom:20px}.ski-pricing-layout{grid-template-columns:1fr;gap:26px}.ski-current-price{padding:25px 22px}.ski-current-price h3{font-size:20px}.ski-price-pair{gap:18px;margin:24px 0}.ski-price-pair>div+div{padding-left:18px}.ski-price-pair strong{font-size:64px}.ski-price-pair span{font-size:11px}.ski-price-heading p{font-size:12px}.ski-price-stages{padding:0 2px}.ski-next-price dl{gap:18px}}
