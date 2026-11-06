@@ -132,3 +132,5 @@
 }
 
 .ski-fees-table .is-sold td:nth-child(2){text-decoration:line-through;text-decoration-thickness:2px}
+
+.ski-page .ski-route-panel{display:block;min-height:0;background:transparent;border:0;padding:10px 0 32px}.ski-route-panel>p{font-size:16px;line-height:1.65;color:var(--ski-ink)}
