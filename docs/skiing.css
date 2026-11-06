@@ -141,3 +141,12 @@
 
 .ski-contact>.ski-bottom-register{width:300px;max-width:100%;flex-shrink:0}
 @media(max-width:760px){.ski-contact>.ski-bottom-register{margin-top:24px;width:100%}}
+
+@media(max-width:760px){
+ .ski-jump{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding-inline:0;overflow:visible;min-height:58px}
+ .ski-jump a{justify-content:center;min-width:0;min-height:58px;font-size:clamp(10px,3vw,13px);font-weight:800;border-right:1px solid var(--ski-line)}
+ .ski-jump a:last-child{border-right:0}
+ .ski-jump a.is-active{background:#dfeaf7;color:var(--blue)}
+ .ski-jump a:after{height:3px}
+ .ski-page .ski-panels{scroll-margin-top:58px}
+}
