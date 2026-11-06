@@ -61,7 +61,7 @@ ${header}
   </section>
   <section class="ski-panel ski-rules-panel" id="rules" aria-labelledby="rules-title"><div class="ski-document-art" aria-hidden="true">${svgDocument}<span>WINTER SKI</span></div><div class="ski-panel-copy"><h2 id="rules-title">${c.rulesTitle}</h2><p>${c.rulesPending}</p><button type="button" class="ski-outline-button" disabled>${c.rulesButton}${arrow}</button></div></section>
  </div>
- <div class="ski-contact ski-container"><div><p>${c.question}</p><a href="mailto:info@winterfest.ee">info@winterfest.ee${arrow}</a></div><a class="ski-festival-link" href="${base}${prefix}/">${c.back}${arrow}</a></div>
+ <div class="ski-contact ski-container"><div><p>${c.question}</p><a href="mailto:info@winterfest.ee">info@winterfest.ee${arrow}</a></div>${registration("ski-bottom-register")}</div>
  <div class="ski-mobile-register">${registration()}</div>
 </main>
 ${footer}</body></html>`;
