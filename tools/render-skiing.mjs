@@ -25,6 +25,11 @@ for(const [lang,c] of Object.entries(copy)){
  et:{now:'Praegu',range:'Osalejad 21–100',first:'Esimesed 20 osalejat',sold:'Välja müüdud',next:'Osalejad 101–200',last:'Alates 201. osalejast ja kohapeal',main:'3 ja 5 km',child:'Lastesõit · 500 m',later:'Järgmised hinnavoorud',note:'Osalustasu sõltub registreerunud osalejate arvust.'},
  en:{now:'Current price',range:'Participants 21–100',first:'First 20 participants',sold:'Sold out',next:'Participants 101–200',last:'From participant 201 and on site',main:'3 and 5 km',child:'Children’s race · 500 m',later:'Next price tiers',note:'The entry fee depends on the number of registered participants.'}
  }[lang];
+ const schedule={
+ ru:[['12:00–13:30','Выдача номеров','В стартовом городке у порта. Приходите заранее.'],['13:30','Детский старт · 500 м','Медаль каждому финишеру.'],['14:00','Общий старт · 3 и 5 км',''],['14:30–16:00','Баня для участников','Один бесплатный вход по стартовому номеру.'],['≈ 15:00','Награждение','На главной сцене.']],
+ et:[['12:00–13:30','Stardinumbrite väljastamine','Sadama juures stardilinnakus. Palume tulla aegsasti.'],['13:30','Lastesõidu start · 500 m','Medal igale lõpetajale.'],['14:00','Ühisstart · 3 ja 5 km',''],['14:30–16:00','Saun osalejatele','Üks tasuta sissepääs stardinumbri alusel.'],['≈ 15:00','Autasustamine','Pealaval.']],
+ en:[['12:00–13:30','Race number collection','At the start village by the harbour. Please arrive early.'],['13:30','Children’s start · 500 m','A medal for every finisher.'],['14:00','Mass start · 3 and 5 km',''],['14:30–16:00','Sauna for participants','One free entry with your race number.'],['≈ 15:00','Award ceremony','On the main stage.']]
+ }[lang];
  const tabs=['route','programme','prices','rules'];
  const poster=`${base}/assets/winter-ski/poster-${lang}-${lang==='en'?'v2':'desktop'}.webp`;
  const desktopPoster=lang==='en'?poster:`${base}/assets/winter-ski/poster-${lang}-wide.webp?v=2`;
@@ -50,7 +55,7 @@ ${header}
  <nav class="ski-jump" aria-label="${c.tabLabel}">${tabs.map((t,i)=>`<a href="#${t}" id="ski-tab-${t}" data-ski-tab="${t}"${i===0?' class="is-active"':''}>${c[t]}</a>`).join('')}</nav>
  <div class="ski-panels ski-container" id="ski-content">
   <section class="ski-panel ski-route-panel" id="route" aria-label="${c.route}"><p>${{ru:'Маршрут дорабатывается — схема появится позже.',et:'Rada on täpsustamisel — rajakaart avaldatakse hiljem.',en:'The route is being finalised — the map will be published later.'}[lang]}</p></section>
-  <section class="ski-panel ski-programme-panel" id="programme" aria-labelledby="programme-title"><div class="ski-calendar-tile"><span>${c.day}</span><strong>23</strong><span>${c.month} 2027</span></div><div class="ski-panel-copy"><h2 id="programme-title">${c.programmeTitle}</h2><p>${c.programmePending}</p><a class="ski-outline-button" href="${base}/skiing/winter-ski.ics" download>${c.calendar}${arrow}</a></div></section>
+  <section class="ski-panel ski-programme-panel" id="programme" aria-label="${c.programme}"><ol class="ski-schedule">${schedule.map(([time,title,note])=>`<li><span class="ski-schedule-time">${time}</span><div><h2>${title}</h2>${note?`<p>${note}</p>`:""}</div></li>`).join("")}</ol></section>
   <section class="ski-panel ski-prices-panel" id="prices" aria-labelledby="prices-title">
    <h2 id="prices-title">${c.pricesTitle}</h2>
    <table class="ski-fees-table"><thead><tr><th scope="col">${{ru:'Участники',et:'Osalejad',en:'Participants'}[lang]}</th><th scope="col">${priceCopy.main}</th><th scope="col">${c.kids}<small>500 ${c.m}</small></th></tr></thead><tbody>
