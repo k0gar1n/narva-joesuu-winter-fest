@@ -165,3 +165,13 @@
  .ski-page .ski-schedule h2{font-size:16px}
  .ski-schedule p{font-size:13px;margin-top:7px}
 }
+
+/* Full rules, readable in the same content tab on all screens. */
+.ski-page .ski-rules-panel{display:block;padding:0;border:0;background:transparent;min-height:0}
+.ski-rule-list{list-style:none;counter-reset:ski-rule;margin:24px 0 0;padding:0}
+.ski-rule-list li{counter-increment:ski-rule;position:relative;border-top:1px solid var(--ski-line);padding:26px 0 26px 58px}
+.ski-rule-list li:before{content:counter(ski-rule,decimal-leading-zero);position:absolute;left:0;top:27px;font-family:Anton,sans-serif;font-size:24px;color:var(--blue)}
+.ski-rule-list h3{font-size:21px;line-height:1.4;margin:0 0 12px;color:var(--ski-ink)}
+.ski-rule-list p{max-width:85ch;font-size:16px;line-height:1.75;margin:0;color:var(--ski-ink)}
+.ski-rule-list p+p{margin-top:12px}
+@media(max-width:760px){.ski-rule-list{margin-top:20px}.ski-rule-list li{padding:22px 0 22px 36px}.ski-rule-list li:before{top:23px;font-size:20px}.ski-rule-list h3{font-size:17px;margin-bottom:10px}.ski-rule-list p{font-size:14px;line-height:1.7}}
