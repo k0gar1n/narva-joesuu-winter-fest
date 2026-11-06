@@ -80,3 +80,5 @@
 @media(max-width:370px){.ski-page{--ski-pad:18px}.ski-hero-bottom{padding-inline:18px}.ski-distance-summary p{padding-inline:10px}.ski-distance-summary strong{font-size:36px}.ski-page .ski-programme-panel,.ski-page .ski-rules-panel{grid-template-columns:78px minmax(0,1fr);gap:14px;padding-inline:14px}.ski-page .ski-panel h2{font-size:22px}.ski-document-art>span{font-size:14px}.ski-jump{gap:20px;padding-inline:18px}}
 @media(prefers-reduced-motion:reduce){.ski-page *{scroll-behavior:auto!important;transition:none!important}}
 @media print{.ski-jump,.ski-mobile-register,.ski-register{display:none!important}.ski-page{padding:0}.ski-page .ski-panel[hidden]{display:grid!important}.ski-page .ski-hero-poster{max-height:none}.ski-panel{break-inside:avoid}}
+
+.ski-register.fienta-embed{background:var(--blue);color:#fff;border-color:var(--blue);cursor:pointer;text-decoration:none}.ski-register.fienta-embed:hover{background:#1235bf}.ski-register.fienta-embed:focus-visible{outline:3px solid #fff;outline-offset:3px}
